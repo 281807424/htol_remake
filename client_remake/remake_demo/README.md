@@ -12,7 +12,11 @@ npm run dev
 
 Open the URL printed by Vite. The page displays only the game at full viewport size and is titled **浩天奇缘ol**. Use **WASD** or the **arrow keys** to move; approach an animated teleportation array to travel to the connected map. The route includes the 桃花坞 branch.
 
-The demo player supports all three jobs, both genders, and both weapons for each job (先锋/剑·斧, 百步/弓·弩, 天灵/棍·杖). Press the top-row **1** to cycle jobs, **2** to cycle male/female, **3** to cycle the current job's weapons, and **4** to cycle its original `/6` component-mapping slots. **Q** toggles the automatic release type between casting and attacking. Right-facing movement mirrors the left-facing animation. Role actions are rendered from the raw AO component atlas and frame draw data; `/6` replaces component IDs at draw time, without generating a second set of appearance-specific animation frames. The AO root stays at the player's logical world coordinate when the appearance changes. Actions of the selected type play automatically in a random sequence and temporarily lock locomotion until each action completes.
+The demo player supports all three jobs, both genders, and both weapons for each job (先锋/剑·斧, 百步/弓·弩, 天灵/棍·杖). Press the top-row **1** to cycle jobs, **2** to cycle male/female, **3** to cycle the current job's weapons, and **4** to cycle its original `/6` component-mapping slots. **Q** toggles the automatic release type between casting and attacking. Right-facing movement mirrors the left-facing animation. Role actions are rendered from the raw AO component atlas and frame draw data; `/6` replaces component IDs at draw time, without generating a second set of appearance-specific animation frames. The AO root stays at the player's logical world coordinate during appearance changes and action animations.
+
+The camera keeps its existing 0.75 zoom, aligns follow on both axes and its map-edge scroll limits to whole screen pixels to prevent tile seams.
+
+Monster spritesheets also preserve each frame's source draw offsets inside a fixed animation-cell anchor. The monster's logical world point remains fixed during attacks and hit reactions; do not reposition it from the changing cropped-frame bounds.
 
 No on-screen control or information panels are displayed. Animated skill-effect groups remain available to the demo; static images are omitted. Press **E** to release the next of five skills in order: 陨石术, 光盾 (self), 冰冻之环, 落雷术, and 雷电束缚; the sequence wraps back to the first skill. Normal movement/idle animation resumes when a player action finishes.
 

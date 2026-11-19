@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node scripts/prepare-assets.mjs && vite --host 0.0.0.0",
     "build": "node scripts/prepare-assets.mjs && vite build",
-    "test": "node --test src/ao-character-renderer.test.js",
+    "test": "node --test src/ao-character-renderer.test.js src/camera-pixel-snap.test.js src/sprite-anchor.test.js",
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {

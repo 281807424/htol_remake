@@ -27,6 +27,7 @@
 - `images/asset_file_index.csv`：逐帧/组件的类别、类型、尺寸、帧时序和绘制原点偏移；非地图资源的 `file` 指向 `sprite_library/` 内对应的 Spritesheet、静态图或组件图。
 - `images/sprite_library/`：便于人工浏览的精灵资源库，按人工类别分目录，并继续划分 `static/` 与 `dynamic/`；常规已命名资源使用 `sprite-ID-中文名-动画组号.png`，角色动态组 074–076 使用 `职业-性别-武器-动作-动作号.png`，未列入人工清单的非地图 sprite 放入 `未分类/`。
 - `images/sprite_library/sprite_library.json`：人类可读索引，保留类别与分类证据/置信度、语义确认状态、静态或动态属性、源动画组、角色的职业/性别/武器/动作映射、帧顺序、逐帧 `durationMs`/`durationTicks`、裁切尺寸、绘制偏移及生成文件。规则 Spritesheet 的格子坐标可由帧序号及 `columns`、`frameWidth`、`frameHeight` 重建；sprite 076 的演示角色动画另标记 `renderSource: raw-ao-root-anchor`，逐帧偏移相对于原 AO 根绘制坐标。
+- [客户端效果字典](./客户端效果字典.md)：原客户端效果 ID 到精灵/动画组的映射、标志、绘制层级和资源动画时序，并注明服务端缺失造成的语义边界。
 - `images/animation_groups.csv`、`images/animation_index.csv`：动画组帧数、源时长以及输出类型/路径索引；单帧组也记录源时长，但单帧组不表示可见循环动画。
 - `images/phaser/atlases/`：非地图 sprite 的旧 atlas 副本在资源库构建后清理；地图引用的 atlas 文件保留。新格式使用独立静态 PNG 和按动画组制作的规则 Spritesheet。
 - `images/fonts/resource_3_font_atlas.png`、`text/resource_3_font_glyphs.csv`：`/3` 记录 0 的点阵字形图集和字符/字形索引。

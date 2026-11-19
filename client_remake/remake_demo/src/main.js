@@ -4,6 +4,11 @@ import {
   cycleAppearanceSlot,
   renderAOFrame,
 } from './ao-character-renderer.js';
+import {
+  getPixelAlignedCameraBounds,
+  snapFollowTargetToPixelGrid,
+} from './camera-pixel-snap.js';
+import { placeSpriteAtLogicalAnchor } from './sprite-anchor.js';
 
 const ASSET_ROOT = '/assets';
 const MAP_OBJECT_TRANSFORMS = [
@@ -50,8 +55,6 @@ const PLAYER_BODY_WIDTH = 24;
 const PLAYER_BODY_HEIGHT = 16;
 const TARGET_MARKER_SPRITE_ID = 32;
 const TARGET_MARKER_ANIMATION_GROUP = 2;
-const METEOR_START_OFFSET_X = 25;
-const METEOR_START_OFFSET_Y = -130;
 const ICE_RING_OFFSET_Y = -24;
 const PORTAL_SCALE = 0.55;
 const PORTAL_LABEL_OFFSET_Y = 116;
@@ -65,6 +68,7 @@ class WorldScene extends Phaser.Scene {
     this.mapObjects = [];
     this.blockers = null;
     this.mapCollider = null;
+    this.cameraFollowTarget = null;
     this.combatTimers = new Set();
     this.followEffects = new Set();
     this.skillEffects = new Map();
@@ -90,7 +94,6 @@ class WorldScene extends Phaser.Scene {
     this.releaseActionType = '施法';
     this.activeReleaseActionToken = null;
     this.releaseAnimationListener = null;
-    this.randomReleaseTimer = null;
   }
 
   preload() {
@@ -159,9 +162,11 @@ class WorldScene extends Phaser.Scene {
     this.createSelectionMarkerAnimation();
     this.debugBounds = this.add.graphics().setDepth(1000000);
     this.switchMap(START_MAP_ID, null, null);
-    this.playRandomReleaseAction();
     document.querySelector('#loading-state')?.remove();
-    this.scale.on('resize', (size) => this.cameras.main.setViewport(0, 0, size.width, size.height));
+    this.scale.on('resize', (size) => {
+      this.cameras.main.setViewport(0, 0, size.width, size.height);
+      this.updateCameraBounds();
+    });
   }
 
   createHeroAnimations() {
@@ -233,8 +238,6 @@ class WorldScene extends Phaser.Scene {
       : (weaponIndex === 0 ? 51 : 73);
     if (!gender || !weapon) throw new Error('角色性别或武器配置无效');
 
-    this.randomReleaseTimer?.remove(false);
-    this.randomReleaseTimer = null;
     if (this.releaseAnimationListener && this.heroAnimationClock) {
       this.heroAnimationClock.off(
         Phaser.Animations.Events.ANIMATION_COMPLETE,
@@ -260,7 +263,6 @@ class WorldScene extends Phaser.Scene {
       this.playHeroAnimation(this.heroAnimations[`${this.facing}-idle`], true);
       this.heroSprite.setFlipX(this.facing === 'right');
     }
-    this.scheduleRandomReleaseAction();
   }
 
   cycleProfession() {
@@ -317,8 +319,6 @@ class WorldScene extends Phaser.Scene {
       );
     }
 
-    this.randomReleaseTimer?.remove(false);
-    this.randomReleaseTimer = null;
     if (this.releaseAnimationListener && this.heroAnimationClock) {
       this.heroAnimationClock.off(
         Phaser.Animations.Events.ANIMATION_COMPLETE,
@@ -334,7 +334,6 @@ class WorldScene extends Phaser.Scene {
       this.playHeroAnimation(this.heroAnimations[`${this.facing}-idle`], true);
       this.heroSprite.setFlipX(this.facing === 'right');
     }
-    this.scheduleRandomReleaseAction();
   }
 
   getReleaseActions() {
@@ -538,7 +537,6 @@ class WorldScene extends Phaser.Scene {
       if (this.activeReleaseActionToken !== token) return;
       this.activeReleaseActionToken = null;
       this.releaseAnimationListener = null;
-      this.scheduleRandomReleaseAction();
     };
     this.heroAnimationClock.once(
       Phaser.Animations.Events.ANIMATION_COMPLETE,
@@ -547,30 +545,33 @@ class WorldScene extends Phaser.Scene {
     this.playHeroAnimation(entry, true);
   }
 
-  playRandomReleaseAction() {
-    const releaseActions = this.getReleaseActions();
-    if (!this.heroSprite?.active || !releaseActions.length) return;
-    const actions = releaseActions.filter(
-      (entry) => entry !== this.selectedReleaseAction,
-    );
-    const candidates = actions.length ? actions : releaseActions;
-    const entry = Phaser.Utils.Array.GetRandom(candidates);
-    this.playSelectedReleaseAction(entry);
-  }
-
-  scheduleRandomReleaseAction() {
-    this.randomReleaseTimer?.remove(false);
-    this.randomReleaseTimer = this.time.delayedCall(
-      Phaser.Math.Between(400, 1200),
-      () => {
-        this.randomReleaseTimer = null;
-        this.playRandomReleaseAction();
-      },
-    );
-  }
-
   syncHeroSpriteToPlayer() {
     this.heroSprite.setPosition(this.player.x, this.player.y);
+  }
+
+  syncCameraFollowTarget() {
+    const target = snapFollowTargetToPixelGrid(
+      this.player.x,
+      this.player.y,
+      this.cameras.main,
+    );
+    this.cameraFollowTarget.setPosition(target.x, target.y);
+  }
+
+  updateCameraBounds() {
+    const cameraBounds = getPixelAlignedCameraBounds(
+      this.cameras.main,
+      0,
+      0,
+      this.worldWidth,
+      this.worldHeight,
+    );
+    this.cameras.main.setBounds(
+      cameraBounds.x,
+      cameraBounds.y,
+      cameraBounds.width,
+      cameraBounds.height,
+    );
   }
 
   switchMap(mapId, entryTeleport, connectionId = null) {
@@ -622,7 +623,6 @@ class WorldScene extends Phaser.Scene {
     this.worldWidth = map.widthInPixels;
     this.worldHeight = map.heightInPixels;
     this.physics.world.setBounds(0, 0, this.worldWidth, this.worldHeight);
-    this.cameras.main.setBounds(0, 0, this.worldWidth, this.worldHeight);
     this.drawMapObjects(map);
 
     const requestedSpawn = entryTeleport
@@ -667,8 +667,14 @@ class WorldScene extends Phaser.Scene {
     this.drawMonsters(config.monsters);
     this.drawAmbientEntities(config.ambientEntities);
     this.drawPortals(config.teleports);
-    this.cameras.main.startFollow(this.player, true, 0.08, 0.08);
-    this.cameras.main.setZoom(0.75);
+    const camera = this.cameras.main;
+    camera.setZoom(0.75);
+    this.updateCameraBounds();
+    if (!this.cameraFollowTarget) {
+      this.cameraFollowTarget = this.add.zone(spawn.x, spawn.y);
+    }
+    this.syncCameraFollowTarget();
+    camera.startFollow(this.cameraFollowTarget, false, 1, 1);
     this.portalCooldown = 700;
     this.blockedPortalConnectionId = connectionId;
 
@@ -702,7 +708,6 @@ class WorldScene extends Phaser.Scene {
         monster.point.y,
         idle.textureKey,
       )
-        .setOrigin(idle.originX, idle.originY)
         .setScale(0.92)
         .setDepth(monster.point.y + 1)
         .setInteractive({ useHandCursor: true })
@@ -803,7 +808,6 @@ class WorldScene extends Phaser.Scene {
 
   playAmbientEntityAnimation(entity) {
     entity.animationEntry = entity.animationEntries[entity.animationIndex];
-    entity.sprite.setOrigin(entity.animationEntry.originX, entity.animationEntry.originY);
     if (entity.animationEntry.textureKind === 'spritesheet') {
       entity.sprite
         .setTexture(entity.animationEntry.textureKey)
@@ -838,12 +842,9 @@ class WorldScene extends Phaser.Scene {
         `${entity.category} ${entity.name} 动画组 ${entity.animationEntry.animationGroup} 缺少帧 ${frameIndex}`,
       );
     }
-    const footOffsetY = frame.drawOffsetY + frame.height;
-    entity.sprite.setPosition(
-      entity.point.x,
-      entity.point.y - footOffsetY * entity.sprite.scaleY,
-    );
+    placeSpriteAtLogicalAnchor(entity.sprite, entity.point, entity.animationEntry);
     entity.sprite.setDepth(entity.point.y + 1);
+    const footOffsetY = frame.drawOffsetY + frame.height;
     entity.label
       .setPosition(entity.point.x, entity.point.y - footOffsetY * entity.sprite.scaleY - 5)
       .setDepth(entity.point.y + 2);
@@ -856,11 +857,7 @@ class WorldScene extends Phaser.Scene {
     if (!frame) {
       throw new Error(`怪物 ${monster.name} 动画组 ${monster.animationEntry.animationGroup} 缺少帧 ${frameIndex}`);
     }
-    const footOffsetY = frame.drawOffsetY + frame.height;
-    monster.sprite.setPosition(
-      monster.point.x,
-      monster.point.y - footOffsetY * monster.sprite.scaleY,
-    );
+    placeSpriteAtLogicalAnchor(monster.sprite, monster.point, monster.animationEntry);
     monster.sprite.setDepth(monster.point.y + 1);
     monster.label.setPosition(monster.point.x, monster.point.y - 91);
     monster.label.setDepth(monster.point.y + 2);
@@ -899,12 +896,14 @@ class WorldScene extends Phaser.Scene {
       if (!monster.sprite.active) return;
       monster.animationEntry = monster.idleAnimation;
       monster.sprite.play(monster.idleAnimation.animationKey);
+      this.syncMonsterSprite(monster);
     };
     monster.sprite.once(
       Phaser.Animations.Events.ANIMATION_COMPLETE,
       monster.hitListener,
     );
     monster.sprite.play(monster.hitAnimation.animationKey);
+    this.syncMonsterSprite(monster);
   }
 
   playSkillEffect(spriteId, animationGroup, anchorX, anchorY, {
@@ -981,20 +980,14 @@ class WorldScene extends Phaser.Scene {
       const meteor = this.playSkillEffect(
         31,
         0,
-        target.point.x + METEOR_START_OFFSET_X,
-        target.point.y + METEOR_START_OFFSET_Y,
+        target.point.x,
+        target.point.y,
         { scale: 0.48, destroyOnAnimationComplete: false },
       );
-      const placement = this.skillEffects.get(meteor);
-      this.tweens.add({
-        targets: placement,
-        anchorY: target.point.y,
-        duration: 500,
-        ease: 'Quad.In',
-        onUpdate: () => this.positionSkillEffect(meteor, placement),
-        onComplete: () => this.destroyCombatEffect(meteor),
+      meteor.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
+        this.playMonsterHit(target);
+        this.destroyCombatEffect(meteor);
       });
-      this.scheduleCombatTimer(500, () => this.playMonsterHit(target));
       return;
     }
 
@@ -1285,6 +1278,7 @@ class WorldScene extends Phaser.Scene {
     this.heroSprite.setFlipX(this.facing === 'right');
     this.player.setDepth(this.player.y + 1);
     this.syncHeroSpriteToPlayer();
+    this.syncCameraFollowTarget();
     this.heroSprite.setDepth(this.player.y + 1);
     for (const monster of this.monsters) this.syncMonsterSprite(monster);
     if (this.selectionMarker && this.selectedMonster) {
