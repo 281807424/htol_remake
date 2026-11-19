@@ -1,0 +1,5 @@
+JAR: server_remake/htol_local.jar
+SHA-256: a126c100616819139767c1c7d0ed6354b4f1025e16e5faacc6e3d6f821c5c180
+Sprite resource set /5: 312 records, 12 shards, boundaries=[0, 26, 51, 73, 152, 208, 211, 215, 240, 257, 266, 277]
+Text resource set /1: 5 records, 1 shards, boundaries=[0]
+Offsets for root shard include its 4-byte + 2-byte-per-shard header; subsequent shards begin with the offset table.

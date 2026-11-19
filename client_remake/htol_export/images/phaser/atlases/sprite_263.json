@@ -1,0 +1,41 @@
+{
+  "textures": [
+    {
+      "image": "sprite_263_00.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 512,
+        "h": 256
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "anim_000_frame_000",
+          "frame": {
+            "x": 1,
+            "y": 1,
+            "w": 292,
+            "h": 238
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 292,
+            "h": 238
+          },
+          "sourceSize": {
+            "w": 292,
+            "h": 238
+          },
+          "duration": 50,
+          "drawOffsetX": -146,
+          "drawOffsetY": -158,
+          "animationGroup": 0,
+          "sourceFrameIndex": 0
+        }
+      ]
+    }
+  ]
+}

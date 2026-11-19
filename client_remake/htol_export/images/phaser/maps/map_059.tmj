@@ -1,0 +1,2404 @@
+{
+  "compressionlevel": -1,
+  "height": 25,
+  "infinite": false,
+  "layers": [
+    {
+      "data": [
+        2147483658,
+        2147483668,
+        2147483667,
+        2147483651,
+        2147483650,
+        2147483649,
+        8,
+        9,
+        2147483657,
+        2147483656,
+        8,
+        9,
+        2147483657,
+        2147483656,
+        8,
+        9,
+        2147483657,
+        2147483656,
+        8,
+        9,
+        2147483657,
+        2147483656,
+        8,
+        2147483657,
+        9,
+        2147483657,
+        2147483656,
+        8,
+        1,
+        2,
+        3,
+        19,
+        20,
+        10,
+        11,
+        2147483667,
+        2147483651,
+        2147483650,
+        2147483649,
+        2147483659,
+        2147483658,
+        17,
+        18,
+        2147483666,
+        2147483665,
+        17,
+        18,
+        2147483666,
+        2147483665,
+        17,
+        18,
+        2147483666,
+        2147483665,
+        17,
+        18,
+        2147483666,
+        2147483665,
+        17,
+        2147483666,
+        18,
+        2147483666,
+        2147483665,
+        17,
+        10,
+        11,
+        1,
+        2,
+        3,
+        19,
+        20,
+        2147483674,
+        2147483673,
+        2147483659,
+        2147483658,
+        2147483668,
+        2147483667,
+        22,
+        23,
+        22,
+        23,
+        22,
+        23,
+        22,
+        23,
+        22,
+        23,
+        22,
+        23,
+        22,
+        22,
+        23,
+        22,
+        23,
+        22,
+        23,
+        23,
+        22,
+        23,
+        19,
+        20,
+        10,
+        11,
+        25,
+        26,
+        3,
+        2147483681,
+        2147483680,
+        2147483668,
+        2147483667,
+        2147483676,
+        2147483675,
+        29,
+        30,
+        29,
+        30,
+        29,
+        30,
+        29,
+        30,
+        29,
+        30,
+        29,
+        30,
+        29,
+        29,
+        30,
+        29,
+        30,
+        30,
+        30,
+        30,
+        29,
+        30,
+        27,
+        28,
+        19,
+        20,
+        32,
+        33,
+        1,
+        2147483668,
+        2147483667,
+        2147483676,
+        2147483675,
+        2147483684,
+        2147483683,
+        37,
+        38,
+        37,
+        38,
+        37,
+        38,
+        37,
+        38,
+        37,
+        38,
+        37,
+        38,
+        37,
+        37,
+        38,
+        37,
+        38,
+        38,
+        37,
+        38,
+        37,
+        38,
+        35,
+        36,
+        27,
+        28,
+        19,
+        20,
+        10,
+        2147483676,
+        2147483675,
+        2147483684,
+        2147483683,
+        2147483692,
+        2147483691,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        21,
+        45,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        45,
+        46,
+        2147483669,
+        2147483669,
+        46,
+        45,
+        46,
+        2147483669,
+        2147483669,
+        44,
+        35,
+        36,
+        27,
+        28,
+        19,
+        2147483684,
+        2147483683,
+        2147483692,
+        2147483691,
+        2147483669,
+        2147483693,
+        12,
+        2147483660,
+        45,
+        46,
+        2147483669,
+        46,
+        45,
+        46,
+        45,
+        46,
+        12,
+        2147483660,
+        45,
+        46,
+        46,
+        2147483694,
+        45,
+        21,
+        46,
+        46,
+        2147483694,
+        45,
+        21,
+        45,
+        43,
+        44,
+        35,
+        36,
+        27,
+        2147483692,
+        2147483691,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        2147483669,
+        46,
+        2147483694,
+        12,
+        2147483660,
+        46,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        45,
+        2147483669,
+        46,
+        43,
+        44,
+        35,
+        2147483694,
+        2147483693,
+        45,
+        21,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        2147483669,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        12,
+        2147483660,
+        45,
+        46,
+        45,
+        46,
+        2147483660,
+        45,
+        46,
+        45,
+        46,
+        12,
+        2147483660,
+        2147483693,
+        2147483694,
+        46,
+        43,
+        12,
+        2147483660,
+        45,
+        46,
+        2147483694,
+        12,
+        2147483660,
+        46,
+        46,
+        2147483694,
+        45,
+        46,
+        2147483694,
+        21,
+        12,
+        2147483669,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        2147483669,
+        46,
+        45,
+        46,
+        45,
+        2147483693,
+        2147483669,
+        46,
+        45,
+        45,
+        46,
+        46,
+        2147483694,
+        45,
+        46,
+        45,
+        12,
+        2147483660,
+        46,
+        2147483694,
+        2147483693,
+        2147483694,
+        46,
+        45,
+        12,
+        2147483660,
+        2147483693,
+        45,
+        46,
+        45,
+        46,
+        12,
+        2147483660,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        2147483693,
+        45,
+        2147483694,
+        2147483693,
+        2147483669,
+        46,
+        12,
+        2147483660,
+        2147483669,
+        46,
+        46,
+        2147483694,
+        45,
+        46,
+        2147483694,
+        46,
+        45,
+        46,
+        2147483694,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        12,
+        2147483660,
+        45,
+        2147483693,
+        45,
+        46,
+        12,
+        45,
+        46,
+        45,
+        12,
+        2147483660,
+        2147483693,
+        2147483694,
+        21,
+        45,
+        12,
+        2147483660,
+        46,
+        2147483694,
+        12,
+        2147483660,
+        12,
+        2147483660,
+        2147483693,
+        2147483694,
+        12,
+        2147483660,
+        12,
+        2147483660,
+        46,
+        45,
+        46,
+        2147483669,
+        46,
+        45,
+        46,
+        45,
+        46,
+        2147483669,
+        46,
+        45,
+        45,
+        21,
+        45,
+        46,
+        45,
+        46,
+        46,
+        2147483694,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        46,
+        2147483694,
+        45,
+        46,
+        12,
+        2147483660,
+        45,
+        46,
+        2147483669,
+        46,
+        46,
+        2147483694,
+        2147483669,
+        46,
+        2147483694,
+        46,
+        12,
+        2147483660,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        12,
+        2147483660,
+        2147483694,
+        2147483693,
+        45,
+        2147483694,
+        2147483693,
+        46,
+        2147483694,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        2147483669,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        45,
+        46,
+        12,
+        2147483660,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        2147483669,
+        46,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        2147483669,
+        12,
+        2147483660,
+        45,
+        46,
+        2147483694,
+        12,
+        2147483660,
+        46,
+        46,
+        2147483694,
+        45,
+        46,
+        2147483694,
+        21,
+        12,
+        2147483669,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        2147483669,
+        46,
+        45,
+        46,
+        45,
+        2147483693,
+        2147483669,
+        46,
+        45,
+        45,
+        46,
+        46,
+        2147483694,
+        45,
+        46,
+        45,
+        12,
+        2147483660,
+        46,
+        2147483694,
+        2147483693,
+        2147483694,
+        46,
+        45,
+        12,
+        2147483660,
+        2147483693,
+        45,
+        46,
+        45,
+        46,
+        12,
+        2147483660,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        2147483693,
+        45,
+        2147483694,
+        2147483693,
+        2147483669,
+        46,
+        12,
+        2147483660,
+        2147483669,
+        46,
+        46,
+        2147483694,
+        45,
+        46,
+        2147483694,
+        46,
+        45,
+        46,
+        2147483694,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        12,
+        2147483660,
+        45,
+        2147483693,
+        45,
+        46,
+        12,
+        45,
+        46,
+        45,
+        12,
+        2147483660,
+        2147483693,
+        2147483694,
+        21,
+        45,
+        12,
+        2147483660,
+        46,
+        2147483694,
+        12,
+        2147483660,
+        12,
+        2147483660,
+        2147483693,
+        2147483694,
+        12,
+        2147483660,
+        12,
+        2147483660,
+        46,
+        45,
+        46,
+        2147483669,
+        46,
+        45,
+        46,
+        45,
+        46,
+        2147483669,
+        46,
+        45,
+        45,
+        21,
+        45,
+        46,
+        45,
+        46,
+        46,
+        2147483694,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        46,
+        2147483694,
+        45,
+        46,
+        12,
+        2147483660,
+        45,
+        46,
+        2147483669,
+        46,
+        46,
+        2147483694,
+        2147483669,
+        46,
+        2147483694,
+        46,
+        12,
+        2147483660,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        12,
+        2147483660,
+        2147483694,
+        2147483693,
+        45,
+        2147483694,
+        2147483693,
+        46,
+        2147483694,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        2147483669,
+        46,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        2147483694,
+        2147483693,
+        45,
+        46,
+        45,
+        46,
+        12,
+        2147483660,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        2147483669,
+        46,
+        45,
+        46,
+        2147483694,
+        2147483693,
+        2147483669
+      ],
+      "height": 25,
+      "id": 1,
+      "name": "ground",
+      "opacity": 1,
+      "type": "tilelayer",
+      "visible": true,
+      "width": 35,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "draworder": "topdown",
+      "id": 2,
+      "name": "source_objects",
+      "objects": [
+        {
+          "height": 0,
+          "id": 1,
+          "name": "sprite_258_object_0001",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "1"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "1"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "1119"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "138"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "1119"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "138"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,7,1119,138,1,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 1119,
+          "y": 138
+        },
+        {
+          "height": 0,
+          "id": 2,
+          "name": "sprite_258_object_0002",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "2"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "1"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "1230"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "189"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "1230"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "189"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,9,1230,189,1,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 1230,
+          "y": 189
+        },
+        {
+          "height": 0,
+          "id": 3,
+          "name": "sprite_258_object_0003",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "3"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "3"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "537"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "276"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "537"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "276"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,12,537,276,3,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 537,
+          "y": 276
+        },
+        {
+          "height": 0,
+          "id": 4,
+          "name": "sprite_258_object_0004",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "4"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "4"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "312"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "453"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "312"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "453"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "1"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,14,312,453,4,1,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 312,
+          "y": 453
+        },
+        {
+          "height": 0,
+          "id": 5,
+          "name": "sprite_258_object_0005",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "5"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "4"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "861"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "495"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "861"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "495"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,15,861,495,4,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 861,
+          "y": 495
+        },
+        {
+          "height": 0,
+          "id": 6,
+          "name": "sprite_258_object_0006",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "6"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "5"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "303"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "303"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,16,303,96,5,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 303,
+          "y": 96
+        },
+        {
+          "height": 0,
+          "id": 7,
+          "name": "sprite_258_object_0007",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "7"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "5"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "399"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "399"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,17,399,96,5,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 399,
+          "y": 96
+        },
+        {
+          "height": 0,
+          "id": 8,
+          "name": "sprite_258_object_0008",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "8"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "5"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "501"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "501"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,18,501,96,5,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 501,
+          "y": 96
+        },
+        {
+          "height": 0,
+          "id": 9,
+          "name": "sprite_258_object_0009",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "9"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "5"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "612"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "612"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,19,612,96,5,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 612,
+          "y": 96
+        },
+        {
+          "height": 0,
+          "id": 10,
+          "name": "sprite_258_object_0010",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "10"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "5"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "813"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "813"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,21,813,96,5,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 813,
+          "y": 96
+        },
+        {
+          "height": 0,
+          "id": 11,
+          "name": "sprite_258_object_0011",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "11"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "5"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "903"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "903"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,22,903,96,5,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 903,
+          "y": 96
+        },
+        {
+          "height": 0,
+          "id": 12,
+          "name": "sprite_258_object_0012",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "12"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "5"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "717"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "717"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,20,717,96,5,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 717,
+          "y": 96
+        },
+        {
+          "height": 0,
+          "id": 13,
+          "name": "sprite_258_object_0013",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "13"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "1"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "132"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "114"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "132"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "114"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "1"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,10,132,114,1,1,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 132,
+          "y": 114
+        },
+        {
+          "height": 0,
+          "id": 14,
+          "name": "sprite_258_object_0014",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "14"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "2"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "249"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "249"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "96"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,8,249,96,2,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 249,
+          "y": 96
+        },
+        {
+          "height": 0,
+          "id": 15,
+          "name": "sprite_258_object_0015",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "15"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "2"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "1002"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "93"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "1002"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "93"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,11,1002,93,2,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 1002,
+          "y": 93
+        },
+        {
+          "height": 0,
+          "id": 16,
+          "name": "sprite_258_object_0016",
+          "point": true,
+          "properties": [
+            {
+              "name": "objectIndex",
+              "type": "string",
+              "value": "16"
+            },
+            {
+              "name": "entityKind",
+              "type": "string",
+              "value": "unclassified_map_sprite"
+            },
+            {
+              "name": "classificationStatus",
+              "type": "string",
+              "value": "NPC/object semantics not confirmed"
+            },
+            {
+              "name": "rawSpriteId",
+              "type": "string",
+              "value": "41"
+            },
+            {
+              "name": "spriteResourceId",
+              "type": "string",
+              "value": "258"
+            },
+            {
+              "name": "animationGroup",
+              "type": "string",
+              "value": "4"
+            },
+            {
+              "name": "sourceXUnits",
+              "type": "string",
+              "value": "363"
+            },
+            {
+              "name": "sourceYUnits",
+              "type": "string",
+              "value": "480"
+            },
+            {
+              "name": "renderXpx",
+              "type": "string",
+              "value": "363"
+            },
+            {
+              "name": "renderYpx",
+              "type": "string",
+              "value": "480"
+            },
+            {
+              "name": "field5",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field6",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field7",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "field8",
+              "type": "string",
+              "value": "0"
+            },
+            {
+              "name": "rawFieldsJson",
+              "type": "string",
+              "value": "[41,13,363,480,4,0,0,0,0]"
+            }
+          ],
+          "rotation": 0,
+          "type": "source_sprite_object",
+          "visible": true,
+          "width": 0,
+          "x": 363,
+          "y": 480
+        }
+      ],
+      "opacity": 1,
+      "type": "objectgroup",
+      "visible": true,
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "nextlayerid": 3,
+  "nextobjectid": 17,
+  "orientation": "orthogonal",
+  "renderorder": "right-down",
+  "tiledversion": "1.10.2",
+  "tileheight": 36,
+  "tilesets": [
+    {
+      "firstgid": 1,
+      "source": "tilesets/sprite_212.tsj"
+    }
+  ],
+  "tilewidth": 36,
+  "type": "map",
+  "version": "1.10",
+  "width": 35,
+  "properties": [
+    {
+      "name": "sourceJarArchive",
+      "type": "string",
+      "value": "/59"
+    },
+    {
+      "name": "sourceRawRecordsPattern",
+      "type": "string",
+      "value": "../raw_resources/maps/map_059_record_NNN.bin"
+    },
+    {
+      "name": "sourceTileSetRawId",
+      "type": "string",
+      "value": "304"
+    },
+    {
+      "name": "sourceTileAtlasSpriteId",
+      "type": "string",
+      "value": "212"
+    },
+    {
+      "name": "sourceLogicalCellUnits",
+      "type": "string",
+      "value": "24"
+    },
+    {
+      "name": "tileTransform2BitBase64",
+      "type": "string",
+      "value": "VVBQUFBRFAABVUFBQUFEUAAFVQAAAAAAAAAVVAAAAAAAAABVUAAAAAAAAAFVVBQBQBQFAAVVEEABAQBAABQUERAUFAUBAFAABAABAEAFQEEQQQVBQVAFABAEVAUAEAAAFBFQUEEBFARAAFQERFREBABAAAQAAAAAFAFFAFEBBBRBUBUUQAEUAAAAAABQAQAAAAAFQFRBEEEFQUFQBQAQBFQFABAAABQRUFBBARQEQABUBERURAQAQAAEAAAAABQBRQBRAQQUQVAVFEABFAAAAAAAUAEAAAAABUBU"
+    },
+    {
+      "name": "tileTransformSemantics",
+      "type": "string",
+      "value": "bit 0 horizontal flip; bit 1 vertical flip (bm.i -> ao.b -> Graphics.drawRegion)"
+    },
+    {
+      "name": "attributeBytesBase64",
+      "type": "string",
+      "value": "FxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXFxcXBgcXF/////////////////////////8XFwUXFxcXFxcXBgf//////////////////////////////////wQFFxcXBgf///////////////////////////////////////8EBRf//////////////////xcX////////////////////////BP//////////////////Fxf///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8XFxf//////////////////////////////////////////wQFBv///////////////xcX//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8="
+    },
+    {
+      "name": "attributeSemantics",
+      "type": "string",
+      "value": "unknown; preserved from source"
+    },
+    {
+      "name": "coordinateOrder",
+      "type": "string",
+      "value": "row-major; x increases right and y increases down (confirmed in bm.java)"
+    },
+    {
+      "name": "entityCoordinates",
+      "type": "string",
+      "value": "source actor coordinates are converted by h constructor and rendered at draw_anchor_x/y from map_objects.csv; values are already render pixels"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "columns": 16,
+  "image": "sprite_212_tiles.png",
+  "imageheight": 108,
+  "imagewidth": 576,
+  "margin": 0,
+  "name": "sprite_212_tiles",
+  "spacing": 0,
+  "tilecount": 47,
+  "tiledversion": "1.10.2",
+  "tileheight": 36,
+  "tileoffset": {
+    "x": 0,
+    "y": 0
+  },
+  "tilewidth": 36,
+  "type": "tileset",
+  "version": "1.10"
+}

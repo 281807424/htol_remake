@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>地图元素布置</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <main class="workspace">
+      <aside class="catalog-panel" aria-label="地图元素素材">
+        <header class="catalog-header">
+          <strong>地图元素</strong>
+          <span>拖到地图上布置</span>
+        </header>
+        <section class="catalog-section teleport-section">
+          <h2>传送点 · 八方向</h2>
+          <div id="direction-list" class="direction-list"></div>
+        </section>
+        <section class="catalog-section monster-section">
+          <h2>怪物 · 按动作数量</h2>
+          <label class="visually-hidden" for="monster-search">搜索怪物</label>
+          <input id="monster-search" type="search" placeholder="搜索怪物名称或编号" />
+          <div id="monster-list" class="monster-list"></div>
+        </section>
+      </aside>
+
+      <section class="editor-panel" aria-label="地图布置画布">
+        <header class="editor-header">
+          <div class="map-navigation">
+            <button id="previous-map" type="button" aria-label="上一张地图">← 上一张</button>
+            <label class="visually-hidden" for="map-select">当前地图</label>
+            <select id="map-select"></select>
+            <button id="next-map" type="button" aria-label="下一张地图">下一张 →</button>
+            <span id="map-counter"></span>
+          </div>
+          <div class="editor-tools">
+            <button id="zoom-out" type="button" aria-label="缩小地图">−</button>
+            <span id="zoom-level">100%</span>
+            <button id="zoom-in" type="button" aria-label="放大地图">+</button>
+            <button id="save-button" type="button">保存布置</button>
+          </div>
+        </header>
+        <div class="map-heading">
+          <strong id="map-title"></strong>
+          <span id="map-description"></span>
+        </div>
+        <div id="map-viewport" class="map-viewport" tabindex="0" aria-label="拖放传送点或怪物到地图；方向键切换地图">
+          <div id="map-canvas" class="map-canvas">
+            <img id="map-image" alt="" draggable="false" />
+            <div id="placements-layer" class="placements-layer"></div>
+          </div>
+        </div>
+        <footer class="editor-footer">
+          <span id="save-status" role="status" aria-live="polite">正在加载地图与布置数据…</span>
+          <span id="selected-info">选择地图上的元素可编辑或删除；Delete 键也可删除。</span>
+        </footer>
+        <section id="element-inspector" class="element-inspector" aria-live="polite" hidden></section>
+      </section>
+    </main>
+  </body>
+</html>

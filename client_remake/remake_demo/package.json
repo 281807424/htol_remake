@@ -1,0 +1,18 @@
+{
+  "name": "htol-phaser-demo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/prepare-assets.mjs && vite --host 0.0.0.0",
+    "build": "node scripts/prepare-assets.mjs && vite build",
+    "test": "node --test src/ao-character-renderer.test.js",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "vite": "^6.4.1"
+  }
+}

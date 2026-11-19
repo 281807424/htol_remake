@@ -1,0 +1,93 @@
+{
+  "textures": [
+    {
+      "image": "sprite_220_00.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 256,
+        "h": 32
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "anim_002_frame_000",
+          "frame": {
+            "x": 1,
+            "y": 1,
+            "w": 46,
+            "h": 25
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 46,
+            "h": 25
+          },
+          "sourceSize": {
+            "w": 46,
+            "h": 25
+          },
+          "duration": 50,
+          "drawOffsetX": -21,
+          "drawOffsetY": -1,
+          "animationGroup": 2,
+          "sourceFrameIndex": 0
+        },
+        {
+          "filename": "anim_001_frame_000",
+          "frame": {
+            "x": 49,
+            "y": 1,
+            "w": 55,
+            "h": 24
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 55,
+            "h": 24
+          },
+          "sourceSize": {
+            "w": 55,
+            "h": 24
+          },
+          "duration": 50,
+          "drawOffsetX": -21,
+          "drawOffsetY": -13,
+          "animationGroup": 1,
+          "sourceFrameIndex": 0
+        },
+        {
+          "filename": "anim_000_frame_000",
+          "frame": {
+            "x": 106,
+            "y": 1,
+            "w": 21,
+            "h": 18
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 21,
+            "h": 18
+          },
+          "sourceSize": {
+            "w": 21,
+            "h": 18
+          },
+          "duration": 50,
+          "drawOffsetX": -9,
+          "drawOffsetY": -7,
+          "animationGroup": 0,
+          "sourceFrameIndex": 0
+        }
+      ]
+    }
+  ]
+}

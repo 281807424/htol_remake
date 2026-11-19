@@ -1,0 +1,3834 @@
+{
+  "schemaVersion": 1,
+  "maps": [
+    {
+      "mapId": 7,
+      "teleports": [
+        {
+          "id": "58d8d95830b048e583a747489faa61f6",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 829,
+          "y": 164
+        },
+        {
+          "id": "dd13276830fc46709a0e658824ccfceb",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 343,
+          "y": 1236
+        },
+        {
+          "id": "007e710bb51d49abba495315604e1b79",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 831,
+          "y": 940
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 8,
+      "teleports": [
+        {
+          "id": "3f2e5f24c8e64d0e9d27eb0a15d200ae",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 167,
+          "y": 86
+        },
+        {
+          "id": "5dda44d486f948d5b74e505b793fd6a1",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1727,
+          "y": 892
+        },
+        {
+          "id": "459fa1ad117f46f0b6591d98e5a10954",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 539,
+          "y": 1094
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 9,
+      "teleports": [
+        {
+          "id": "115121cdd7f6406ca140eb4ed1103b79",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 167,
+          "y": 106
+        },
+        {
+          "id": "f1e7517a0593451286a0a0de1139d55a",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1317,
+          "y": 86
+        },
+        {
+          "id": "b57811ebe87d4acbaac97f3e8afd3e2e",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1612,
+          "y": 911
+        },
+        {
+          "id": "5a36debe29ee47a58a1b3c85767f6f9b",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 215,
+          "y": 1109
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 10,
+      "teleports": [
+        {
+          "id": "b9d81b502a124c5cb1f670d7b9841e3a",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 300,
+          "y": 53
+        },
+        {
+          "id": "dd6e6c5f4b964f2b883146ef45f03cc2",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 237,
+          "y": 1367
+        },
+        {
+          "id": "8fb16c29956748ce92b95240c24bfbd2",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 657,
+          "y": 689
+        },
+        {
+          "id": "329ddf16a6af4b8b8069dc2e0fcc79fe",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 65,
+          "y": 912
+        }
+      ],
+      "monsters": [
+        {
+          "id": "acbf45abeb2f40b38082755ecd3537fe",
+          "spriteId": 92,
+          "name": "狐狸",
+          "actionCount": 5,
+          "x": 308,
+          "y": 601
+        }
+      ]
+    },
+    {
+      "mapId": 11,
+      "teleports": [
+        {
+          "id": "c24e09c8f8ba496fa32d9877c5930b8c",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 104,
+          "y": 1330
+        },
+        {
+          "id": "b5e71ba31b7b4be49c8f7e42a4567cdf",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 974,
+          "y": 1361
+        },
+        {
+          "id": "6fc9f1a7f4db4c71b023a480e1196f7c",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 734,
+          "y": 58
+        }
+      ],
+      "monsters": [
+        {
+          "id": "6e892b73afb94f2d896852d572153ff7",
+          "spriteId": 92,
+          "name": "狐狸",
+          "actionCount": 5,
+          "x": 321,
+          "y": 748
+        }
+      ]
+    },
+    {
+      "mapId": 12,
+      "teleports": [
+        {
+          "id": "58e40d6a9dba4c9eb140d1bdf6c05cf7",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 91,
+          "y": 1072
+        },
+        {
+          "id": "c1514632b6684a99b1f26f5ec948ba05",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1537,
+          "y": 1066
+        },
+        {
+          "id": "e3bfe73105e24f5b85af691ad459e0e5",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1556,
+          "y": 95
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 13,
+      "teleports": [
+        {
+          "id": "8abecea87ebe4eecb12f8dd1a129656b",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 119,
+          "y": 1466
+        },
+        {
+          "id": "b7d4d994aca841d5bce183b7c1e4fe6f",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 2016,
+          "y": 930
+        },
+        {
+          "id": "67c6b2e9f3fc4903b0a87187681c2c4b",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 405,
+          "y": 136
+        },
+        {
+          "id": "3af99768f4684e88b7c16ee4d76becd6",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1338,
+          "y": 347
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 14,
+      "teleports": [
+        {
+          "id": "8da8bd447d1348cdb87cd7ed08e14a5f",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 75,
+          "y": 829
+        },
+        {
+          "id": "6c064c8975de48e4ac7e2c7ad3bee5ad",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1371,
+          "y": 827
+        },
+        {
+          "id": "806d8399e88247c3939260ba1ddedf43",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 909,
+          "y": 49
+        },
+        {
+          "id": "c2da1706d4df43aaa1314544fdbad162",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 50,
+          "y": 327
+        },
+        {
+          "id": "8c3cc8e811984188b7ab6e95c77e69b3",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1363,
+          "y": 266
+        }
+      ],
+      "monsters": [
+        {
+          "id": "1443b74180d04edda053f5145ce1b07b",
+          "spriteId": 108,
+          "name": "毒龟",
+          "actionCount": 5,
+          "x": 441,
+          "y": 356
+        }
+      ]
+    },
+    {
+      "mapId": 15,
+      "teleports": [
+        {
+          "id": "eecb6160d74f40f78375c2c292a44eaa",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 105,
+          "y": 1161
+        },
+        {
+          "id": "fdff576004674a6397857562cd718702",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1672,
+          "y": 1160
+        },
+        {
+          "id": "639f0281f4204ddea5756cbda68d9581",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1618,
+          "y": 101
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 16,
+      "teleports": [
+        {
+          "id": "d24fea6f0ea74d5b9581ad8c5043faf6",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1449,
+          "y": 1333
+        },
+        {
+          "id": "c9ce2b2a3e2543fb99db1c499794f21c",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1561,
+          "y": 498
+        },
+        {
+          "id": "723f88a95bae4b239baa5fd1883fe0be",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 460,
+          "y": 77
+        },
+        {
+          "id": "bfe5138f91ca4f8f842a15137fd22029",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 83,
+          "y": 1282
+        }
+      ],
+      "monsters": [
+        {
+          "id": "ef3f92a47abf4b7fa1a36bc192d4e915",
+          "spriteId": 94,
+          "name": "野狼",
+          "actionCount": 5,
+          "x": 527,
+          "y": 608
+        }
+      ]
+    },
+    {
+      "mapId": 17,
+      "teleports": [
+        {
+          "id": "261fe3eec75044419cd0d970bab84be2",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 65,
+          "y": 1074
+        },
+        {
+          "id": "2f2f0d09641a4cfa8948ef4154d8c7e1",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1536,
+          "y": 1065
+        },
+        {
+          "id": "362ef05eedf04da9a053710c425673bc",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 68,
+          "y": 61
+        },
+        {
+          "id": "55309ec87c52490d9434e00529cf8fdc",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1474,
+          "y": 62
+        }
+      ],
+      "monsters": [
+        {
+          "id": "55a136fb3cae46bc919ab416b950960d",
+          "spriteId": 93,
+          "name": "野猪",
+          "actionCount": 5,
+          "x": 574,
+          "y": 509
+        }
+      ]
+    },
+    {
+      "mapId": 18,
+      "teleports": [
+        {
+          "id": "f63cb18e619a4734a6b38b6713f21c89",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 45,
+          "y": 529
+        },
+        {
+          "id": "c2e37982635c4e54b69f39f3dac2bc84",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 1472,
+          "y": 732
+        },
+        {
+          "id": "f43f94897213409daf5d794da242c288",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 360,
+          "y": 62
+        },
+        {
+          "id": "d2643e22ebae4797b4c751359a1a9dd5",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1674,
+          "y": 75
+        }
+      ],
+      "monsters": [
+        {
+          "id": "a24dade6d0b546e08a31cce615fac21e",
+          "spriteId": 91,
+          "name": "山猫",
+          "actionCount": 5,
+          "x": 1412,
+          "y": 324
+        }
+      ]
+    },
+    {
+      "mapId": 19,
+      "teleports": [
+        {
+          "id": "11609a2ad6aa4642a897406e97825503",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 177,
+          "y": 1099
+        },
+        {
+          "id": "8623611bbb4a4d1b9b9431cb0375f40e",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1562,
+          "y": 67
+        },
+        {
+          "id": "23afb6cbb1eb4032a0d3c07649d962e1",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1716,
+          "y": 1062
+        }
+      ],
+      "monsters": [
+        {
+          "id": "b3e6eb62c8d7439faa88d9d45eedcc84",
+          "spriteId": 91,
+          "name": "山猫",
+          "actionCount": 5,
+          "x": 737,
+          "y": 462
+        }
+      ]
+    },
+    {
+      "mapId": 20,
+      "teleports": [
+        {
+          "id": "6e6a9ae5cd78405097faf37ab9dc327d",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 40,
+          "y": 46
+        },
+        {
+          "id": "9450f82d4718462d8d9379c74cefc95f",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 147,
+          "y": 670
+        },
+        {
+          "id": "2cd8b2926c594013a95d002c4636b5ae",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 855,
+          "y": 675
+        },
+        {
+          "id": "b6a6dff789684ccca19e47a7af715679",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1059,
+          "y": 46
+        }
+      ],
+      "monsters": [
+        {
+          "id": "71e1e85c4ce4498eafa90b456c465b5c",
+          "spriteId": 161,
+          "name": "妖小兵",
+          "actionCount": 5,
+          "x": 574,
+          "y": 425
+        }
+      ]
+    },
+    {
+      "mapId": 21,
+      "teleports": [
+        {
+          "id": "900d26523576403699932d4dbf585016",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 642,
+          "y": 1007
+        },
+        {
+          "id": "fe1f8bb9f7bf4fd3b425310f49c29efe",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 233,
+          "y": 60
+        },
+        {
+          "id": "59f05b8b334e4b7a94470d5c24ab07f3",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 641,
+          "y": 286
+        }
+      ],
+      "monsters": [
+        {
+          "id": "55f61be05cda452f9f0218c3c3a21f0d",
+          "spriteId": 154,
+          "name": "鬼女子",
+          "actionCount": 5,
+          "x": 269,
+          "y": 234
+        }
+      ]
+    },
+    {
+      "mapId": 22,
+      "teleports": [
+        {
+          "id": "5e470f26941147ebbeea0ee32d07234c",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 966,
+          "y": 88
+        },
+        {
+          "id": "682ef036114d4ff99175cef589dc3ebc",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 146,
+          "y": 985
+        },
+        {
+          "id": "18928fc515a04627a608232e9a6f1bc2",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 965,
+          "y": 985
+        }
+      ],
+      "monsters": [
+        {
+          "id": "919cb35b1f6740c2bd522b9e59af14af",
+          "spriteId": 104,
+          "name": "斗笠刀客",
+          "actionCount": 5,
+          "x": 399,
+          "y": 474
+        }
+      ]
+    },
+    {
+      "mapId": 23,
+      "teleports": [
+        {
+          "id": "dbb4dca069b14af0bee425796965450f",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 461,
+          "y": 763
+        },
+        {
+          "id": "62dbeb9846c74743a61440e3d73fee51",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 89,
+          "y": 54
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 24,
+      "teleports": [
+        {
+          "id": "5e473c0d4a194614bc36bf1f9be49d69",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 70,
+          "y": 991
+        },
+        {
+          "id": "de477dd8321d47119b1ed98a4bd5903b",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 955,
+          "y": 955
+        },
+        {
+          "id": "44e5e9746a584b8c81c4e6119cec0804",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 324,
+          "y": 66
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 25,
+      "teleports": [
+        {
+          "id": "84a50fdf1c3444ae86d65e4c6e7e93a0",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1377,
+          "y": 553
+        },
+        {
+          "id": "53c78bf4a5034c4ba5e2ad1e5fbe8c65",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1381,
+          "y": 51
+        },
+        {
+          "id": "3bc1069e863840628096295848adad2d",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 137,
+          "y": 66
+        },
+        {
+          "id": "214796b48f414c8b99f143795ce59488",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 134,
+          "y": 636
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 26,
+      "teleports": [
+        {
+          "id": "ae1ce3c949754031a9292be927f34dd1",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 74,
+          "y": 54
+        },
+        {
+          "id": "53b86bf46f794fd3b9443cc8b27ed4ef",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1007,
+          "y": 666
+        },
+        {
+          "id": "8ea13de500e541ec806c61571dcfb6c0",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1027,
+          "y": 223
+        }
+      ],
+      "monsters": [
+        {
+          "id": "d43895de03d7476a93a7af3adc92246d",
+          "spriteId": 187,
+          "name": "虎王怪",
+          "actionCount": 7,
+          "x": 316,
+          "y": 361
+        }
+      ]
+    },
+    {
+      "mapId": 27,
+      "teleports": [
+        {
+          "id": "4df4743e15984de5aa8d086fe39ceca8",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 84,
+          "y": 659
+        },
+        {
+          "id": "2e9c70c8b5354957b2f08f5c6eed2ac3",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 113,
+          "y": 49
+        },
+        {
+          "id": "7336ea0e8b024ec2937b036b8a4eca43",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1019,
+          "y": 410
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 28,
+      "teleports": [
+        {
+          "id": "4e17ee8a91a44640a300a57b1435f035",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1002,
+          "y": 51
+        },
+        {
+          "id": "77b3cca8a0d74cbf969cd788a98fc787",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 45,
+          "y": 488
+        }
+      ],
+      "monsters": [
+        {
+          "id": "9c5ebad487564231b87b832c2d2f6d42",
+          "spriteId": 161,
+          "name": "妖小兵",
+          "actionCount": 5,
+          "x": 604,
+          "y": 531
+        }
+      ]
+    },
+    {
+      "mapId": 29,
+      "teleports": [
+        {
+          "id": "1f1065d0795b48fcb1a67e689fe2f99b",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 160,
+          "y": 846
+        },
+        {
+          "id": "e9c963489dc64dd2b9d13dacef5a226f",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1028,
+          "y": 640
+        },
+        {
+          "id": "62bf749c78f24fd8bf63e30ad88f13b4",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 192,
+          "y": 66
+        }
+      ],
+      "monsters": [
+        {
+          "id": "00eb967cd00c4862a7de9247f2d922ef",
+          "spriteId": 182,
+          "name": "树妖怪",
+          "actionCount": 5,
+          "x": 402,
+          "y": 420
+        }
+      ]
+    },
+    {
+      "mapId": 30,
+      "teleports": [
+        {
+          "id": "442302c06e944e31b0be5dfe4569a836",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 114,
+          "y": 985
+        },
+        {
+          "id": "e793ccca4bdc498e9d13c1f595586ce1",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1000,
+          "y": 577
+        },
+        {
+          "id": "7b7142db435049a1b00970db8985640e",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 893,
+          "y": 111
+        }
+      ],
+      "monsters": [
+        {
+          "id": "554d38dbde3341078025b46462e8aa79",
+          "spriteId": 182,
+          "name": "树妖怪",
+          "actionCount": 5,
+          "x": 567,
+          "y": 841
+        },
+        {
+          "id": "ad723441300345ac8b8a04e35bf04d15",
+          "spriteId": 152,
+          "name": "树精怪",
+          "actionCount": 8,
+          "x": 350,
+          "y": 254
+        }
+      ]
+    },
+    {
+      "mapId": 31,
+      "teleports": [
+        {
+          "id": "75d02bc85811486784577bd8a8b7471b",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 532,
+          "y": 1006
+        },
+        {
+          "id": "3b6f5d81c8ea4f20983863587377b149",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 138,
+          "y": 81
+        }
+      ],
+      "monsters": [
+        {
+          "id": "3757d81c8d3740d8bb05e76177b9926e",
+          "spriteId": 182,
+          "name": "树妖怪",
+          "actionCount": 5,
+          "x": 251,
+          "y": 610
+        }
+      ]
+    },
+    {
+      "mapId": 32,
+      "teleports": [
+        {
+          "id": "1afbe297be674325acf78290b3a357f1",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 67,
+          "y": 51
+        },
+        {
+          "id": "dc75bf4faf724bfe99c8c1b5a2095b0d",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1022,
+          "y": 652
+        }
+      ],
+      "monsters": [
+        {
+          "id": "fcb9eeaf84d24ec090a313c9d0a8c9fe",
+          "spriteId": 197,
+          "name": "泥人士兵",
+          "actionCount": 5,
+          "x": 270,
+          "y": 212
+        }
+      ]
+    },
+    {
+      "mapId": 33,
+      "teleports": [
+        {
+          "id": "10ed94c5dc4540f7a10de01ca2f43b90",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 64,
+          "y": 669
+        },
+        {
+          "id": "30acb1b75515450f8ff6352d0be2cebb",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 681,
+          "y": 509
+        },
+        {
+          "id": "579fe74eff8a4e8f91b1e3f03edba3aa",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 670,
+          "y": 43
+        },
+        {
+          "id": "76c807408da94c1da6698e9b7c5c3ab9",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 40,
+          "y": 258
+        }
+      ],
+      "monsters": [
+        {
+          "id": "7183ae0514564a18bda180cffa076891",
+          "spriteId": 123,
+          "name": "僵尸怪",
+          "actionCount": 5,
+          "x": 311,
+          "y": 395
+        }
+      ]
+    },
+    {
+      "mapId": 34,
+      "teleports": [
+        {
+          "id": "8d916cad4c0f4ed18fcec4855575e60b",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 132,
+          "y": 807
+        },
+        {
+          "id": "420e769f6d4641538bff63bddf4ec182",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 115,
+          "y": 102
+        },
+        {
+          "id": "bd75dbade0594f06885d104dea58d33e",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 801,
+          "y": 447
+        }
+      ],
+      "monsters": [
+        {
+          "id": "3a6de99eed3c448c832d45db42f1965d",
+          "spriteId": 186,
+          "name": "孩儿怪",
+          "actionCount": 5,
+          "x": 291,
+          "y": 502
+        }
+      ]
+    },
+    {
+      "mapId": 35,
+      "teleports": [
+        {
+          "id": "5d9731dd0c6842c7ac23bde3a798580f",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 47,
+          "y": 338
+        },
+        {
+          "id": "96a691cdb27e42dba3f40991b7dcc5e3",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 788,
+          "y": 670
+        },
+        {
+          "id": "f57dd5a96f8845b9a0c03a3d0a794b83",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1390,
+          "y": 347
+        }
+      ],
+      "monsters": [
+        {
+          "id": "0b7d91f78b1e4726a895c0b1faf80155",
+          "spriteId": 102,
+          "name": "刀客",
+          "actionCount": 5,
+          "x": 433,
+          "y": 446
+        }
+      ]
+    },
+    {
+      "mapId": 36,
+      "teleports": [
+        {
+          "id": "2bec577ed11a44dcacb58455564d09a3",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 40,
+          "y": 424
+        },
+        {
+          "id": "1ca4606658444b7a8b51326e2438b949",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 675,
+          "y": 447
+        },
+        {
+          "id": "26ba667ce338432a8a134b6d08e075c2",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 654,
+          "y": 63
+        }
+      ],
+      "monsters": [
+        {
+          "id": "3f94d08e30a64cbc9e76e3f34b629bba",
+          "spriteId": 122,
+          "name": "鼓音怪",
+          "actionCount": 5,
+          "x": 175,
+          "y": 316
+        }
+      ]
+    },
+    {
+      "mapId": 37,
+      "teleports": [
+        {
+          "id": "e2f0acbeeef04c3e9f95c3bbb09f8c55",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 42,
+          "y": 195
+        },
+        {
+          "id": "5c5a61a9a7924302b771577bb3ae21b2",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1032,
+          "y": 674
+        }
+      ],
+      "monsters": [
+        {
+          "id": "e44370a7e99e4a3ea8f004025b0a5c47",
+          "spriteId": 151,
+          "name": "霸气大剑士",
+          "actionCount": 7,
+          "x": 854,
+          "y": 405
+        }
+      ]
+    },
+    {
+      "mapId": 38,
+      "teleports": [
+        {
+          "id": "418378f4b11040a4b061b6ecd23960bd",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 89,
+          "y": 1018
+        },
+        {
+          "id": "4ffff51e7fd14b89bd67a700539a9294",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 86,
+          "y": 209
+        },
+        {
+          "id": "417b857dcac04e6a9bfd689fd5ab2abf",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1026,
+          "y": 284
+        }
+      ],
+      "monsters": [
+        {
+          "id": "67d913f66d9a4b559ec7907c1baa0511",
+          "spriteId": 98,
+          "name": "老鹰",
+          "actionCount": 5,
+          "x": 805,
+          "y": 483
+        }
+      ]
+    },
+    {
+      "mapId": 39,
+      "teleports": [
+        {
+          "id": "8b409a72d2ed4503b6e0725b41144e31",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1151,
+          "y": 1232
+        },
+        {
+          "id": "61f1ba96b84340f0b9c116cd6578b717",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1221,
+          "y": 304
+        },
+        {
+          "id": "e9c84a7ba502490c81a97966a31de2e6",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 57,
+          "y": 442
+        }
+      ],
+      "monsters": [
+        {
+          "id": "e4344069ed3f46eda5e57454cb146866",
+          "spriteId": 151,
+          "name": "霸气大剑士",
+          "actionCount": 7,
+          "x": 437,
+          "y": 797
+        }
+      ]
+    },
+    {
+      "mapId": 40,
+      "teleports": [
+        {
+          "id": "7847690e149a4b2c9c2aabedad98c9c2",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 82,
+          "y": 60
+        },
+        {
+          "id": "a726495bd1ba4e1a986988f6d4b95342",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 74,
+          "y": 1012
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 41,
+      "teleports": [
+        {
+          "id": "5aa0d667844a4325ae9a7cd786ec0aa0",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 74,
+          "y": 835
+        },
+        {
+          "id": "5c46311999f7432e8927d7ae8e74d24f",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 799,
+          "y": 845
+        },
+        {
+          "id": "75c59c1b00fb4897a1f6de7a99ebe96b",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 177,
+          "y": 66
+        },
+        {
+          "id": "afba2c2f720e48b2bee3e2014d294fe6",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 968,
+          "y": 46
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 42,
+      "teleports": [
+        {
+          "id": "222cb66cfa054792b7077a98865b403c",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 690,
+          "y": 79
+        },
+        {
+          "id": "b469055fcd714b309b459ec3f886c7ff",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 99,
+          "y": 75
+        },
+        {
+          "id": "eb4ebfc9833f453e9e1805b638421edb",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 448,
+          "y": 1016
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 43,
+      "teleports": [
+        {
+          "id": "e6a2824bb94843ddbb3c3752832a7f27",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 110,
+          "y": 58
+        },
+        {
+          "id": "303443cec47644eaa826e245f54d103e",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 97,
+          "y": 771
+        },
+        {
+          "id": "adbd605e9e7e47b78c781350fbf1eb96",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1015,
+          "y": 698
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 44,
+      "teleports": [
+        {
+          "id": "5b09e6828bd64d75912cd18c748bee5b",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 77,
+          "y": 60
+        },
+        {
+          "id": "aadcb0e21e3d4ef3bb2e7f23856bdefa",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1374,
+          "y": 844
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 45,
+      "teleports": [
+        {
+          "id": "8e17bed35d7e4e8898e81c587d302109",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 232,
+          "y": 1500
+        },
+        {
+          "id": "7ddd8a424617468ea6507c107fe15ea9",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 137,
+          "y": 108
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 46,
+      "teleports": [
+        {
+          "id": "3f01f4f01d7748ba936429de0213ed3b",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 70,
+          "y": 192
+        },
+        {
+          "id": "45bed605b06b4a17966644712aafaa88",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 545,
+          "y": 807
+        },
+        {
+          "id": "6ee4e8435a3a484ba975b271e91ae172",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1031,
+          "y": 175
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 47,
+      "teleports": [
+        {
+          "id": "61a896a705ae402b8907d6e7ef597f23",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 92,
+          "y": 826
+        },
+        {
+          "id": "579bb1dd21cb4e989f67a98da2c55748",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1189,
+          "y": 58
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 48,
+      "teleports": [
+        {
+          "id": "85f22b698dab4262975454095c441828",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 88,
+          "y": 933
+        },
+        {
+          "id": "b9bb0821d68248b79e16086c03c5bb11",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 829,
+          "y": 59
+        },
+        {
+          "id": "4a15e23c1bdd4ff1a7db61e6cc9bc4a0",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 88,
+          "y": 317
+        },
+        {
+          "id": "62407922ecda4da1a764118b59429eb8",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1087,
+          "y": 903
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 49,
+      "teleports": [
+        {
+          "id": "cf973e74b26142d7aa97b0a5189e9215",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1319,
+          "y": 1341
+        },
+        {
+          "id": "ada5d716b5de47f4a1faaf72ab6274c8",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 622,
+          "y": 71
+        },
+        {
+          "id": "11edf2a587b142e3a2bbf2eecd5485e9",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 227,
+          "y": 1343
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 50,
+      "teleports": [
+        {
+          "id": "a968964ca447453a9d18f0b330565207",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 81,
+          "y": 832
+        },
+        {
+          "id": "db949745ca484a1db1b86151ec808cd8",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1005,
+          "y": 61
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 51,
+      "teleports": [
+        {
+          "id": "3544bf690c70419b978854a74259697f",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 760,
+          "y": 1349
+        },
+        {
+          "id": "e8f054db527c4ea192c8e1223503eec8",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 278,
+          "y": 60
+        },
+        {
+          "id": "983a66e3f0b14142ac8671a82bd41127",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 821,
+          "y": 629
+        },
+        {
+          "id": "fb4d9ece03e64c01bcc5a3a27c0ae602",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 55,
+          "y": 512
+        },
+        {
+          "id": "c14e540708724b478a86eb49273c286c",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 842,
+          "y": 109
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 52,
+      "teleports": [
+        {
+          "id": "fc0cdd2faa2f40be8ac1acad20b859e9",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 74,
+          "y": 924
+        },
+        {
+          "id": "aa71a43badcd485188d1f42a46ee68f7",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1218,
+          "y": 927
+        },
+        {
+          "id": "58a4e8582f844a41984dc79fedee397c",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 677,
+          "y": 64
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 53,
+      "teleports": [
+        {
+          "id": "a4133d9da08a42b3915abf30af9ae853",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 101,
+          "y": 1085
+        },
+        {
+          "id": "7ad8480be7c34fc2b1670420189fa649",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1187,
+          "y": 550
+        },
+        {
+          "id": "8b614d6d1234473abb659ffb1c022214",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1041,
+          "y": 73
+        },
+        {
+          "id": "4f61722562634eea84d2bb0c7f14ac42",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 70,
+          "y": 365
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 54,
+      "teleports": [
+        {
+          "id": "15df5f98063d4de481c41d5b0d38fb0b",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 71,
+          "y": 943
+        },
+        {
+          "id": "58bacc16a2ca4f93a3f87eaa43a95f03",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 71,
+          "y": 71
+        },
+        {
+          "id": "816ebac682d14495afa4b14de6aef765",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1034,
+          "y": 281
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 55,
+      "teleports": [
+        {
+          "id": "6d015c626f1f43ddbc26acd0f8f8bb02",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 642,
+          "y": 2052
+        },
+        {
+          "id": "7c31929afab547398f877c7f4cea9fba",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 59,
+          "y": 515
+        },
+        {
+          "id": "73e29fa4bc4246debcfc4baca6d02e06",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 982,
+          "y": 626
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 56,
+      "teleports": [
+        {
+          "id": "319ad9e4699e468d9fc615d2478446ef",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 56,
+          "y": 980
+        },
+        {
+          "id": "4996b312be3645c5a5b29c23d1d9d016",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 264,
+          "y": 70
+        },
+        {
+          "id": "5574b11deb9a4c7eadf2d60a7c7348e5",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 938,
+          "y": 344
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 62,
+      "teleports": [
+        {
+          "id": "b3d785732e9243cc9b76d925528ef985",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 58,
+          "y": 834
+        },
+        {
+          "id": "54559e4f2ce14707a481bd4285ca68d2",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1211,
+          "y": 294
+        },
+        {
+          "id": "7c9eb5fc300946e5ba5a14c4eddd7196",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 407,
+          "y": 51
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 63,
+      "teleports": [
+        {
+          "id": "214cee5ffc85490ead7105b894596ecb",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 64,
+          "y": 665
+        },
+        {
+          "id": "94e3786aa54149b0890a4a8ba282728e",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1201,
+          "y": 661
+        },
+        {
+          "id": "f03bd8f5dc4b4436b9ceb6eab42f65bf",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 77,
+          "y": 84
+        },
+        {
+          "id": "a1ba59164d694c8e98aeca9f90094396",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1216,
+          "y": 228
+        },
+        {
+          "id": "7f1e93e2ec7f41fe9290dfd6e7e97e36",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 976,
+          "y": 55
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 64,
+      "teleports": [
+        {
+          "id": "85f4444bf6f84add8c5549eedd976d2c",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 62,
+          "y": 667
+        },
+        {
+          "id": "bed6a53302884294b32ff30dbb9b4d7c",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1375,
+          "y": 664
+        },
+        {
+          "id": "9d206d2b2d2b49a3b2c7283de1a877a7",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 62,
+          "y": 64
+        },
+        {
+          "id": "4e2bf0373a204f30aeea8fbe63514697",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 823,
+          "y": 54
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 65,
+      "teleports": [
+        {
+          "id": "43397650549e43f99ef9716be4dea702",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 627,
+          "y": 1352
+        },
+        {
+          "id": "c2a7ec6c9c4e490d9d06c034f14590c7",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 258,
+          "y": 66
+        },
+        {
+          "id": "6660e72132c14bd0bf6bc4852ecdea7f",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 650,
+          "y": 582
+        },
+        {
+          "id": "36f58e6a1b654d23a73a99b70d1305d1",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 57,
+          "y": 1022
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 66,
+      "teleports": [
+        {
+          "id": "9ba89af224914a6f88b690e7b31b912d",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 80,
+          "y": 1016
+        },
+        {
+          "id": "07201a68abd84db9a4e1586786b137e3",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 664,
+          "y": 1016
+        },
+        {
+          "id": "561edf49dc654bed8dc5f607972e71fc",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 710,
+          "y": 423
+        },
+        {
+          "id": "04ce5f5e71614d229a3264a759bdc95b",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 223,
+          "y": 56
+        },
+        {
+          "id": "f0ef50accbb14712be48c63353e1fdd4",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 47,
+          "y": 438
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 67,
+      "teleports": [
+        {
+          "id": "6ff2e17367534771b73f2578e3b493c4",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1008,
+          "y": 1011
+        },
+        {
+          "id": "5949d8ce21714848ba408f99a898ed62",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1015,
+          "y": 79
+        },
+        {
+          "id": "684e24f4a90049999c4d53b2c7c22f61",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 58,
+          "y": 283
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 68,
+      "teleports": [
+        {
+          "id": "526955daaec24b67b005ca43f989d01d",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 90,
+          "y": 1171
+        },
+        {
+          "id": "0ec37eff583645ba954ce618764976e3",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 299,
+          "y": 56
+        },
+        {
+          "id": "12d210998ff84392ac882fff6feb6ff1",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 939,
+          "y": 686
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 69,
+      "teleports": [
+        {
+          "id": "f36d504897bc4ccd8d17a4bd792c190c",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 165,
+          "y": 1670
+        },
+        {
+          "id": "afe07534156c470890c3ee95498f2770",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 394,
+          "y": 114
+        },
+        {
+          "id": "54b9a157d35d4488bd7c4319c774d187",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1491,
+          "y": 128
+        },
+        {
+          "id": "75b4bd053db64563a01fce4ec31e3ac1",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1669,
+          "y": 1281
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 70,
+      "teleports": [
+        {
+          "id": "3a55ab0b1e3c4ea888b3863bf985cdfe",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 126,
+          "y": 1686
+        },
+        {
+          "id": "1dd66424b77048e9a501baad48038698",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 115,
+          "y": 429
+        },
+        {
+          "id": "c7638a5c38984af886522b3c57268999",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 979,
+          "y": 948
+        },
+        {
+          "id": "40339a2458534806a4167d3bc12bfe2a",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 549,
+          "y": 97
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 72,
+      "teleports": [
+        {
+          "id": "7fbabd0be17f4befb35a5b03aef2b434",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 70,
+          "y": 845
+        },
+        {
+          "id": "e89cee95fe984c5482aff7993949194a",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 826,
+          "y": 51
+        },
+        {
+          "id": "a3ac68c53bba4e21a4746b4f47585696",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 46,
+          "y": 313
+        },
+        {
+          "id": "ce5517fd46cc4fe0b1d470578c0a84c4",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 292,
+          "y": 57
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 74,
+      "teleports": [
+        {
+          "id": "6e11fc13eba74552a18dbe50e13dc9b2",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 56,
+          "y": 616
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 75,
+      "teleports": [
+        {
+          "id": "3dfaa7367428420da8881bb1e8d71d07",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 110,
+          "y": 1213
+        },
+        {
+          "id": "5ca6cfe54fb74f9e889cf7afc91552f6",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1622,
+          "y": 1176
+        },
+        {
+          "id": "f402e434b9044e11bbb47db42a9f3582",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 161,
+          "y": 92
+        },
+        {
+          "id": "e2469a1f0ebc480e827357f4af6b5b89",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 1356,
+          "y": 111
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 78,
+      "teleports": [
+        {
+          "id": "d63a368b677e420bb68550a93e27e197",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 39,
+          "y": 519
+        },
+        {
+          "id": "51aa2ac227454d1c90a70fb38f16fa51",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 828,
+          "y": 867
+        },
+        {
+          "id": "d6ff8bbf23924a05a0223158e32ac2a8",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 835,
+          "y": 286
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 79,
+      "teleports": [
+        {
+          "id": "7db2c2abca35485b9a2bc27ba8f8cfec",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 76,
+          "y": 832
+        },
+        {
+          "id": "bce7a97c3ad041948b6b5dd87737b684",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1170,
+          "y": 823
+        },
+        {
+          "id": "d87d4fe23f544e6d843e0fda144eca67",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 357,
+          "y": 40
+        },
+        {
+          "id": "c57f7f46663945708fd7fae591cab34b",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1185,
+          "y": 69
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 80,
+      "teleports": [
+        {
+          "id": "dbb8262114a640c685b76e24a1230f26",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1163,
+          "y": 1332
+        },
+        {
+          "id": "6073817868384848a1c273fae2a7a9f6",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 127,
+          "y": 98
+        },
+        {
+          "id": "c17f4f86f1054f6eb7754b48a482c99b",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1190,
+          "y": 206
+        },
+        {
+          "id": "6d79464a76a343898a76c2f57987c09c",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 83,
+          "y": 966
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 81,
+      "teleports": [
+        {
+          "id": "dca6f69a04d5499895b7e147480d003f",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 109,
+          "y": 93
+        },
+        {
+          "id": "88caeddb74924f059a09e04af76bf339",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1348,
+          "y": 1314
+        },
+        {
+          "id": "bd3ce83916d34251b880d751c9ab271e",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1341,
+          "y": 102
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 82,
+      "teleports": [
+        {
+          "id": "044c722a0a8741c29f44be8af5e34e72",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 549,
+          "y": 1182
+        },
+        {
+          "id": "058186909de54b7ab46515b56b592498",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1636,
+          "y": 101
+        },
+        {
+          "id": "518f252a07ba4a08880952a584701b27",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 63,
+          "y": 123
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 83,
+      "teleports": [
+        {
+          "id": "6ed85e01d6084778a87acaf4affc1318",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 141,
+          "y": 1613
+        },
+        {
+          "id": "fb055acbfc9b4f6ab5359f3c889b392b",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1880,
+          "y": 1472
+        },
+        {
+          "id": "afc74492faa24c429c4de742f1affa75",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 86,
+          "y": 184
+        },
+        {
+          "id": "d2e7be0b26af44b1b5b307b1f147b517",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 1368,
+          "y": 97
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 84,
+      "teleports": [
+        {
+          "id": "485fb3f293f54e8b835c0b7c4b44e0b5",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 63,
+          "y": 668
+        },
+        {
+          "id": "a1b90094286d45b1867bdf80a5ddb547",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 56,
+          "y": 49
+        },
+        {
+          "id": "27a3ef26e36640e0aa052822d614c359",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1099,
+          "y": 165
+        },
+        {
+          "id": "e1861e6429954e9f8c9f9d601e29fc79",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1023,
+          "y": 684
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 85,
+      "teleports": [
+        {
+          "id": "78f0a85f13334a7c8c76a952d7c67adb",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 69,
+          "y": 1009
+        },
+        {
+          "id": "35ccde40ee6a4c8fa98fa4464b625776",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 75,
+          "y": 70
+        },
+        {
+          "id": "743bcab5513346e9a44f4af0d588875a",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1354,
+          "y": 91
+        },
+        {
+          "id": "aca967188c774fc0935e33acc916ccd7",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1361,
+          "y": 1003
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 86,
+      "teleports": [
+        {
+          "id": "3053ed1dc9674969be430f164ac5024d",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 104,
+          "y": 1013
+        },
+        {
+          "id": "c952bb68a7844d45b7903f93e69d39e6",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 78,
+          "y": 68
+        },
+        {
+          "id": "e0bda184339c49e9ad3d78dafcf2a2cd",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1441,
+          "y": 1008
+        },
+        {
+          "id": "a234f2d1ed6d44a8b9fbfb81b7280ece",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1442,
+          "y": 64
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 87,
+      "teleports": [
+        {
+          "id": "16ffda93de8a4222804612156247c84e",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1096,
+          "y": 672
+        },
+        {
+          "id": "aee06760aac0495c8bddcd0b921d507f",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 108,
+          "y": 61
+        },
+        {
+          "id": "a7b556a0100c4619abd91ee610dd22ba",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1071,
+          "y": 36
+        },
+        {
+          "id": "69139b8daa264bc88c41e053cae42eab",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 287,
+          "y": 682
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 88,
+      "teleports": [
+        {
+          "id": "e6180e74678c4f66a642a03a21cb2b2e",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 106,
+          "y": 96
+        },
+        {
+          "id": "03de6dc1aed04fd7b64cd3abae7447c7",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 193,
+          "y": 1520
+        },
+        {
+          "id": "362a2cb555bb41e6b6c106852bf1a75f",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 91,
+          "y": 980
+        },
+        {
+          "id": "59ee205f811c4ca4bb4865e967fb1f00",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1164,
+          "y": 1522
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 89,
+      "teleports": [
+        {
+          "id": "9416c8f5b72a4f1ba02b52bdb39906ff",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 78,
+          "y": 828
+        },
+        {
+          "id": "5acf6bdfd20e401fadb4911e4cae77c2",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1391,
+          "y": 66
+        },
+        {
+          "id": "8c5f476549ae4040b4bf252ceaae391c",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 176,
+          "y": 57
+        },
+        {
+          "id": "d09668fc20124ab1a03cbb3386c915fc",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1306,
+          "y": 844
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 90,
+      "teleports": [
+        {
+          "id": "3e95b4a0cec04d6b86bf3996bf849144",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 115,
+          "y": 1351
+        },
+        {
+          "id": "7d5431a6a45a4a758e4c77fa22fed115",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1464,
+          "y": 1332
+        },
+        {
+          "id": "963fa11df32b44fe932c27c52fb74a90",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1568,
+          "y": 263
+        },
+        {
+          "id": "4c4b8947c0d04044b2fc7f07cd25b6d5",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 67,
+          "y": 540
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 91,
+      "teleports": [
+        {
+          "id": "df3d0fca2955465ba071fe9dab2f40fe",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 100,
+          "y": 1492
+        },
+        {
+          "id": "7af6bd5c1c46494292f0f77ecf79d04d",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1969,
+          "y": 1625
+        },
+        {
+          "id": "75e61f8134f84c49b47c552087564281",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 263,
+          "y": 86
+        },
+        {
+          "id": "3d5b6923cbb148269102b9e6bece4028",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1687,
+          "y": 125
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 94,
+      "teleports": [
+        {
+          "id": "6f19286f4dd44f6fb86fd10a7ba09b0d",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1373,
+          "y": 1225
+        },
+        {
+          "id": "7aa128b004404fac87ec3804de77901e",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 127,
+          "y": 1351
+        },
+        {
+          "id": "8a6a9a60bd9240408fcdc9daf170536b",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 213,
+          "y": 98
+        },
+        {
+          "id": "04566763111a4d0b96f42111e62286ea",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1196,
+          "y": 82
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 95,
+      "teleports": [
+        {
+          "id": "acd572dccae7426b8144daed83807268",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 62,
+          "y": 842
+        },
+        {
+          "id": "26aded6315004e8890e8ff976520fa30",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1002,
+          "y": 844
+        },
+        {
+          "id": "15a618f8f94e4eb799f54a69c1223a00",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 789,
+          "y": 50
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 96,
+      "teleports": [
+        {
+          "id": "d37dae34742a40d69ac4ab6797420abb",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1015,
+          "y": 66
+        },
+        {
+          "id": "f68c60e89fb0463aaa4e6af2a1b8309d",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 84,
+          "y": 859
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 97,
+      "teleports": [
+        {
+          "id": "041f3db1c7ad4a5dabd43a0d0fe1355f",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 183,
+          "y": 674
+        },
+        {
+          "id": "53d6c94900854ece994f7fb150e5b639",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 985,
+          "y": 652
+        },
+        {
+          "id": "6d534256119545ceb9c08b4824fb2668",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 120,
+          "y": 46
+        },
+        {
+          "id": "2f24ca79994d4cbb85e29a4f07b50d12",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 769,
+          "y": 40
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 98,
+      "teleports": [
+        {
+          "id": "005284bd2699417da43ce1d098beb81c",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 55,
+          "y": 833
+        },
+        {
+          "id": "e05a8f861c9044cdb9d4eeef529516cc",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 718,
+          "y": 823
+        },
+        {
+          "id": "fac7a2a0d9254a8ebff27f6c9f62e8a8",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 71,
+          "y": 57
+        },
+        {
+          "id": "edbd0bc6f0aa4ac4bedbf299c0e958a9",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 699,
+          "y": 56
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 102,
+      "teleports": [
+        {
+          "id": "9936e5b654e64329b5e384424bf2a371",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 197,
+          "y": 1071
+        },
+        {
+          "id": "f716f51ef47649cc97ec53ff181c56e2",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 102,
+          "y": 75
+        },
+        {
+          "id": "bc0f7703cd874be6a5bbbc0d2eb2594e",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1676,
+          "y": 879
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 103,
+      "teleports": [
+        {
+          "id": "8f8a02f1c8034623bd356ce607dc6939",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 146,
+          "y": 1119
+        },
+        {
+          "id": "bccd5900219c4c80854787c0a00719ba",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 100,
+          "y": 78
+        },
+        {
+          "id": "51778882694b454b9081922dc01b1b22",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1604,
+          "y": 988
+        },
+        {
+          "id": "cbdd5682f54846fca46d151a0cc6e59d",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1287,
+          "y": 61
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 104,
+      "teleports": [
+        {
+          "id": "9391c0b44efe4518a1905871f55e30f4",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 52,
+          "y": 524
+        },
+        {
+          "id": "ea6702b19a434bd887bf34e0a30c4c0c",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 849,
+          "y": 860
+        },
+        {
+          "id": "a588cc300f9f49bc98416726be2c8da7",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 820,
+          "y": 119
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 107,
+      "teleports": [
+        {
+          "id": "bcc3c4e5b658417ab7bdae4a0440e005",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 694,
+          "y": 953
+        },
+        {
+          "id": "0306d66e1cd3404882bb540f57a59629",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1817,
+          "y": 61
+        },
+        {
+          "id": "a483ec0c49bb40519144f36be721fa0f",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 61,
+          "y": 752
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 108,
+      "teleports": [
+        {
+          "id": "de91e397fc3244beb3befcbfe296b996",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 116,
+          "y": 1291
+        },
+        {
+          "id": "92b4d1b6b4ff43178672cbc56d07d9cb",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1706,
+          "y": 1340
+        },
+        {
+          "id": "78c9c3d6b7224f35805399e1fd2194df",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1694,
+          "y": 88
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 109,
+      "teleports": [
+        {
+          "id": "7375ce39f5db439c884962bc82395abd",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 69,
+          "y": 869
+        },
+        {
+          "id": "b0f4e37dfa394dd7be61dadffb4e4e2b",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1903,
+          "y": 869
+        },
+        {
+          "id": "3091df6c279b493a849e19d1a7fca904",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1909,
+          "y": 66
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 110,
+      "teleports": [
+        {
+          "id": "474e9020cd4c404fa0698683a8eac7da",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1527,
+          "y": 168
+        },
+        {
+          "id": "8227be616c3f4da4bde72df357ac97e9",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 761,
+          "y": 90
+        },
+        {
+          "id": "5ddd24ac1e884bcc89ad60a35833fc84",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 75,
+          "y": 1466
+        },
+        {
+          "id": "a39ad38e3d0849d5b2da8fe6e2c146d0",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1460,
+          "y": 1496
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 111,
+      "teleports": [
+        {
+          "id": "770d862a701c4bc99b6b1c435d4a9ef0",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 811,
+          "y": 84
+        },
+        {
+          "id": "8c5aa99681f449549bd3837e87ef8a03",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 88,
+          "y": 495
+        },
+        {
+          "id": "a17079cd6e82440f96a97c629618504b",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 117,
+          "y": 1872
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 112,
+      "teleports": [
+        {
+          "id": "8d25471c2c6241d68d82cfd3a5f0f0f7",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 122,
+          "y": 1507
+        },
+        {
+          "id": "4d44e0277809471cbca02d6c169710f7",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1710,
+          "y": 1527
+        },
+        {
+          "id": "b1b02f6d94654ec38ec3e9871d98989f",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 93,
+          "y": 509
+        },
+        {
+          "id": "8064dfb1ab5a4e3ea0f85e3e941c409f",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 744,
+          "y": 99
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 113,
+      "teleports": [
+        {
+          "id": "18c66820d4e24c698ffe1f81762de1d2",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 154,
+          "y": 1501
+        },
+        {
+          "id": "96eb0e517a8b408cbcdb69a92f18eee3",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1663,
+          "y": 1516
+        },
+        {
+          "id": "43faf9de20294d70be3ec2c40e8e4929",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 325,
+          "y": 83
+        },
+        {
+          "id": "34b899a637054c26b52312f85b2076b9",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1513,
+          "y": 207
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 114,
+      "teleports": [
+        {
+          "id": "01308425f26548cdbd383deadcf2cccc",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1703,
+          "y": 1259
+        },
+        {
+          "id": "f5449a42b0014551a5768a8e3c1aa383",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1717,
+          "y": 102
+        },
+        {
+          "id": "d45c939bb26146338b7083eb0a3ae836",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 101,
+          "y": 425
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 115,
+      "teleports": [
+        {
+          "id": "09c93240d33b4b8e977d8ea2890ea61a",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 124,
+          "y": 1494
+        },
+        {
+          "id": "874cc09aa6df47738ff517b86f7f89e4",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1675,
+          "y": 115
+        },
+        {
+          "id": "8e3ebbb27bd44979986bf351aadb98e8",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 153,
+          "y": 115
+        },
+        {
+          "id": "d88481b87a5e4e70a76416563a6c19d7",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1543,
+          "y": 1484
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 116,
+      "teleports": [
+        {
+          "id": "144845471c3940239205c6ae79019f60",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1697,
+          "y": 1316
+        },
+        {
+          "id": "12d5d1b4bbfa4a94a50dc3ee82df95a0",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 98,
+          "y": 152
+        },
+        {
+          "id": "df0c2aacb390405b9d66bc86a363e993",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1719,
+          "y": 112
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 117,
+      "teleports": [
+        {
+          "id": "e256a489add7458abdc827651b2571dc",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1646,
+          "y": 1358
+        },
+        {
+          "id": "723927fe4af24bbc8b4665afa60803cd",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 201,
+          "y": 90
+        },
+        {
+          "id": "9902f864932648e08f1a1716c2efbc6a",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 1077,
+          "y": 107
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 121,
+      "teleports": [
+        {
+          "id": "8100885469634a308b81221adaca5b0f",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 70,
+          "y": 71
+        },
+        {
+          "id": "005648b346044d40957491d781a4a383",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 900,
+          "y": 1113
+        },
+        {
+          "id": "bd57f7f4994a412da268b930c108e2a0",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 61,
+          "y": 1108
+        },
+        {
+          "id": "1dda83d532d148cf97932c1c46c422c8",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 900,
+          "y": 62
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 122,
+      "teleports": [
+        {
+          "id": "aaa81eee1cc446c9a2daa11d46ae857a",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 65,
+          "y": 47
+        },
+        {
+          "id": "24347cd19faf4e72a6959f0e00b19680",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1355,
+          "y": 930
+        },
+        {
+          "id": "195b9f6754004a3aa75013189a8cf5dc",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 330,
+          "y": 937
+        },
+        {
+          "id": "e6bce573a59b4ddcab1a6dd009bd1072",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1373,
+          "y": 78
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 123,
+      "teleports": [
+        {
+          "id": "16ff66dfc9fc4c9989569a4295fed2dd",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 282,
+          "y": 1199
+        },
+        {
+          "id": "d426759b2f3c44a1bac2974a33d61469",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 99,
+          "y": 597
+        },
+        {
+          "id": "eb898730e2034b70bd6e7944617c6032",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1355,
+          "y": 649
+        },
+        {
+          "id": "471517a2ddf74f28b9cac9f6eb223b8d",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 938,
+          "y": 62
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 124,
+      "teleports": [
+        {
+          "id": "8564e221920f4543bca088453d2b8b9f",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 879,
+          "y": 1388
+        },
+        {
+          "id": "f451f5ef8dc94c968deebba2aa10c878",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 99,
+          "y": 87
+        },
+        {
+          "id": "774494e2ecc1431d877fc7a2f13f3c23",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 895,
+          "y": 420
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 125,
+      "teleports": [
+        {
+          "id": "e260f5ecf3b941d5a86cf6524aa94240",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 684,
+          "y": 1524
+        },
+        {
+          "id": "d61eb482a8154da3aa89544267c4093e",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 309,
+          "y": 82
+        },
+        {
+          "id": "9f98c4ca659e480899a23c4ea1650934",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 78,
+          "y": 1316
+        },
+        {
+          "id": "fce35df61283450bac278f25e251dde0",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 734,
+          "y": 486
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 126,
+      "teleports": [
+        {
+          "id": "2828f9d831e942019252d982e49c2818",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 104,
+          "y": 1529
+        },
+        {
+          "id": "60c4c874ce9c462f8f0bc340770c1d63",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 579,
+          "y": 72
+        },
+        {
+          "id": "0586389e2b9043cf9628131cfa6ff381",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1012,
+          "y": 616
+        },
+        {
+          "id": "95cc361fdda44a70b74bf4cd5828a2e8",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 108,
+          "y": 980
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 127,
+      "teleports": [
+        {
+          "id": "47f82a9b6f3344bfbfb68719c072d8b2",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 368,
+          "y": 69
+        },
+        {
+          "id": "c06205b03e1548769d632762c9bea316",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1083,
+          "y": 838
+        },
+        {
+          "id": "3e994666c84645e79803049576b1b1e8",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 50,
+          "y": 332
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 128,
+      "teleports": [
+        {
+          "id": "39ea1601bc784c10b566ab7cb06d99ca",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1705,
+          "y": 641
+        },
+        {
+          "id": "83031de2faec4d838ba72d72ae2fd54f",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 850,
+          "y": 45
+        },
+        {
+          "id": "777dc9a453c94851b29c25882a38e523",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 105,
+          "y": 521
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 129,
+      "teleports": [
+        {
+          "id": "66b00b32347b4d6380be72a5eafa7beb",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 551,
+          "y": 1351
+        },
+        {
+          "id": "18fd0a3dbaf147fa98e1a84870708779",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 308,
+          "y": 87
+        },
+        {
+          "id": "f0df1b5902c7489b819efaa3b55e1521",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 89,
+          "y": 572
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 130,
+      "teleports": [
+        {
+          "id": "b1e2fac1bdbc4a0eb70e675e8cb5f2cd",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 377,
+          "y": 79
+        },
+        {
+          "id": "f7d0d6ba62c342aea0f6754455639dfd",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 90,
+          "y": 836
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 131,
+      "teleports": [
+        {
+          "id": "e23b38a349974581a4df2c0089170cab",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 984,
+          "y": 96
+        },
+        {
+          "id": "7ccea9e9d99f4cae9f8df0a625eae188",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 609,
+          "y": 1364
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 132,
+      "teleports": [
+        {
+          "id": "fd816d896ee640c09d316381107d5847",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 527,
+          "y": 1460
+        },
+        {
+          "id": "9814219c6e974a588beca3efb4b0687d",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1029,
+          "y": 164
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 139,
+      "teleports": [
+        {
+          "id": "c3dd8a37aa4941c48dc51758107add90",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 131,
+          "y": 110
+        },
+        {
+          "id": "6dda599bb31645f19aeccfe80a35323f",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1553,
+          "y": 1510
+        },
+        {
+          "id": "e5e519c7aa94405c89c81aca12407cd8",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1725,
+          "y": 463
+        },
+        {
+          "id": "1a0b03f4b5bd453bae95d51fa4deedd5",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 109,
+          "y": 1323
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 140,
+      "teleports": [
+        {
+          "id": "a020e0ada9ad4886888d68f5d82608eb",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1969,
+          "y": 1412
+        },
+        {
+          "id": "247d77a00ff741a48567aedbd094d4a1",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 83,
+          "y": 944
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 142,
+      "teleports": [
+        {
+          "id": "08ae95c2d2cb4312929651a55dd18550",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 112,
+          "y": 1382
+        },
+        {
+          "id": "2a06824eb84741aa9c0b349df3f748dc",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 2006,
+          "y": 1772
+        },
+        {
+          "id": "b33972057b0744edbcc33c1a8e61b5fa",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 2022,
+          "y": 172
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 143,
+      "teleports": [
+        {
+          "id": "5cc441461ea34853a97f66b26252787e",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1677,
+          "y": 1654
+        },
+        {
+          "id": "3bd7761ba9834531b8163ed1e0733a85",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1485,
+          "y": 101
+        },
+        {
+          "id": "91a923c0e0dd405fb3d136144ce28025",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 110,
+          "y": 444
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 144,
+      "teleports": [
+        {
+          "id": "4ed80c5791754b36811b22adf7f31a30",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 120,
+          "y": 122
+        },
+        {
+          "id": "b08dc0c2e2d54fd28359d4eb503be442",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 43,
+          "y": 1337
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 145,
+      "teleports": [
+        {
+          "id": "75750be960264f5983549f52939b59e2",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 85,
+          "y": 81
+        },
+        {
+          "id": "b4035cf01b9d4c7cba19fe3f957fb8eb",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1163,
+          "y": 1308
+        },
+        {
+          "id": "fada590c457c4ce5a5b5fb6999b8ed88",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 79,
+          "y": 937
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 147,
+      "teleports": [
+        {
+          "id": "a2e2dd419b694da2a4afab851bbb1496",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 74,
+          "y": 281
+        },
+        {
+          "id": "382bcca567ca49fca10ed1d5789dfdf7",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1633,
+          "y": 1718
+        },
+        {
+          "id": "b158638156284678b5ace1dad62a15bf",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 99,
+          "y": 1281
+        },
+        {
+          "id": "45ae89bb6229438a8b6f74dfc3eaf638",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1706,
+          "y": 442
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 148,
+      "teleports": [
+        {
+          "id": "0acb54a8b7374876b01e2b1b00b34920",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 81,
+          "y": 999
+        },
+        {
+          "id": "154eb41100534b8ba6807409194f6ca8",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 1249,
+          "y": 1005
+        },
+        {
+          "id": "7d5dafd8a3fe48b4a411a845047e3a7f",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1983,
+          "y": 1013
+        },
+        {
+          "id": "59561aa10b954505a7237f9f889f159b",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 1669,
+          "y": 62
+        },
+        {
+          "id": "c048a30e393746d38b976c330a79e4f5",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 54,
+          "y": 305
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 151,
+      "teleports": [
+        {
+          "id": "a85c743f218445e89401151aa9b5e6fb",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 153,
+          "y": 1518
+        },
+        {
+          "id": "aa72afd0f6514492a0ad6bd06a8fb26e",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1907,
+          "y": 868
+        },
+        {
+          "id": "9cfccaa180914ca6a4a54a8f196ac126",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1878,
+          "y": 219
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 152,
+      "teleports": [
+        {
+          "id": "2d618c2f70b14318a3c6782b0344c123",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1689,
+          "y": 1331
+        },
+        {
+          "id": "943b5877844545eaa3885cfff136954e",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 87,
+          "y": 104
+        },
+        {
+          "id": "19b7ebc8a4134805a038809aa65f1fbc",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1682,
+          "y": 88
+        },
+        {
+          "id": "3033d2a812db4b1b8096543d8fabf24c",
+          "direction": "南",
+          "targetMapId": null,
+          "x": 443,
+          "y": 1347
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 153,
+      "teleports": [
+        {
+          "id": "33eefa5ff28b48fd82bf11f4fe057b7b",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1488,
+          "y": 1698
+        },
+        {
+          "id": "1a762699c15c4ca9b44e67afeb3eaf40",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 104,
+          "y": 429
+        },
+        {
+          "id": "6f92e155b96d479fbb738f6b37ce811b",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1492,
+          "y": 126
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 155,
+      "teleports": [
+        {
+          "id": "7fa81b8d4e20407695df4a557a016088",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 71,
+          "y": 78
+        },
+        {
+          "id": "9e982dab0a514bb3972412d24d53e627",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1724,
+          "y": 1432
+        },
+        {
+          "id": "1b655c058db4459495b173fb3756dae0",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1726,
+          "y": 83
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 156,
+      "teleports": [
+        {
+          "id": "d471c0fa7f434cf2aa2e98abe5be09b1",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 99,
+          "y": 81
+        },
+        {
+          "id": "baa40f67d6b84d158e847a936a8d0cf9",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 74,
+          "y": 1152
+        },
+        {
+          "id": "8ba4fec8ea004a55b5f32e3f739b7e03",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1700,
+          "y": 1320
+        },
+        {
+          "id": "811c7960da4c420db438a2e936bf8e9d",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1687,
+          "y": 75
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 157,
+      "teleports": [
+        {
+          "id": "f792237439e44d0aa5fdb4f6c3d4ffaf",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 107,
+          "y": 1612
+        },
+        {
+          "id": "51e4aafa8d3a4e6fb9ca00aea43c04e7",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1693,
+          "y": 1626
+        },
+        {
+          "id": "347cceca0ae842668742eef6f649d804",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1553,
+          "y": 85
+        },
+        {
+          "id": "039cafdc913d4bbcb1917bbe53d4739a",
+          "direction": "西北",
+          "targetMapId": null,
+          "x": 336,
+          "y": 102
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 159,
+      "teleports": [
+        {
+          "id": "8dc7c0d1c2be4b6ca60da2b2a27af200",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 2058,
+          "y": 754
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 160,
+      "teleports": [
+        {
+          "id": "bf6bbe5a38f6499c83e9fd917462ee49",
+          "direction": "西",
+          "targetMapId": null,
+          "x": 82,
+          "y": 456
+        },
+        {
+          "id": "2a7fc121753d46978e53923b42802e92",
+          "direction": "东",
+          "targetMapId": null,
+          "x": 1519,
+          "y": 815
+        },
+        {
+          "id": "232a084e43a84389862781f80ee2d781",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 990,
+          "y": 89
+        }
+      ],
+      "monsters": []
+    },
+    {
+      "mapId": 161,
+      "teleports": [
+        {
+          "id": "450300ba1bc14bd280828a8c4740f926",
+          "direction": "西南",
+          "targetMapId": null,
+          "x": 95,
+          "y": 1015
+        },
+        {
+          "id": "a9139ff4b3644cd294886ac9bfab8828",
+          "direction": "东南",
+          "targetMapId": null,
+          "x": 1679,
+          "y": 1007
+        },
+        {
+          "id": "111d8f221a1e480698272cf9f7acfb98",
+          "direction": "东北",
+          "targetMapId": null,
+          "x": 1623,
+          "y": 68
+        },
+        {
+          "id": "c392d31b93414b9e8a047312b03e5269",
+          "direction": "北",
+          "targetMapId": null,
+          "x": 836,
+          "y": 69
+        }
+      ],
+      "monsters": []
+    }
+  ]
+}

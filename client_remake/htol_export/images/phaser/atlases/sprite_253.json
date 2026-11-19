@@ -1,0 +1,249 @@
+{
+  "textures": [
+    {
+      "image": "sprite_253_00.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 256,
+        "h": 256
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "anim_001_frame_000",
+          "frame": {
+            "x": 1,
+            "y": 1,
+            "w": 27,
+            "h": 150
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 27,
+            "h": 150
+          },
+          "sourceSize": {
+            "w": 27,
+            "h": 150
+          },
+          "duration": 100,
+          "drawOffsetX": -7,
+          "drawOffsetY": 0,
+          "animationGroup": 1,
+          "sourceFrameIndex": 0
+        },
+        {
+          "filename": "anim_001_frame_001",
+          "frame": {
+            "x": 30,
+            "y": 1,
+            "w": 27,
+            "h": 150
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 27,
+            "h": 150
+          },
+          "sourceSize": {
+            "w": 27,
+            "h": 150
+          },
+          "duration": 100,
+          "drawOffsetX": -7,
+          "drawOffsetY": 0,
+          "animationGroup": 1,
+          "sourceFrameIndex": 1
+        },
+        {
+          "filename": "anim_001_frame_002",
+          "frame": {
+            "x": 59,
+            "y": 1,
+            "w": 27,
+            "h": 150
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 27,
+            "h": 150
+          },
+          "sourceSize": {
+            "w": 27,
+            "h": 150
+          },
+          "duration": 100,
+          "drawOffsetX": -7,
+          "drawOffsetY": 0,
+          "animationGroup": 1,
+          "sourceFrameIndex": 2
+        },
+        {
+          "filename": "anim_002_frame_001",
+          "frame": {
+            "x": 88,
+            "y": 1,
+            "w": 34,
+            "h": 92
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 34,
+            "h": 92
+          },
+          "sourceSize": {
+            "w": 34,
+            "h": 92
+          },
+          "duration": 100,
+          "drawOffsetX": 6,
+          "drawOffsetY": -67,
+          "animationGroup": 2,
+          "sourceFrameIndex": 1
+        },
+        {
+          "filename": "anim_002_frame_000",
+          "frame": {
+            "x": 124,
+            "y": 1,
+            "w": 34,
+            "h": 91
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 34,
+            "h": 91
+          },
+          "sourceSize": {
+            "w": 34,
+            "h": 91
+          },
+          "duration": 100,
+          "drawOffsetX": 6,
+          "drawOffsetY": -67,
+          "animationGroup": 2,
+          "sourceFrameIndex": 0
+        },
+        {
+          "filename": "anim_002_frame_002",
+          "frame": {
+            "x": 160,
+            "y": 1,
+            "w": 34,
+            "h": 88
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 34,
+            "h": 88
+          },
+          "sourceSize": {
+            "w": 34,
+            "h": 88
+          },
+          "duration": 100,
+          "drawOffsetX": 6,
+          "drawOffsetY": -67,
+          "animationGroup": 2,
+          "sourceFrameIndex": 2
+        },
+        {
+          "filename": "anim_000_frame_001",
+          "frame": {
+            "x": 196,
+            "y": 1,
+            "w": 34,
+            "h": 71
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 34,
+            "h": 71
+          },
+          "sourceSize": {
+            "w": 34,
+            "h": 71
+          },
+          "duration": 100,
+          "drawOffsetX": 6,
+          "drawOffsetY": -67,
+          "animationGroup": 0,
+          "sourceFrameIndex": 1
+        },
+        {
+          "filename": "anim_000_frame_002",
+          "frame": {
+            "x": 1,
+            "y": 153,
+            "w": 34,
+            "h": 71
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 34,
+            "h": 71
+          },
+          "sourceSize": {
+            "w": 34,
+            "h": 71
+          },
+          "duration": 100,
+          "drawOffsetX": 6,
+          "drawOffsetY": -67,
+          "animationGroup": 0,
+          "sourceFrameIndex": 2
+        },
+        {
+          "filename": "anim_000_frame_000",
+          "frame": {
+            "x": 37,
+            "y": 153,
+            "w": 34,
+            "h": 68
+          },
+          "rotated": false,
+          "trimmed": false,
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 34,
+            "h": 68
+          },
+          "sourceSize": {
+            "w": 34,
+            "h": 68
+          },
+          "duration": 100,
+          "drawOffsetX": 6,
+          "drawOffsetY": -67,
+          "animationGroup": 0,
+          "sourceFrameIndex": 0
+        }
+      ]
+    }
+  ]
+}

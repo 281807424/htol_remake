@@ -1,0 +1,56 @@
+resource_record_id,sprite_id,palette_slot,mapping_pair_index,source_sprite_component_index,target_sprite_component_index,status,raw_record_file
+0,74,0,,,,empty mapping record referenced by source,../raw_resources/palettes/resource_000.bin
+1,74,1,0,0,3,source-mapped,../raw_resources/palettes/resource_001.bin
+1,74,1,1,16,15,source-mapped,../raw_resources/palettes/resource_001.bin
+2,74,2,0,0,2,source-mapped,../raw_resources/palettes/resource_002.bin
+2,74,2,1,16,14,source-mapped,../raw_resources/palettes/resource_002.bin
+3,74,3,0,0,1,source-mapped,../raw_resources/palettes/resource_003.bin
+3,74,3,1,16,13,source-mapped,../raw_resources/palettes/resource_003.bin
+4,74,4,0,0,4,source-mapped,../raw_resources/palettes/resource_004.bin
+4,74,4,1,16,11,source-mapped,../raw_resources/palettes/resource_004.bin
+5,74,5,0,0,5,source-mapped,../raw_resources/palettes/resource_005.bin
+6,74,6,0,0,6,source-mapped,../raw_resources/palettes/resource_006.bin
+7,74,7,0,0,7,source-mapped,../raw_resources/palettes/resource_007.bin
+8,74,8,0,0,8,source-mapped,../raw_resources/palettes/resource_008.bin
+8,74,8,1,16,12,source-mapped,../raw_resources/palettes/resource_008.bin
+9,74,9,0,0,9,source-mapped,../raw_resources/palettes/resource_009.bin
+10,74,10,0,0,10,source-mapped,../raw_resources/palettes/resource_010.bin
+11,75,0,,,,empty mapping record referenced by source,../raw_resources/palettes/resource_011.bin
+12,75,1,0,0,1,source-mapped,../raw_resources/palettes/resource_012.bin
+12,75,1,1,14,10,source-mapped,../raw_resources/palettes/resource_012.bin
+13,75,2,0,0,2,source-mapped,../raw_resources/palettes/resource_013.bin
+13,75,2,1,14,11,source-mapped,../raw_resources/palettes/resource_013.bin
+14,75,3,0,0,3,source-mapped,../raw_resources/palettes/resource_014.bin
+14,75,3,1,14,12,source-mapped,../raw_resources/palettes/resource_014.bin
+15,75,4,0,0,4,source-mapped,../raw_resources/palettes/resource_015.bin
+15,75,4,1,14,13,source-mapped,../raw_resources/palettes/resource_015.bin
+16,75,5,0,14,9,source-mapped,../raw_resources/palettes/resource_016.bin
+17,75,6,0,14,8,source-mapped,../raw_resources/palettes/resource_017.bin
+18,75,7,0,0,5,source-mapped,../raw_resources/palettes/resource_018.bin
+18,75,7,1,14,15,source-mapped,../raw_resources/palettes/resource_018.bin
+19,75,8,0,0,6,source-mapped,../raw_resources/palettes/resource_019.bin
+19,75,8,1,14,16,source-mapped,../raw_resources/palettes/resource_019.bin
+20,76,0,,,,empty mapping record referenced by source,../raw_resources/palettes/resource_020.bin
+21,76,1,0,0,1,source-mapped,../raw_resources/palettes/resource_021.bin
+21,76,1,1,8,9,source-mapped,../raw_resources/palettes/resource_021.bin
+22,76,2,0,0,2,source-mapped,../raw_resources/palettes/resource_022.bin
+22,76,2,1,8,10,source-mapped,../raw_resources/palettes/resource_022.bin
+23,76,3,0,0,3,source-mapped,../raw_resources/palettes/resource_023.bin
+23,76,3,1,8,11,source-mapped,../raw_resources/palettes/resource_023.bin
+24,76,4,0,0,4,source-mapped,../raw_resources/palettes/resource_024.bin
+24,76,4,1,8,12,source-mapped,../raw_resources/palettes/resource_024.bin
+25,76,5,0,8,13,source-mapped,../raw_resources/palettes/resource_025.bin
+26,76,6,0,8,14,source-mapped,../raw_resources/palettes/resource_026.bin
+27,76,7,0,0,5,source-mapped,../raw_resources/palettes/resource_027.bin
+27,76,7,1,8,15,source-mapped,../raw_resources/palettes/resource_027.bin
+28,76,8,0,0,6,source-mapped,../raw_resources/palettes/resource_028.bin
+28,76,8,1,8,16,source-mapped,../raw_resources/palettes/resource_028.bin
+29,71,0,,,,empty mapping record referenced by source,../raw_resources/palettes/resource_029.bin
+30,71,1,0,0,2,source-mapped,../raw_resources/palettes/resource_030.bin
+31,71,2,0,0,1,source-mapped,../raw_resources/palettes/resource_031.bin
+32,72,0,,,,empty mapping record referenced by source,../raw_resources/palettes/resource_032.bin
+33,72,1,0,0,1,source-mapped,../raw_resources/palettes/resource_033.bin
+34,73,0,,,,empty mapping record referenced by source,../raw_resources/palettes/resource_034.bin
+35,73,1,0,0,1,source-mapped,../raw_resources/palettes/resource_035.bin
+36,,,,,,empty/unreferenced record,../raw_resources/palettes/resource_036.bin
+37,,,,,,empty/unreferenced record,../raw_resources/palettes/resource_037.bin
