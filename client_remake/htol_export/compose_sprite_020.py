@@ -13,8 +13,8 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / "raw_resources" / "sprites" / "resource_020.bin"
-COMPONENTS = ROOT / "images" / "ui_icons_candidate"
-OUTPUT = ROOT / "images" / "sprite_composites"
+SPRITE_LIBRARY = ROOT / "sprite_library.json"
+OUTPUT = ROOT / "other" / "sprite_composites"
 COMPONENT_CAPTURE_MARGIN = 8
 AO_TO_MIDP_TRANSFORM = (0, 2, 1, 3, 5, 7, 4, 6)
 
@@ -164,6 +164,7 @@ def flatten_group(
 def compose_group(
     group_id: int,
     component_sizes: list[tuple[int, int]],
+    component_files: dict[int, Path],
     draw_items: list[tuple[int, int, int, int]],
     groups: list[tuple[int, int]],
     group_bounds: list[tuple[int, int, int, int]],
@@ -175,7 +176,9 @@ def compose_group(
         if component_id >= len(component_sizes):
             raise ValueError(f"component {component_id} is outside the component table")
         width, height = component_sizes[component_id]
-        path = COMPONENTS / f"sprite_020_component_{component_id:04d}.png"
+        path = component_files.get(component_id)
+        if path is None:
+            raise ValueError(f"component {component_id} is missing from sprite_library.json")
         with Image.open(path) as source:
             source = source.convert("RGBA")
             left = COMPONENT_CAPTURE_MARGIN
@@ -227,11 +230,27 @@ def main() -> None:
     component_sizes, draw_items, groups, group_bounds = parse_sprite(
         SOURCE.read_bytes()
     )
+    manifest = json.loads(SPRITE_LIBRARY.read_text(encoding="utf-8"))
+    sprite = next(
+        (item for item in manifest["sprites"] if int(item["spriteId"]) == 20),
+        None,
+    )
+    if sprite is None:
+        raise ValueError("sprite 20 is missing from sprite_library.json")
+    component_files = {
+        int(item["componentId"]): ROOT / item["file"]
+        for item in sprite["components"]
+    }
     OUTPUT.mkdir(parents=True, exist_ok=True)
 
     for group_id in (0, 5):
         result = compose_group(
-            group_id, component_sizes, draw_items, groups, group_bounds
+            group_id,
+            component_sizes,
+            component_files,
+            draw_items,
+            groups,
+            group_bounds,
         )
         image_path = OUTPUT / f"sprite_020_group_{group_id}.png"
         json_path = OUTPUT / f"sprite_020_group_{group_id}.json"

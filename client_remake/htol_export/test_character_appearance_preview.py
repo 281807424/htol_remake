@@ -10,7 +10,7 @@ from generate_character_appearance_preview import (
 )
 
 
-def make_sprite() -> bytes:
+def make_sprite(palette_count: int = 1) -> bytes:
     parts = [
         b"\x00\x00",
         struct.pack("<I", 0x1000),
@@ -30,8 +30,26 @@ def make_sprite() -> bytes:
             struct.pack("<BBhhB", 0, 0, 0, 0, 0),
             struct.pack("<H", 1),
             struct.pack("<BBH", 1, 0, 0),
-            struct.pack("<HBB", 0x8888, 1, 3),
-            struct.pack("<III", 0xFFFF00FF, 0xFFFF0000, 0xFF00FF00),
+            struct.pack("<HBB", 0x8888, palette_count, 3),
+            struct.pack(
+                "<" + "I" * (palette_count * 3),
+                *(
+                    color
+                    for palette in (
+                        (
+                            0xFFFF00FF,
+                            0xFFFF0000,
+                            0xFF00FF00,
+                        ),
+                        (
+                            0xFFFF00FF,
+                            0xFF0000FF,
+                            0xFFFFFF00,
+                        ),
+                    )[:palette_count]
+                    for color in palette
+                ),
+            ),
             struct.pack("<H", 22018),
             struct.pack("<HB", 1, 1),
             struct.pack("<HB", 1, 2),
@@ -41,6 +59,16 @@ def make_sprite() -> bytes:
 
 
 class CharacterAppearanceRendererTests(unittest.TestCase):
+    def test_parser_decodes_the_selected_palette(self) -> None:
+        sprite = parse_ao_sprite(make_sprite(palette_count=2), 74, palette_index=1)
+
+        self.assertEqual(sprite.palette_count, 2)
+        self.assertEqual(sprite.bitmaps[0].getpixel((0, 0)), (0, 0, 255, 255))
+
+    def test_parser_rejects_an_out_of_range_palette(self) -> None:
+        with self.assertRaisesRegex(ValueError, "palette index 1 is out of range"):
+            parse_ao_sprite(make_sprite(), 74, palette_index=1)
+
     def test_component_mapping_replaces_drawn_sprite_index(self) -> None:
         sprite = parse_ao_sprite(make_sprite(), 74)
 

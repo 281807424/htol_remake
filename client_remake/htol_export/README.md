@@ -21,23 +21,22 @@
 - `text/strings_NNN.txt`：按资源记录编号分组的易读文本。
 - `text/class_strings.csv`：从 Java class 常量池补充提取的含中文字符串。
 - `resource_0_4_analysis.csv`、`raw_resources/misc/`：`/0`、`/4` 的容器判定、记录解析和原始字节。
-- `images/standalone/`：JAR 中直接存储的独立图片，如 `icon.png`、`splash1.png`。
-- `images/<category>/`：导出流程使用的临时浅层素材目录；`build_phaser_assets.py` 构建完成后，非地图 PNG 副本会清理，正式浏览入口为 `images/sprite_library/`。
-- `images/asset_catalog.csv`：每条 `/5` 记录的类别、分类置信度、导出状态、帧/组件数和原始载荷 SHA-256。
-- `images/asset_file_index.csv`：逐帧/组件的类别、类型、尺寸、帧时序和绘制原点偏移；非地图资源的 `file` 指向 `sprite_library/` 内对应的 Spritesheet、静态图或组件图。
-- `images/sprite_library/`：便于人工浏览的精灵资源库，按人工类别分目录，并继续划分 `static/` 与 `dynamic/`；常规已命名资源使用 `sprite-ID-中文名-动画组号.png`，角色动态组 074–076 使用 `职业-性别-武器-动作-动作号.png`，未列入人工清单的非地图 sprite 放入 `未分类/`。
-- `images/sprite_library/sprite_library.json`：人类可读索引，保留类别与分类证据/置信度、语义确认状态、静态或动态属性、源动画组、角色的职业/性别/武器/动作映射、帧顺序、逐帧 `durationMs`/`durationTicks`、裁切尺寸、绘制偏移及生成文件。规则 Spritesheet 的格子坐标可由帧序号及 `columns`、`frameWidth`、`frameHeight` 重建；sprite 076 的演示角色动画另标记 `renderSource: raw-ao-root-anchor`，逐帧偏移相对于原 AO 根绘制坐标。
+- `map/`：地图预览、Tiled 地图、调色板图块集和碰撞数据。
+- `unit/`、`monster/`、`player/`、`effect/`、`icon/`、`pet/`、`npc/`、`other/`：按用途分类的可读精灵资源；未确认用途的资源归入 `other/`。
+- `asset_catalog.csv`：每条 `/5` 记录的类别、分类置信度、导出状态、帧/组件数和原始载荷 SHA-256。
+- `asset_file_index.csv`：逐帧/组件/地图图集的类别、类型、尺寸、帧时序和绘制原点偏移；路径相对导出根目录。
+- `sprite_library.json`：人类可读索引，保留类别与分类证据/置信度、语义确认状态、静态或动态属性、源动画组、角色的职业/性别/武器/动作映射、帧顺序、逐帧 `durationMs`/`durationTicks`、裁切尺寸、绘制偏移及生成文件。规则 Spritesheet 的格子坐标可由帧序号及 `columns`、`frameWidth`、`frameHeight` 重建；sprite 076 的演示角色动画另标记 `renderSource: raw-ao-root-anchor`，逐帧偏移相对于原 AO 根绘制坐标。
 - [客户端效果字典](./客户端效果字典.md)：原客户端效果 ID 到精灵/动画组的映射、标志、绘制层级和资源动画时序，并注明服务端缺失造成的语义边界。
-- `images/animation_groups.csv`、`images/animation_index.csv`：动画组帧数、源时长以及输出类型/路径索引；单帧组也记录源时长，但单帧组不表示可见循环动画。
-- `images/phaser/atlases/`：非地图 sprite 的旧 atlas 副本在资源库构建后清理；地图引用的 atlas 文件保留。新格式使用独立静态 PNG 和按动画组制作的规则 Spritesheet。
-- `images/fonts/resource_3_font_atlas.png`、`text/resource_3_font_glyphs.csv`：`/3` 记录 0 的点阵字形图集和字符/字形索引。
+- `animation_groups.csv`、`animation_index.csv`：动画组帧数、源时长以及输出类型/路径索引；单帧组也记录源时长，但单帧组不表示可见循环动画。
+- `map/tilesets/`：地图图块集按颜色调色板分别输出为 `sprite_NNN_palette_P_tiles.png`，并有匹配的 `.tsj` 元数据；地图预览使用与地图对应的调色板。
+- `other/fonts/resource_3_font_atlas.png`、`text/resource_3_font_glyphs.csv`：`/3` 记录 0 的点阵字形图集和字符/字形索引。
 - `text/resource_3_inline_glyphs.csv`：`/3` 记录 1 中 11 个内嵌聊天字形的索引与 `%a`–`%k` 协议内标记。
-- `images/maps/`：`map_NNN_base_preview.png` 是仅含地面的历史参考图；`map_NNN_full_preview.png` 是应用瓦片变换并叠加首帧地图对象后的静态合成预览。
-- `images/map_index.csv`、`map_tiles.csv`、`map_objects.csv`、`map_entities.csv`：地图尺寸、逐格组件/变换/属性、原始对象记录，以及对象精灵、坐标、动画组和语义置信状态。
-- `images/map_collision/map_NNN.json`：按地图保存的完整逐格 `attribute_byte` 网格；`blockingAttribute` 标记源码确认的阻挡值 23，其他原始值完整保留。
-- `images/sprite_palette_maps.csv`：`/6` 记录的 sprite 组件索引映射及对应精灵/槽位；CSV 文件名和 `palette_slot` 列名沿用旧名，该列表示映射槽位而非颜色调色板。
+- `map/preview/`：按地图实际调色板渲染并缩小的预览图；旧的无调色板 `maps/` 预览不再保留。
+- `map_index.csv`、`map_tiles.csv`、`map_objects.csv`、`map_entities.csv`：地图尺寸、逐格组件/变换/属性、原始对象记录，以及对象精灵、坐标、动画组和语义置信状态。
+- `map/collision/map_NNN.json`：按地图保存的完整逐格 `attribute_byte` 网格；`blockingAttribute` 标记源码确认的阻挡值 23，其他原始值完整保留。
+- `sprite_palette_maps.csv`：`/6` 记录的 sprite 组件索引映射及对应精灵/槽位；CSV 文件名和 `palette_slot` 列名沿用旧名，该列表示映射槽位而非颜色调色板。
 - `raw_resources/maps/`、`raw_resources/palettes/`：地图和 `/6` 的原始索引记录，文件名中保留资源编号。
-- 索引保留源帧/组件、地图预览和独立图片的追溯信息；非地图总览图与旧 atlas 作为重复浏览副本清理，`images/` 下不再保留旧的 `sprites/sprite_NNN/...` 深层目录。
+- 导出根目录不再有 `images/` 子目录；重复 PNG 统一按内容哈希去重，并更新索引和 Tiled 元数据中的引用。
 
 ## 已解析的资源与格式发现
 
@@ -66,8 +65,8 @@
 - 资源 ID 是精灵资源记录编号，不是动作组编号；动画组编号是各资源内部的顺序，也没有已确认的动作名称。
 - 242 条非空记录解出了动画，共 1,304 个动画组、6,290 个源帧。
 - 33 条记录没有动画组，但含有可单独绘制的组件，共导出 1,586 个组件。组件可能用于图块或其他拼装式画面，需结合代码和画面进一步判别。
-- 分类导出覆盖全部 312 个 `/5` ID：275 条有帧/组件图像，35 条空记录；ID 53、55 是相同的 18 字节记录。按客户端 `ao` 读取布局校验后，它们的精灵/子段计数均为 0，是合法的空资源描述而不是待解密图像。原始字节仍保留在 `images/unclassified/` 和 `raw_resources/sprites/`。
-- `/6` 在客户端启动时按槽位载入映射表。`ao.a(int, byte[])` 将每对 16-bit 数值用于替换精灵绘制中的组件索引，不是颜色索引重映射；`bj.S` 与初始化代码确认记录 0–35 映射到 sprite 71–76 的对应槽位。映射表见 `images/sprite_palette_maps.csv`。
+- 分类导出覆盖全部 312 个 `/5` ID：275 条有帧/组件图像，35 条空记录；ID 53、55 是相同的 18 字节记录。按客户端 `ao` 读取布局校验后，它们的精灵/子段计数均为 0，是合法的空资源描述而不是待解密图像。原始字节仍保留在 `other/unclassified/` 和 `raw_resources/sprites/`。
+- `/6` 在客户端启动时按槽位载入映射表。`ao.a(int, byte[])` 将每对 16-bit 数值用于替换精灵绘制中的组件索引，不是颜色索引重映射；`bj.S` 与初始化代码确认记录 0–35 映射到 sprite 71–76 的对应槽位。映射表见 `sprite_palette_maps.csv`。
 
 ### 动画时序与校验
 
@@ -82,11 +81,11 @@
 - `/2` 有 20 个索引槽，13 条非空载荷已保存；非空项经文件头确认是 4 个 MIDI 和 9 个 RIFF/WAVE 声音文件，7 个空槽没有载荷。客户端音频加载器按编号读取这些槽位。每条声音的原始数据都在 `raw_resources/set_2/`，但声音 ID 到 UI/战斗事件的具体用途尚未全部建立映射。
 - `/3` 的两条记录均非空，且由启动代码分别交给 `aa` 和 `ao` 解码。记录 0 已确认是 16×16 单色点阵字体：包含 3,592 个字形槽、3,480 个不同 Unicode 码点；重复码点仍按原始槽位完整保留，客户端按字符查找时采用第一个匹配项。记录 1 的 `ao` 字形数为 11；聊天绘制代码把 `%a`–`%k` 映射到这 11 个字形索引。可运行 `python decode_resource_3_font.py` 生成点阵图集、完整字符索引和内嵌聊天字形索引。它们是字体/聊天显示资源，不是任务或装备模板。
 - `/6` 的索引有 38 条记录，其中 30 条非空、8 条空。记录 0–35 被启动代码按映射槽分配给 sprite 71–76；记录 36–37 没有在该初始化映射中被引用。组件索引替换效果已通过 AO 绘制逻辑生成角色预览，但装备槽与具体物品名称的对应仍未确认。
-- JAR 还含有 `/7`–`/161` 共 155 个地图资源档案。源码 `bm.L()` 依次读取每份档案的 0–3 号记录：地图宽高与图块格、每格 2-bit 瓦片变换标志、每格属性/碰撞候选字节，以及场景对象记录。此次已导出全部 620 个原始地图记录，展开为 209,965 行格子数据、12,200 行对象记录，并为每张地图生成底图参考图和完整静态预览。
+- JAR 还含有 `/7`–`/161` 共 155 个地图资源档案。源码 `bm.L()` 依次读取每份档案的 0–3 号记录：地图宽高与图块格、每格 2-bit 瓦片变换标志、每格属性/碰撞候选字节，以及场景对象记录。此次已导出全部 620 个原始地图记录，展开为 209,965 行格子数据、12,200 行对象记录，并按各地图的实际调色板生成低清预览。
 - 上述 155 张仅是 JAR 内置地图，不等于客户端运行时可能加载的地图全集。`cw.b()` 先由 `bm.L()` 从包内读取 `"/" + (mapResId + 7)`；失败后查 RMS `HTQY10006`，缓存未命中才发送命令 `530`（携带 `bm.ci` / mapResId），并由命令 `531` 的子类型 1–4 分段接收地图。`af` 的记录 7 保存 5 个地图 ID 和循环写入游标，记录 8–12 保存对应地图数据；新下载数据写入此 5 项缓存。源码显示此网络请求是在包内读取失败且缓存未命中时发生，不能据此说客户端会主动刷新或替换已经能从 JAR 读取的地图。当前导出没有采集 `530`/`531` 会话或 RMS，因此无法覆盖只由服务端下发的地图。
 - 另有一类“地图”是 `/5` 中 sprite 20 的两个世界地图 UI 画面（动画组 0、5）；`m.java` 将其画在世界地图界面，并叠加名称/标记。它不是 `/7`–`/161` 的可行走场景地图，不应与 155 张场景地图合并计数。
 - 旧版 Phaser atlas 曾把动画帧和组件压入每个 sprite 的纹理图集。当前资源库将组件作为独立静态 PNG、将每个多帧动画组生成为规则 Spritesheet；组件文件保留组件 ID，但这不意味着组件已按客户端布局拼成整图。`sprite_020` 在客户端代码中以动画组 0/5 绘制两种国家地图画面，现有扁平组件索引没有保存布局/绘制偏移，需使用 `compose_sprite_020.py` 查看合成结果。
-- `compose_sprite_020.py` 依据客户端 `ao` 精灵格式解析 sprite 20 的组 0/5 嵌套绘制项，并用每个组件的逻辑尺寸、绘制坐标和翻转/旋转标记合成两张整图；PNG 与逐项坐标 JSON 输出到 `images/sprite_composites/`。组件 PNG 是旧导出器在 (8, 8) 偏移处绘制到带边距画布的捕获图，因此合成时按 AO 记录尺寸从该偏移裁切。整图不包括 `m.java` 叠加的地图名称、当前位置和标记，也不包括地图窗口裁剪。
+- `compose_sprite_020.py` 依据客户端 `ao` 精灵格式解析 sprite 20 的组 0/5 嵌套绘制项，并用每个组件的逻辑尺寸、绘制坐标和翻转/旋转标记合成两张整图；PNG 与逐项坐标 JSON 输出到 `other/sprite_composites/`。组件 PNG 是旧导出器在 (8, 8) 偏移处绘制到带边距画布的捕获图，因此合成时按 AO 记录尺寸从该偏移裁切。整图不包括 `m.java` 叠加的地图名称、当前位置和标记，也不包括地图窗口裁剪。
 
 ### 档案、原始记录与解读覆盖范围
 
@@ -107,7 +106,8 @@
 
 - 地图资源编号不是已知的游戏地图名称。源码使用 24 个逻辑单位作为地图格距；预览按 36 px/格绘制。对象记录中的第 0 个 short 经 `bm.i()` 转成 `/5` 精灵 ID，第 2、3 个 short 是位置，第 4 个 short 选择动画组。其余字段保留原值，不臆测语义。
 - 地图图块资源引用经 `bm.i()` 映射到 sprite 208–215；地图对象记录映射到 sprite 218–274 中实际被引用的子集。地图格子的 2-bit 值由客户端传入 `ao` 的绘制变换参数：bit 0 为水平翻转，bit 1 为垂直翻转；它不是颜色调色索引。地图预览和 Tiled GID 都应用这两个标志。每格属性字节仍保留原值，其每个 bit 的确切含义未确认。
-- `/5` 地图瓦片组件源图为 88×88，非透明图块位于偏移 `(8,8)` 的 36×36 区域。36×36 区域用于地图网格绘制；预览裁掉源画布留白后按格子原点放置，避免把源图像的透明边距再当成地图偏移。
+- `/5` 地图瓦片组件源图为 88×88，非透明图块位于偏移 `(8,8)` 的 36×36 区域。构建过程将这些组件从原始 AO 资源按 palette 解码并拼成图集；独立组件 PNG 与组件总览图不再导出或保留。地图预览从 palette 0 图集中按组件编号裁取 36×36 格子，并按格子原点放置。
+- 地图图集 palette 数量为：sprite 208=3、209=2、210=3、211=2、212=2、213–215 各 1。静态 JAR 地图本身没有已确认的场景 palette 选择字段，所以 preview/Tiled 地图固定使用 palette 0；这不表示它就是运行时服务器为该场景选择的 palette。
 - `map_NNN_full_preview.png` 先绘制地面，再按绘制 Y 坐标叠加每条地图对象记录所引用精灵动画组的首帧；帧裁剪原点用于恢复相对绘制锚点的位置。`map_entities.csv` 显式记录渲染像素坐标、来源坐标、精灵/动画、帧图、对象原始字段及语义状态。JAR 对象记录本身没有足够信息把所有对象可靠命名为 NPC 或建筑，因此统一标记为 `unclassified_map_sprite`，不猜测业务语义。静态预览不是完整运行时画面：动画只显示首帧，动态排序/碰撞/调色或其他未确认行为仍需 Phaser 逻辑解释。
 - `/2` 是声音资源集；`/3` 是客户端启动时读取的字体及自定义资源记录，不属于 `/5` 的普通动画精灵集。相应原始资源仍保留在 `raw_resources/`。
 
@@ -116,27 +116,24 @@
 - `source-confirmed`：源码和记录结构共同证实用途，例如地图图块、地图对象引用、sprite 71–76 的 `/6` 组件索引映射。
 - `source-reference`：源码确实引用该 ID，但被引用的代码不一定能证明它的精确业务名称，例如 sprite 307–311。
 - `visual-candidate`：按缩略总览的外观和连续编号段分组，仅作为整理候选，不表示 JAR 中存在同名类别字段。
-- `unresolved`：无可绘制帧/组件或目前不能确定用途。sprite 53、55 虽有非空存储记录，但客户端 `ao` 结构校验显示所有内容计数为 0；原始字节仍保留在 `images/unclassified/`，没有将其伪装成图片。零字节空记录仍逐条列在 `asset_catalog.csv`。
+- `unresolved`：无可绘制帧/组件或目前不能确定用途。sprite 53、55 虽有非空存储记录，但客户端 `ao` 结构校验显示所有内容计数为 0；原始字节仍保留在 `other/unclassified/`，没有将其伪装成图片。零字节空记录仍逐条列在 `asset_catalog.csv`。
 
-`sprite_library/` 现按用户提供的手工清单组织：目录包括 `无用图片/`、`原画/`、`图标/`、`UI相关/`、`技能特效/`、`中立生物/`、`宠物/`、`角色/`、`坐骑/`、`其他/`、`怪物/`、`NPC/`、`采集物/` 和 `未分类/`；每类再分 `static/` 与 `dynamic/`。怪物动态资源继续按一个 sprite 的动画组数量放入 `怪物/dynamic/5/`、`怪物/dynamic/6/` 等目录。5 组怪物按 `待机`、`移动`、`攻击`、`受击`、`死亡` 命名，例如 `sprite-091-山猫-受击.png`；这是当前人工动作分类，未从客户端状态映射独立验证。组数超过 5 的怪物仍保留数字组号。sprite 108 的动画组 05–09 命名为 `熔岩龟`，文件序号从 01 开始；sprite 119 的动画组 05–09 命名为 `披甲大力士`，文件序号同样从 01 开始。其他资源文件名保留源 sprite ID，并使用中文别名及两位动画组号，例如 `sprite-110-钓鱼老翁-00.png`。组件图使用 `sprite-ID-中文名-组件-组件号.png`；未提供语义名称的特效使用“技能特效”，未列入清单的非地图资源使用“未分类”。sprite 032 的动画组 002 单独放在 `UI相关/`，其他动画组放入 `技能特效/`。地图对象 sprite 仍保留在 `map_objects/`，地图素材目录和地图 atlas 不在此次人工重组/重复文件清理范围内。
+精灵资源按 `map/`、`unit/`、`monster/`、`player/`、`effect/`、`icon/`、`pet/`、`npc/`、`other/` 九个目录组织，并继续按 `static/` 与 `dynamic/` 区分资源；怪物动态资源还按一个 sprite 的动画组数量细分目录。采集物和地图标志物放在 `unit/`；人物、装备外观及坐骑放在 `player/`；地图专属的其他场景资源放在 `map/`。未确认归属的资源放在 `other/`。动画组、组件和调色板图集均由 `sprite_library.json` 与 CSV 索引描述，资源目录中不再保留旧 `sprite_library/` 或 `map_objects/` 副本。
 
-角色动态资源 sprite 074/075/076 按动画组起始编号 00、22、51、73 划分为每职业的男/女及两种武器配置；其中天灵对应棍、杖的组别已由用户确认。组 43–50、94–101 由用户单独移动到 `角色/空手/`，不纳入动态目录重命名。动作名称采用用户给出的 00–21 对照，其中 06–11、13–15 为攻击，12、17、20、21 为施法。动态 PNG 按 SHA-256 去重；内容相同的动画组共享序号较小组的文件路径，避免磁盘中保留重复图像。
+角色动态资源 sprite 074/075/076 按动画组起始编号 00、22、51、73 划分为每职业的男/女及两种武器配置；其中天灵对应棍、杖的组别已由用户确认。组 43–50、94–101 单独放在 `player/空手/`。动作名称采用用户给出的 00–21 对照，其中 06–11、13–15 为攻击，12、17、20、21 为施法。PNG 按解码后的 RGBA 像素内容去重；重复引用通过索引和 JSON 更新到保留文件。
 
 分类范围（遇到更强的源码引用时，以索引中的逐资源证据为准）：
 
-| 类别目录 | 主要 sprite ID | 依据 |
-|---|---:|---|
-| `ui_icons_candidate/` | 1–20 | 外观候选 |
-| `effects_candidate/` | 23–69 | 外观候选 |
-| `characters_candidate/` | 70–156 | 外观候选；71–76 另有组件索引映射 |
-| `items_candidate/` | 157–179 | 外观候选 |
-| `monsters_candidate/` | 180–203 | 外观候选 |
-| `map_tiles/` | 208–215 | 地图记录中的图块集引用 |
-| `world_objects_candidate/` | 217–274 | 未被地图记录引用的资源为外观候选 |
-| `map_objects/` | 地图对象记录实际引用的 ID | `/7`–`/161` 场景对象记录与源码 ID 转换 |
-| `equipment_candidate/` | 277–306 | 外观候选 |
-| `character_palette_variants/` | 71–76 | 历史目录名；内容为 `/6` 组件索引映射 |
-| `ui_character_resources/` | 307–311 | 有源码引用，具体语义需继续确认 |
+| 类别目录 | 主要内容 |
+|---|---|
+| `map/` | 地图、预览、Tiled 数据、地形图集和专属场景对象 |
+| `unit/` | 采集物与地图标志物 |
+| `monster/` | 怪物动画 |
+| `player/` | 角色、装备外观、武器外观及坐骑 |
+| `effect/` | 技能与受击特效 |
+| `icon/` | 界面和技能图标 |
+| `pet/`、`npc/` | 宠物和 NPC |
+| `other/` | 尚未确认用途的资源、字体和运行时辅助数据 |
 
 ### 偏移、时序与地图位置
 
@@ -147,15 +144,15 @@
 
 ### 重新组织导出
 
-`export_classified_assets.py` 将旧的 `images/sprites/sprite_NNN/...` 导出复制为 `images/<category>/` 下的浅层文件名，并从 JAR 解出地图与 `/6` 数据。需先有旧的精灵 PNG/GIF 导出；脚本不会自行重做 J2ME 精灵解码。之后运行 `python build_phaser_assets.py`，生成地图预览、Tiled JSON、地图对象坐标索引以及 `sprite_library/` 中的 Spritesheet/静态 PNG 和可读 JSON manifest。构建完成后，生成器会清理作为中间重复副本的非地图精灵 PNG 和未被地图引用的旧 `phaser/atlases/` 文件；帧时序、偏移与输出文件位置继续记录在索引/manifest 中，原始 `/5` 载荷仍在 `raw_resources/sprites/`。地图瓦片、Tiled 地图、地图对象坐标和碰撞数据保持不动。
+`export_classified_assets.py` 需要已有的旧版精灵 PNG/GIF 解码结果，不会自行重做 J2ME 精灵解码；新资源生成后运行 `python build_phaser_assets.py`，会在九个分类目录生成可读精灵图集、Tiled 地图、逐调色板图块集、地图低清预览和相关索引。构建时按解码像素去重，并同步修正 CSV、JSON、TSJ、TMJ 中的资源引用。地图碰撞数据位于 `map/collision/`，原始 `/5` 载荷仍在 `raw_resources/sprites/`。
 
-演示角色 sprite 074–076 的职业、性别和武器动作组会从各自的 `raw_resources/sprites/resource_NNN.bin` 直接重建，而不是继续依赖旧序列帧。`python export_character_phaser_assets.py` 可单独重建资源清单中存在的全部角色配置动作组（空缺组不补造），并同步更新 Spritesheet、manifest 和帧索引；`build_phaser_assets.py` 也会调用这一步。解码器保留 AO 组件树、变换、每帧根坐标偏移及原始时长，裁切图像时将裁切左上角精确记录为相对于 AO 根绘制坐标的 `drawOffsetX/Y`，因此 Phaser 的 sprite origin 可将每帧放回该根坐标，无需颜色启发式。该脚本另为每个角色精灵输出一张共享组件 atlas 和 `images/weapon_appearance_export/ao_runtime.json`；运行时按 `/6` 组件映射重绘当前帧，不会为每个映射槽复制整套帧动画。
+演示角色 sprite 074–076 的职业、性别和武器动作组会从各自的 `raw_resources/sprites/resource_NNN.bin` 直接重建。`python export_character_phaser_assets.py` 可单独重建资源清单中存在的全部角色配置动作组（空缺组不补造），并同步更新 Spritesheet、manifest 和帧索引；`build_phaser_assets.py` 也会调用这一步。解码器保留 AO 组件树、变换、每帧根坐标偏移及原始时长，裁切图像时将裁切左上角精确记录为相对于 AO 根绘制坐标的 `drawOffsetX/Y`。该脚本另为每个角色精灵输出共享组件 atlas 和 `player/ao_runtime.json`；运行时按 `/6` 组件映射重绘当前帧。
 - `python compose_sprite_020.py` 单独生成 sprite 20 客户端绘制组 0/5 的合成整图与布局 JSON。
-- JAR 中另有独立 PNG 图片，已复制至 `images/standalone/`。
+- JAR 中另有独立 PNG 图片，已复制至 `other/standalone/`。
 
 ### 武器状态对应的角色动画导出
 
-运行 `python export_weapon_appearance.py`，从仓库根目录唯一的 JAR 读取 `/5` 和 `/6`，在 `images/weapon_appearance_export/manifest.json` 生成索引。脚本按客户端角色创建路径验证 sprite 74–76、`/6` 映射记录、组件索引对和哈希，并列出通用解码索引中每个精灵实际存在的全部动画组（编号范围 0–101，包括已标注的女性动画组 51–101；空缺组不会伪造）。当前索引分别有 102、92、76 组，其中女性标注组分别有 51、46、38 组。帧图、动画表和原始资源均链接到通用资源目录中的既有文件，不再复制 PNG、`/5` payload 或 `/6` 记录。重新运行时，只会依据旧 manifest 删除本脚本上一版输出的重复文件；不会清理清单未列出的内容。
+运行 `python export_weapon_appearance.py`，从仓库根目录唯一的 JAR 读取 `/5` 和 `/6`，在 `player/weapon_appearance_export/manifest.json` 生成索引。脚本按客户端角色创建路径验证 sprite 74–76、`/6` 映射记录、组件索引对和哈希，并列出通用解码索引中每个精灵实际存在的全部动画组（编号范围 0–101，包括已标注的女性动画组 51–101；空缺组不会伪造）。当前索引分别有 102、92、76 组，其中女性标注组分别有 51、46、38 组。帧图、动画表和原始资源均链接到通用资源目录中的既有文件，不再复制 PNG、`/5` payload 或 `/6` 记录。重新运行时，只会依据旧 manifest 删除本脚本上一版输出的重复文件；不会清理清单未列出的内容。
 
 角色创建命令 `2102` 选择职业精灵：`cr.a(..., class, ...)` 加载 `/5` 资源 74+class。紧接着客户端从 `2102` 数据的 20 槽位掩码读取外观值，并调用 `cr.l(slot,value)`；`2103` 更新路径相同，`1264` 可单独更新一个槽位。槽位 8 的值中，第 4–7 位选择角色武器动画模式（客户端数组支持 0–2），第 8–11 位传给另一段角色动画状态；低 4 位保存在 `cr.n`，但目前没有找到它参与角色精灵绘制或选择 `/6` 映射的证据。`h.b()` 会把角色对象当前的 `h.n` 传给 AO 的 `b(int)` 选择映射槽；`ao` 随后在绘制位图组件前应用该槽的组件索引表。尚未确认玩家实体的 `h.n` 是否由 `cr.n` 或装备槽位驱动。Phaser 演示的数字键 4 仅按原版 `/6` 映射机制轮换有效槽位，不代表已还原服务端槽位到角色外观的选择规则。客户端把实体字段 `ai` 作为绘制动画组偏移 `ai * 51`；现有动画索引把第二段 51–101 标为女性动作，协议位的语义仍需抓包确认。动作组还受角色状态分支影响，因此 manifest 同时给出源码模式基表和备用组；它不是所有实时 `G/X` 状态的完整展开。
 
@@ -166,7 +163,7 @@
 
 因此，客户端确实会从服务端收到本机装备物品（其槽位可包含肩甲），但现有代码证据不能证明肩甲装备记录会被用于世界角色外观；地图中其他玩家的 2102/2103 数据也没有解析出 `cr.ao[]` 物品记录。要生成可信的肩甲穿戴 PNG，还缺少从肩甲物品 ID 到角色精灵组件/映射槽或叠层的客户端调用路径。仅凭当前装备图标或角色动画不能合成这种效果。
 
-`python generate_character_appearance_preview.py` 生成武器动作对照图和 `images/weapon_appearance_export/character_appearance_mapping_preview.png`。后者覆盖角色 sprite 74–76 的动画组 0、51，以及资源库确认的坐骑 sprite 71（狂狮）、72（圣龙）、73（麒麟）的动画组 0，并按各自 `/6` 槽位重绘。坐骑映射改变坐骑精灵部件；角色映射也会改变整身角色画面中的部件，但这些变化与具体武器、肩甲物品 ID 的对应仍未确认。
+`python generate_character_appearance_preview.py` 生成武器动作对照图和 `player/weapon_appearance_export/character_appearance_mapping_preview.png`。后者覆盖角色 sprite 74–76 的动画组 0、51，以及资源库确认的坐骑 sprite 71（狂狮）、72（圣龙）、73（麒麟）的动画组 0，并按各自 `/6` 槽位重绘。坐骑映射改变坐骑精灵部件；角色映射也会改变整身角色画面中的部件，但这些变化与具体武器、肩甲物品 ID 的对应仍未确认。
 
 ## 后续分类建议
 

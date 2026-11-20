@@ -121,16 +121,7 @@
           "y": 912
         }
       ],
-      "monsters": [
-        {
-          "id": "acbf45abeb2f40b38082755ecd3537fe",
-          "spriteId": 92,
-          "name": "狐狸",
-          "actionCount": 5,
-          "x": 308,
-          "y": 601
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 11,
@@ -157,16 +148,7 @@
           "y": 58
         }
       ],
-      "monsters": [
-        {
-          "id": "6e892b73afb94f2d896852d572153ff7",
-          "spriteId": 92,
-          "name": "狐狸",
-          "actionCount": 5,
-          "x": 321,
-          "y": 748
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 12,
@@ -268,16 +250,7 @@
           "y": 266
         }
       ],
-      "monsters": [
-        {
-          "id": "1443b74180d04edda053f5145ce1b07b",
-          "spriteId": 108,
-          "name": "毒龟",
-          "actionCount": 5,
-          "x": 441,
-          "y": 356
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 15,
@@ -338,16 +311,7 @@
           "y": 1282
         }
       ],
-      "monsters": [
-        {
-          "id": "ef3f92a47abf4b7fa1a36bc192d4e915",
-          "spriteId": 94,
-          "name": "野狼",
-          "actionCount": 5,
-          "x": 527,
-          "y": 608
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 17,
@@ -381,16 +345,7 @@
           "y": 62
         }
       ],
-      "monsters": [
-        {
-          "id": "55a136fb3cae46bc919ab416b950960d",
-          "spriteId": 93,
-          "name": "野猪",
-          "actionCount": 5,
-          "x": 574,
-          "y": 509
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 18,
@@ -424,16 +379,7 @@
           "y": 75
         }
       ],
-      "monsters": [
-        {
-          "id": "a24dade6d0b546e08a31cce615fac21e",
-          "spriteId": 91,
-          "name": "山猫",
-          "actionCount": 5,
-          "x": 1412,
-          "y": 324
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 19,
@@ -460,16 +406,7 @@
           "y": 1062
         }
       ],
-      "monsters": [
-        {
-          "id": "b3e6eb62c8d7439faa88d9d45eedcc84",
-          "spriteId": 91,
-          "name": "山猫",
-          "actionCount": 5,
-          "x": 737,
-          "y": 462
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 20,
@@ -503,16 +440,7 @@
           "y": 46
         }
       ],
-      "monsters": [
-        {
-          "id": "71e1e85c4ce4498eafa90b456c465b5c",
-          "spriteId": 161,
-          "name": "妖小兵",
-          "actionCount": 5,
-          "x": 574,
-          "y": 425
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 21,
@@ -539,16 +467,7 @@
           "y": 286
         }
       ],
-      "monsters": [
-        {
-          "id": "55f61be05cda452f9f0218c3c3a21f0d",
-          "spriteId": 154,
-          "name": "鬼女子",
-          "actionCount": 5,
-          "x": 269,
-          "y": 234
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 22,
@@ -575,16 +494,7 @@
           "y": 985
         }
       ],
-      "monsters": [
-        {
-          "id": "919cb35b1f6740c2bd522b9e59af14af",
-          "spriteId": 104,
-          "name": "斗笠刀客",
-          "actionCount": 5,
-          "x": 399,
-          "y": 474
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 23,
@@ -692,16 +602,7 @@
           "y": 223
         }
       ],
-      "monsters": [
-        {
-          "id": "d43895de03d7476a93a7af3adc92246d",
-          "spriteId": 187,
-          "name": "虎王怪",
-          "actionCount": 7,
-          "x": 316,
-          "y": 361
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 27,
@@ -748,16 +649,7 @@
           "y": 488
         }
       ],
-      "monsters": [
-        {
-          "id": "9c5ebad487564231b87b832c2d2f6d42",
-          "spriteId": 161,
-          "name": "妖小兵",
-          "actionCount": 5,
-          "x": 604,
-          "y": 531
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 29,
@@ -784,16 +676,7 @@
           "y": 66
         }
       ],
-      "monsters": [
-        {
-          "id": "00eb967cd00c4862a7de9247f2d922ef",
-          "spriteId": 182,
-          "name": "树妖怪",
-          "actionCount": 5,
-          "x": 402,
-          "y": 420
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 30,
@@ -820,24 +703,7 @@
           "y": 111
         }
       ],
-      "monsters": [
-        {
-          "id": "554d38dbde3341078025b46462e8aa79",
-          "spriteId": 182,
-          "name": "树妖怪",
-          "actionCount": 5,
-          "x": 567,
-          "y": 841
-        },
-        {
-          "id": "ad723441300345ac8b8a04e35bf04d15",
-          "spriteId": 152,
-          "name": "树精怪",
-          "actionCount": 8,
-          "x": 350,
-          "y": 254
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 31,
@@ -857,16 +723,7 @@
           "y": 81
         }
       ],
-      "monsters": [
-        {
-          "id": "3757d81c8d3740d8bb05e76177b9926e",
-          "spriteId": 182,
-          "name": "树妖怪",
-          "actionCount": 5,
-          "x": 251,
-          "y": 610
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 32,
@@ -886,16 +743,7 @@
           "y": 652
         }
       ],
-      "monsters": [
-        {
-          "id": "fcb9eeaf84d24ec090a313c9d0a8c9fe",
-          "spriteId": 197,
-          "name": "泥人士兵",
-          "actionCount": 5,
-          "x": 270,
-          "y": 212
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 33,
@@ -929,16 +777,7 @@
           "y": 258
         }
       ],
-      "monsters": [
-        {
-          "id": "7183ae0514564a18bda180cffa076891",
-          "spriteId": 123,
-          "name": "僵尸怪",
-          "actionCount": 5,
-          "x": 311,
-          "y": 395
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 34,
@@ -965,16 +804,7 @@
           "y": 447
         }
       ],
-      "monsters": [
-        {
-          "id": "3a6de99eed3c448c832d45db42f1965d",
-          "spriteId": 186,
-          "name": "孩儿怪",
-          "actionCount": 5,
-          "x": 291,
-          "y": 502
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 35,
@@ -1001,16 +831,7 @@
           "y": 347
         }
       ],
-      "monsters": [
-        {
-          "id": "0b7d91f78b1e4726a895c0b1faf80155",
-          "spriteId": 102,
-          "name": "刀客",
-          "actionCount": 5,
-          "x": 433,
-          "y": 446
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 36,
@@ -1037,16 +858,7 @@
           "y": 63
         }
       ],
-      "monsters": [
-        {
-          "id": "3f94d08e30a64cbc9e76e3f34b629bba",
-          "spriteId": 122,
-          "name": "鼓音怪",
-          "actionCount": 5,
-          "x": 175,
-          "y": 316
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 37,
@@ -1066,16 +878,7 @@
           "y": 674
         }
       ],
-      "monsters": [
-        {
-          "id": "e44370a7e99e4a3ea8f004025b0a5c47",
-          "spriteId": 151,
-          "name": "霸气大剑士",
-          "actionCount": 7,
-          "x": 854,
-          "y": 405
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 38,
@@ -1102,16 +905,7 @@
           "y": 284
         }
       ],
-      "monsters": [
-        {
-          "id": "67d913f66d9a4b559ec7907c1baa0511",
-          "spriteId": 98,
-          "name": "老鹰",
-          "actionCount": 5,
-          "x": 805,
-          "y": 483
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 39,
@@ -1138,16 +932,7 @@
           "y": 442
         }
       ],
-      "monsters": [
-        {
-          "id": "e4344069ed3f46eda5e57454cb146866",
-          "spriteId": 151,
-          "name": "霸气大剑士",
-          "actionCount": 7,
-          "x": 437,
-          "y": 797
-        }
-      ]
+      "monsters": []
     },
     {
       "mapId": 40,

@@ -3,17 +3,16 @@ import json
 import re
 from collections import Counter, defaultdict
 from pathlib import Path
+from urllib.parse import quote
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-IMAGES_ROOT = PROJECT_ROOT / "htol_export" / "images"
-MAPS_ROOT = IMAGES_ROOT / "maps"
-OBJECTS_ROOT = IMAGES_ROOT / "map_objects"
-COLLISION_ROOT = IMAGES_ROOT / "map_collision"
+EXPORT_ROOT = PROJECT_ROOT / "htol_export"
+MAPS_ROOT = EXPORT_ROOT / "map" / "preview"
+COLLISION_ROOT = EXPORT_ROOT / "map" / "collision"
 OUTPUT_ROOT = Path(__file__).resolve().parent
 
-MAP_FILE_PATTERN = re.compile(r"map_(\d+)_full_preview\.png$")
-SPRITE_FILE_PATTERN = re.compile(r"sprite_(\d+)_")
+MAP_FILE_PATTERN = re.compile(r"map_(\d+)_palette_0_preview\.png$")
 REGION_CELLS = {
     "玄武国": [
         *((row, column) for row, start, stop in ((0, 4, 9), (1, 3, 10), (2, 2, 11), (3, 1, 12), (4, 0, 13))
@@ -210,7 +209,7 @@ def image_url(folder, filename):
 
 
 def object_url(filename):
-    return f"/objects/{filename}"
+    return "/objects/" + "/".join(quote(part, safe="") for part in Path(filename).parts)
 
 
 def list_group_cells(rows, columns):
@@ -386,14 +385,39 @@ def terrain_labels(category):
 
 
 def main():
-    map_rows = read_csv(IMAGES_ROOT / "map_index.csv")
-    entity_rows = read_csv(IMAGES_ROOT / "map_entities.csv")
-    all_image_files = list(MAPS_ROOT.rglob("map_*_full_preview.png"))
-    image_by_id = {}
-    for path in all_image_files:
-        match = MAP_FILE_PATTERN.match(path.name)
-        if match:
-            image_by_id[int(match.group(1))] = path
+    map_rows = read_csv(EXPORT_ROOT / "map_index.csv")
+    entity_rows = read_csv(EXPORT_ROOT / "map_entities.csv")
+    preview_rows = read_csv(EXPORT_ROOT / "map_preview_index.csv")
+    image_by_id = {
+        int(row["map_resource_id"]): EXPORT_ROOT / row["file"]
+        for row in preview_rows
+        if int(row["palette_index"]) == 0
+    }
+    previous_catalog_path = OUTPUT_ROOT / "map_catalog.json"
+    previous_maps = {}
+    if previous_catalog_path.is_file():
+        previous_catalog = json.loads(
+            previous_catalog_path.read_text(encoding="utf-8")
+        )
+        previous_maps = {
+            int(map_record["mapId"]): map_record
+            for map_record in previous_catalog.get("maps", [])
+        }
+    design_path = OUTPUT_ROOT / "world_map.json"
+    design_maps = {}
+    if design_path.is_file():
+        design = json.loads(design_path.read_text(encoding="utf-8"))
+        design_maps = {
+            int(map_record["mapId"]): map_record
+            for map_record in design.get("maps", [])
+        }
+    sprite_manifest = json.loads(
+        (EXPORT_ROOT / "sprite_library.json").read_text(encoding="utf-8")
+    )
+    library_by_id = {
+        int(sprite["spriteId"]): sprite
+        for sprite in sprite_manifest.get("sprites", [])
+    }
 
     entities_by_map = defaultdict(list)
     for row in entity_rows:
@@ -404,14 +428,19 @@ def main():
         sprite_id = int(entity["sprite_resource_id"])
         sprite_rows[sprite_id].append(entity)
 
-    sprite_files = defaultdict(list)
-    for path in sorted(OBJECTS_ROOT.glob("sprite_*.png")):
-        match = SPRITE_FILE_PATTERN.match(path.name)
-        if match:
-            sprite_files[int(match.group(1))].append(path.name)
-
     sprites = []
-    for sprite_id in sorted(set(sprite_rows) | set(sprite_files)):
+    for sprite_id in sorted(set(sprite_rows)):
+        library_sprite = library_by_id.get(sprite_id, {})
+        sprite_files = sorted(
+            {
+                item["file"]
+                for item in (
+                    *library_sprite.get("groups", []),
+                    *library_sprite.get("components", []),
+                )
+                if item.get("file")
+            }
+        )
         label, description, confidence = SPRITE_DESCRIPTIONS.get(
             sprite_id,
             (f"精灵资源 {sprite_id}", "未添加人工视觉描述。", "low"),
@@ -422,9 +451,9 @@ def main():
             "label": label,
             "visualDescription": description,
             "confidence": confidence,
-            "overviewImage": object_url(f"sprite_{sprite_id:03d}_overview.png"),
-            "files": [object_url(filename) for filename in sprite_files.get(sprite_id, [])],
-            "fileCount": len(sprite_files.get(sprite_id, [])),
+            "overviewImage": object_url(sprite_files[0]) if sprite_files else None,
+            "files": [object_url(filename) for filename in sprite_files],
+            "fileCount": len(sprite_files),
             "mapInstanceCount": len(used_rows),
             "mapCount": len({int(row["map_resource_id"]) for row in used_rows}),
         })
@@ -437,7 +466,12 @@ def main():
         path = image_by_id.get(map_id)
         if path is None:
             raise FileNotFoundError(f"Missing full map preview for map_{map_id:03d}.")
-        category = map_category(path)
+        old_record = previous_maps.get(map_id, {})
+        design_record = design_maps.get(map_id, {})
+        category = old_record.get(
+            "sourceCategory",
+            design_record.get("category", map_category(path)),
+        )
         excluded_reason = (
             "maps 根目录散图：按需求暂不用于世界地图"
             if category == "_未分类根目录"
@@ -445,6 +479,8 @@ def main():
             if category == "地府"
             else None
         )
+        if old_record.get("includedInWorld") is not None:
+            excluded_reason = old_record.get("exclusionReason")
         terrain, vegetation = terrain_labels(category)
         map_entities = sorted(
             entities_by_map.get(map_id, []),
@@ -483,19 +519,30 @@ def main():
                 "sourceYUnits": number(entity["source_y_units"]),
                 "renderXPx": number(entity["render_x_px"]),
                 "renderYPx": number(entity["render_y_px"]),
-                "frameFile": object_url(Path(frame_file).name) if frame_file else None,
+                "frameFile": object_url(frame_file) if frame_file else None,
                 "frameOriginXPx": number(entity["frame_origin_x_px"]),
                 "frameOriginYPx": number(entity["frame_origin_y_px"]),
                 "rawFields": json.loads(entity["raw_fields_json"]),
             })
+        image_folder = (
+            path.parent.name if path.parent != MAPS_ROOT else "_未分类根目录"
+        )
         map_record = {
             "mapId": map_id,
             "key": f"map_{map_id:03d}",
             "filename": path.name,
-            "image": image_url(category, path.name),
+            "image": image_url(image_folder, path.name),
+            "previewFile": path.relative_to(EXPORT_ROOT).as_posix(),
             "sourceCategory": category,
-            "includedInWorld": excluded_reason is None,
+            "includedInWorld": old_record.get(
+                "includedInWorld", excluded_reason is None
+            ),
             "exclusionReason": excluded_reason,
+            "name": design_record.get("name", old_record.get("name", f"地图 {map_id}")),
+            "region": design_record.get("region", old_record.get("region", category)),
+            "nation": design_record.get("nation", old_record.get("nation", "")),
+            "kind": design_record.get("kind", old_record.get("kind", terrain)),
+            "category": design_record.get("category", old_record.get("category", vegetation)),
             "widthCells": int(row["width_cells"]),
             "heightCells": int(row["height_cells"]),
             "logicalCellUnits": int(row["logical_cell_units"]),
@@ -523,7 +570,7 @@ def main():
     OUTPUT_ROOT.joinpath("map_catalog.json").write_text(
         json.dumps({
             "schemaVersion": 1,
-            "source": "htol_export/images/map_index.csv + map_entities.csv",
+            "source": "htol_export/map_index.csv + map_entities.csv",
             "mapCount": len(maps),
             "mapObjectInstanceCount": sum(len(item["objects"]) for item in maps),
             "maps": maps,
@@ -533,13 +580,41 @@ def main():
     OUTPUT_ROOT.joinpath("object_catalog.json").write_text(
         json.dumps({
             "schemaVersion": 1,
-            "source": "htol_export/images/map_objects",
+            "source": "htol_export/map and sprite_library.json",
             "uniqueSpriteCount": len(sprites),
             "objectImageFileCount": sum(sprite["fileCount"] for sprite in sprites),
             "sprites": sprites,
         }, ensure_ascii=False, separators=(",", ":")),
         encoding="utf-8",
     )
+
+    if len(design_maps) == 1:
+        current_design = json.loads(design_path.read_text(encoding="utf-8"))
+        map_node = current_design["maps"][0]
+        catalog_map = map_by_id[int(map_node["mapId"])]
+        for field in (
+            "image",
+            "name",
+            "region",
+            "nation",
+            "kind",
+            "category",
+            "hasBuildings",
+            "buildingObjectCount",
+        ):
+            map_node[field] = catalog_map[field]
+        design_path.write_text(
+            json.dumps(current_design, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        print(json.dumps({
+            "maps": len(maps),
+            "mapObjectInstances": sum(len(item["objects"]) for item in maps),
+            "spriteResources": len(sprites),
+            "objectImageFiles": sum(sprite["fileCount"] for sprite in sprites),
+            "worldMapPreserved": True,
+        }, ensure_ascii=False))
+        return
 
     field_maps = [
         record for record in maps

@@ -53,6 +53,25 @@ MANUAL_NAMES: dict[int, str] = {
 
 MANUAL_CATEGORIES: dict[int, str] = {}
 DUPLICATE_SPRITE_IDS = {285: 83, 301: 299, 302: 300}
+MAP_UNIT_SPRITE_IDS = {109, 159, 160}
+
+ASSET_FOLDERS = {
+    "图标": "icon",
+    "UI相关": "icon",
+    "技能特效": "effect",
+    "角色": "player",
+    "坐骑": "player",
+    "怪物": "monster",
+    "中立生物": "monster",
+    "宠物": "pet",
+    "NPC": "npc",
+    "采集物": "unit",
+    "其他": "other",
+    "未分类": "other",
+    "原画": "other",
+    "多分类": "other",
+    "无用图片": "other",
+}
 
 ROLE_SPRITE_CONFIGS = {
     74: ("先锋", "剑", "斧"),
@@ -122,6 +141,20 @@ def sprite_category(sprite_id: int, animation_group: int | None = None) -> str:
     if sprite_id == 38 and animation_group == 1:
         return "其他"
     return MANUAL_CATEGORIES.get(sprite_id, "未分类")
+
+
+def asset_folder(
+    sprite_id: int,
+    category: str,
+    is_map_sprite: bool = False,
+) -> str:
+    if category == "采集物" or sprite_id in MAP_UNIT_SPRITE_IDS:
+        return "unit"
+    if category in {"图标", "UI相关", "技能特效", "角色", "坐骑", "怪物", "中立生物", "宠物", "NPC"}:
+        return ASSET_FOLDERS[category]
+    if is_map_sprite:
+        return "map"
+    return ASSET_FOLDERS.get(category, "other")
 
 
 def sprite_name(

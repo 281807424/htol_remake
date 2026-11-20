@@ -3,8 +3,12 @@ import { extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const projectRoot = fileURLToPath(new URL('.', import.meta.url));
-const exportImageRoot = resolve(projectRoot, '..', 'htol_export', 'images');
-const runtimeRoot = resolve(exportImageRoot, 'demo_runtime');
+const exportRoot = resolve(projectRoot, '..', 'htol_export');
+const mapRoot = resolve(exportRoot, 'map');
+const tiledMapRoot = resolve(mapRoot, 'tiled');
+const tilesetRoot = resolve(mapRoot, 'tilesets');
+const collisionRoot = resolve(mapRoot, 'collision');
+const runtimeRoot = resolve(exportRoot, 'other', 'demo_runtime');
 const mimeTypes = {
   '.json': 'application/json; charset=utf-8',
   '.png': 'image/png',
@@ -13,10 +17,10 @@ const mimeTypes = {
 
 async function loadRuntimeMap(mapName) {
   if (!/^map_\d{3}\.tmj$/.test(mapName)) throw new Error(`Invalid map asset path: ${mapName}`);
-  const mapPath = resolve(exportImageRoot, 'phaser', 'maps', mapName);
+  const mapPath = resolve(tiledMapRoot, mapName);
   const map = JSON.parse(await readFile(mapPath, 'utf8'));
   map.tilesets = await Promise.all((map.tilesets || []).map(async (tileset) => {
-    const tilesetPath = resolve(exportImageRoot, 'phaser', 'maps', tileset.source);
+    const tilesetPath = resolve(tiledMapRoot, tileset.source);
     const definition = JSON.parse(await readFile(tilesetPath, 'utf8'));
     return { ...definition, firstgid: tileset.firstgid };
   }));
@@ -25,9 +29,9 @@ async function loadRuntimeMap(mapName) {
 
 function exportedAssets() {
   const routeRoots = [
-    ['/assets/collision/', resolve(exportImageRoot, 'map_collision')],
-    ['/assets/sprite_library/', resolve(exportImageRoot, 'sprite_library')],
-    ['/assets/tilesets/', resolve(exportImageRoot, 'phaser', 'maps', 'tilesets')],
+    ['/assets/collision/', collisionRoot],
+    ['/assets/tilesets/', tilesetRoot],
+    ['/assets/', exportRoot],
   ];
 
   return {
@@ -97,13 +101,13 @@ function exportedAssets() {
         });
         await addFile(
           `assets/collision/${mapName}.json`,
-          resolve(exportImageRoot, 'map_collision', `${mapName}.json`),
+          resolve(collisionRoot, `${mapName}.json`),
         );
         for (const tileset of map.tilesets) {
           const imageName = tileset.image.split(/[\\/]/).pop();
           await addFile(
             `assets/tilesets/${imageName}`,
-            resolve(exportImageRoot, 'phaser', 'maps', 'tilesets', imageName),
+            resolve(tilesetRoot, imageName),
           );
         }
       }
@@ -111,13 +115,13 @@ function exportedAssets() {
         if ([74, 75, 76].includes(sprite.spriteId)) continue;
         await addFile(
           `assets/${sprite.file}`,
-          resolve(exportImageRoot, sprite.file),
+          resolve(exportRoot, sprite.file),
         );
       }
       for (const character of Object.values(manifest.aoCharacters)) {
         await addFile(
           `assets/${character.componentAtlasFile}`,
-          resolve(exportImageRoot, character.componentAtlasFile),
+          resolve(exportRoot, character.componentAtlasFile),
         );
       }
     },

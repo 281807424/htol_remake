@@ -1,0 +1,31 @@
+{
+  "columns": 16,
+  "image": "sprite_213_palette_0_tiles.png",
+  "imageheight": 324,
+  "imagewidth": 576,
+  "margin": 0,
+  "name": "sprite_213_palette_0_tiles",
+  "spacing": 0,
+  "tilecount": 144,
+  "tiledversion": "1.10.2",
+  "tileheight": 36,
+  "tileoffset": {
+    "x": 0,
+    "y": 0
+  },
+  "tilewidth": 36,
+  "type": "tileset",
+  "version": "1.10",
+  "properties": [
+    {
+      "name": "spriteId",
+      "type": "int",
+      "value": 213
+    },
+    {
+      "name": "paletteIndex",
+      "type": "int",
+      "value": 0
+    }
+  ]
+}

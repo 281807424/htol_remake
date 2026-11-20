@@ -2,14 +2,13 @@ import { createServer } from "node:http";
 import { execFile } from "node:child_process";
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { dirname, join, resolve } from "node:path";
+import { dirname, join, resolve, sep } from "node:path";
 import { tmpdir } from "node:os";
 import { promisify } from "node:util";
 
 const directory = dirname(fileURLToPath(import.meta.url));
-const imagesDirectory = resolve(directory, "..", "htol_export", "images");
-const mapsDirectory = join(imagesDirectory, "maps");
-const objectsDirectory = join(imagesDirectory, "map_objects");
+const exportDirectory = resolve(directory, "..", "htol_export");
+const mapsDirectory = join(exportDirectory, "map", "preview");
 const designFile = join(directory, "world_map.json");
 const placementsFile = resolve(directory, "..", "map_placement_editor", "map_placements.json");
 const thumbnailScript = join(directory, "thumbnail_cache.py");
@@ -22,8 +21,8 @@ const staticFiles = new Map([
   ["/layout.js", ["layout.js", "text/javascript; charset=utf-8"]],
   ["/styles.css", ["styles.css", "text/css; charset=utf-8"]],
 ]);
-const mapFilenamePattern = /^map_\d+_full_preview\.png$/;
-const objectFilenamePattern = /^sprite_\d+_(?:overview|anim_\d+_frame_\d+)\.png$/;
+const mapFilenamePattern = /^map_\d+_palette_0_preview\.png$/;
+const objectFilenamePattern = /^(?:map|unit|monster|player|effect|icon|pet|npc|other)\/(?:[^/]+\/)*sprite-\d+-.+\.png$/;
 const maxDesignBytes = 8 * 1024 * 1024;
 const maxTeleportLinkDistance = 220;
 let thumbnailPromise;
@@ -233,7 +232,7 @@ async function ensureThumbnailCache() {
         thumbnailScript,
         designFile,
         join(directory, "map_catalog.json"),
-        mapsDirectory,
+        exportDirectory,
         thumbnailDirectory,
       ],
       { maxBuffer: 1024 * 1024, timeout: 120000 },
@@ -349,8 +348,13 @@ const server = createServer(async (request, response) => {
           send(response, 404, "text/plain; charset=utf-8", "Not found");
           return;
         }
+        const objectPath = resolve(exportDirectory, ...filename.split("/"));
+        if (!objectPath.startsWith(`${exportDirectory}${sep}`)) {
+          send(response, 404, "text/plain; charset=utf-8", "Not found");
+          return;
+        }
         try {
-          send(response, 200, "image/png", await readFile(join(objectsDirectory, filename)));
+          send(response, 200, "image/png", await readFile(objectPath));
         } catch (error) {
           if (error.code === "ENOENT") {
             send(response, 404, "text/plain; charset=utf-8", "Not found");

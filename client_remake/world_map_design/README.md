@@ -27,7 +27,7 @@ node server.mjs
 - `map_catalog.json`：全部 155 张地图预览/分类/规格、12,200 条地图物件实例的精灵、动画组、源坐标、渲染坐标及原始字段。根目录散图与地府地图保留在档案中并标记为未纳入世界。
 - `object_catalog.json`：57 种地图物件精灵的视觉说明、图鉴预览、逐地图实例数量以及 1,329 张 PNG 的完整文件索引。
 - `thumbnail_cache.py`：为当前世界地图生成并缓存小尺寸地图预览；使用 Pillow。
-- `build_catalog.py`：从 `htol_export/images` 下的地图目录和 CSV 导出数据重建地图/物件清单及初始世界布局；运行 `python build_catalog.py` 后，再运行 `python arrange_world.py`，按地图地貌、植被与传送点关系生成自由布局和连接。
+- `build_catalog.py`：从 `htol_export/map` 下的地图资源及导出根目录 CSV 重建地图/物件清单；当前世界地图布局只保留 demo 使用的首张地图。运行 `python build_catalog.py` 可刷新清单与地图预览路径。
 - `arrange_world.py`：只更新 `world_map.json`，读取地图档案和 `map_placement_editor/map_placements.json`，在传送点距离范围内为传送点建立方向相对优先的一对一连接；同一对地图最多连接一次，避免连线穿过其他地图，并生成非网格化布局；不会修改传送点布置源文件。
 - `layout.js`：根据设计器当前连接和传送点方向计算地图排版，不会重建或修改连接。
 

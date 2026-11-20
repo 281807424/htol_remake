@@ -13,7 +13,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent
 FONT_PATH = ROOT / "raw_resources" / "set_3" / "resource_000.bin"
 INLINE_GLYPHS_PATH = ROOT / "raw_resources" / "set_3" / "resource_001.bin"
-IMAGE_PATH = ROOT / "images" / "fonts" / "resource_3_font_atlas.png"
+IMAGE_PATH = ROOT / "other" / "fonts" / "resource_3_font_atlas.png"
 CSV_PATH = ROOT / "text" / "resource_3_font_glyphs.csv"
 INLINE_CSV_PATH = ROOT / "text" / "resource_3_inline_glyphs.csv"
 

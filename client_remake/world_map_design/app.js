@@ -253,10 +253,9 @@ function renderRegionLegend() {
 function renderRegionLabels() {
   regionLabels.replaceChildren();
   for (const [index, region] of design.regions.entries()) {
-    const position = REGION_LABEL_POSITIONS[region.id] ?? {
-      x: 16,
-      y: 16 + index * 34,
-    };
+    const position = design.maps.length === 1
+      ? { x: design.maps[0].x, y: design.maps[0].y }
+      : REGION_LABEL_POSITIONS[region.id] ?? { x: 16, y: 16 + index * 34 };
     const label = document.createElement("div");
     label.className = `region-label region-${region.id === "皇城" ? "capital" : "country"}`;
     label.textContent = region.label;
@@ -500,6 +499,12 @@ function renderMapNodes() {
 }
 
 function renderWorldSummary() {
+  if (design.maps.length === 1) {
+    const map = design.maps[0];
+    const teleportCount = teleportsByMapId.get(map.mapId)?.length ?? 0;
+    worldSummary.textContent = `Demo 首张地图 ${map.key} · ${teleportCount} 个传送点`;
+    return;
+  }
   const { countryMapCounts, imperialCityMapCount } = design.summary;
   const maximumTeleports = Math.max(0, ...[...teleportsByMapId.values()].map((items) => items.length));
   design.summary.connectionCount = design.connections.length;
@@ -869,9 +874,10 @@ async function start() {
     teleportsByMapId = new Map();
     for (const entry of placedTeleports.maps) {
       const map = mapsById.get(entry.mapId);
-      if (!map || !Array.isArray(entry.teleports)) {
+      if (!Array.isArray(entry.teleports)) {
         throw new Error(`地图 ${entry.mapId} 的传送点数据无效`);
       }
+      if (!map) continue;
       for (const teleport of entry.teleports) {
         if (
           !teleport ||

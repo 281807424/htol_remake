@@ -93,7 +93,7 @@ test('AO component rotations and reflections match the original transform table'
 test('all exported character frames render for every original appearance slot', async () => {
   const runtime = JSON.parse(
     await readFile(
-      new URL('../../htol_export/images/weapon_appearance_export/ao_runtime.json', import.meta.url),
+      new URL('../../htol_export/player/ao_runtime.json', import.meta.url),
       'utf8',
     ),
   );

@@ -3,11 +3,12 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const exportRoot = resolve(projectRoot, '..', 'htol_export', 'images', 'phaser');
-const exportImageRoot = resolve(projectRoot, '..', 'htol_export', 'images');
-const collisionOutputRoot = resolve(exportImageRoot, 'map_collision');
-const runtimeRoot = resolve(exportImageRoot, 'demo_runtime');
-const spriteLibraryRoot = resolve(exportImageRoot, 'sprite_library');
+const exportRoot = resolve(projectRoot, '..', 'htol_export');
+const mapRoot = resolve(exportRoot, 'map');
+const tiledMapRoot = resolve(mapRoot, 'tiled');
+const collisionOutputRoot = resolve(mapRoot, 'collision');
+const runtimeRoot = resolve(exportRoot, 'other', 'demo_runtime');
+const spriteLibraryRoot = exportRoot;
 const spriteLibraryPaths = new Set();
 const spriteLibraryPathsByName = new Map();
 async function indexSpriteLibraryFiles(directory, relativeDirectory = '') {
@@ -25,7 +26,9 @@ async function indexSpriteLibraryFiles(directory, relativeDirectory = '') {
     }
   }
 }
-await indexSpriteLibraryFiles(spriteLibraryRoot);
+for (const category of ['map', 'unit', 'monster', 'player', 'effect', 'icon', 'pet', 'npc', 'other']) {
+  await indexSpriteLibraryFiles(resolve(spriteLibraryRoot, category), category);
+}
 
 function resolveSpriteLibraryPath(file) {
   if (spriteLibraryPaths.has(file)) return file;
@@ -50,16 +53,6 @@ const placements = JSON.parse(
 );
 const mapIds = worldMap.maps.map(({ mapId }) => mapId);
 const spriteIds = new Set([31, 32, 38, 74, 75, 76]);
-const spriteFileOverrides = new Map([
-  ['30:0', '技能特效/dynamic/sprite-030-爆裂术-00.png'],
-  ['31:0', '技能特效/dynamic/sprite-031-陨石术-00.png'],
-  ['32:0', '技能特效/dynamic/sprite-032-落雷术-00.png'],
-  ['32:1', '技能特效/dynamic/sprite-032-雷电束缚-01.png'],
-  ['32:6', '技能特效/dynamic/sprite-032-冰冻之环-06.png'],
-  ['32:7', '技能特效/dynamic/sprite-032-冰冻之环被控-07.png'],
-  ['32:8', '技能特效/dynamic/sprite-032-光盾-08.png'],
-  ['33:0', '技能特效/dynamic/sprite-033-天火术-00.png'],
-]);
 const collisionCellSize = 36;
 const blockingAttribute = 23;
 
@@ -72,7 +65,7 @@ function parseCsv(content) {
   });
 }
 
-const mapIndexRows = parseCsv(await readFile(resolve(exportImageRoot, 'map_index.csv'), 'utf8'));
+const mapIndexRows = parseCsv(await readFile(resolve(exportRoot, 'map_index.csv'), 'utf8'));
 const placementsByMapId = new Map();
 for (const mapPlacement of placements.maps) {
   if (placementsByMapId.has(mapPlacement.mapId)) {
@@ -81,10 +74,11 @@ for (const mapPlacement of placements.maps) {
   placementsByMapId.set(mapPlacement.mapId, mapPlacement);
   for (const monster of mapPlacement.monsters) spriteIds.add(monster.spriteId);
 }
+const availableMapIds = new Set(mapIndexRows.map((row) => Number(row.map_resource_id)));
 if (
   placements.schemaVersion !== 1 ||
   mapIds.some((mapId) => !placementsByMapId.has(mapId)) ||
-  placements.maps.some(({ mapId }) => !mapIds.includes(mapId))
+  placements.maps.some(({ mapId }) => !availableMapIds.has(mapId))
 ) {
   throw new Error('map_placements.json 格式无效或缺少地图布置');
 }
@@ -145,7 +139,7 @@ for (const row of mapIndexRows) {
   });
 }
 
-const tileCsv = (await readFile(resolve(exportImageRoot, 'map_tiles.csv'), 'utf8')).replace(/^\uFEFF/, '');
+const tileCsv = (await readFile(resolve(exportRoot, 'map_tiles.csv'), 'utf8')).replace(/^\uFEFF/, '');
 const tileRows = parseCsv(tileCsv);
 for (const requiredColumn of ['map_resource_id', 'cell_x', 'cell_y', 'attribute_byte']) {
   if (!tileRows.length || !(requiredColumn in tileRows[0])) {
@@ -189,7 +183,7 @@ for (const collisionData of collisionDataByMap.values()) {
 
 for (const mapId of mapIds) {
   const mapName = `map_${String(mapId).padStart(3, '0')}`;
-  const sourcePath = resolve(exportRoot, 'maps', `${mapName}.tmj`);
+  const sourcePath = resolve(tiledMapRoot, `${mapName}.tmj`);
   const map = JSON.parse(await readFile(sourcePath, 'utf8'));
   const collisionData = collisionDataByMap.get(mapId);
   if (collisionData.width !== map.width || collisionData.height !== map.height) {
@@ -206,8 +200,8 @@ for (const mapId of mapIds) {
   }
 }
 
-if (mapIds.length !== 124 || new Set(mapIds).size !== mapIds.length || !mapIds.includes(13)) {
-  throw new Error('world_map.json 必须包含唯一的 124 张地图，并将 map_013 用作玄月国主城。');
+if (mapIds.length !== 1 || mapIds[0] !== 13) {
+  throw new Error('world_map.json 必须只包含 demo 出场地图 map_013。');
 }
 
 const library = JSON.parse(
@@ -218,7 +212,7 @@ if (library.format !== 'htol-readable-sprite-library' || library.version !== 1) 
 }
 const aoRuntime = JSON.parse(
   await readFile(
-    resolve(exportImageRoot, 'weapon_appearance_export', 'ao_runtime.json'),
+    resolve(exportRoot, 'player', 'ao_runtime.json'),
     'utf8',
   ),
 );
@@ -231,35 +225,6 @@ if (
 }
 const aoCharacters = aoRuntime.characters;
 const libraryById = new Map(library.sprites.map((sprite) => [sprite.spriteId, sprite]));
-const entityCategories = new Set(['怪物', 'NPC']);
-const ambientEntityGroupKeys = new Set();
-let ambientEntityCatalog = library.sprites.flatMap((sprite) => {
-  const categories = [...new Set(
-    sprite.groups
-      .filter((group) => entityCategories.has(group.category))
-      .map((group) => group.category),
-  )];
-  return categories.map((category) => {
-    const groups = sprite.groups
-      .filter((group) => group.category === category)
-      .sort((left, right) => left.animationGroup - right.animationGroup);
-    if (groups.some((group) => (
-      group.outputKind !== 'spritesheet' &&
-      !(group.outputKind === 'image' && group.frameCount === 1)
-    ))) {
-      throw new Error(`${category} ${sprite.name} 包含不支持的动画格式`);
-    }
-    if (category === 'NPC' && groups.length !== 1) {
-      throw new Error(`NPC ${sprite.name} 必须且只能有一个动画组`);
-    }
-    return {
-      spriteId: sprite.spriteId,
-      name: sprite.name,
-      category,
-      animationGroups: groups.map((group) => group.animationGroup),
-    };
-  });
-});
 const skillEffectSpriteIds = new Set(
   library.sprites
     .filter((sprite) => sprite.groups.some(
@@ -270,7 +235,7 @@ const skillEffectSpriteIds = new Set(
 const monsterGroupFileOverrides = new Map();
 for (const mapPlacement of placements.maps) {
   for (const monster of mapPlacement.monsters) {
-    const directory = `怪物/dynamic/${monster.actionCount}`;
+    const directory = `monster/dynamic/${monster.actionCount}`;
     const files = await readdir(resolve(spriteLibraryRoot, directory));
     for (const animationGroup of [0, 3]) {
       const prefix = `sprite-${String(monster.spriteId).padStart(3, '0')}-${monster.name}-`;
@@ -293,71 +258,10 @@ for (const mapPlacement of placements.maps) {
     }
   }
 }
-const ambientEntityFileOverrides = new Map();
-const availableAmbientEntities = [];
-for (const entity of ambientEntityCatalog) {
-  const sprite = libraryById.get(entity.spriteId);
-  const groupsByDisplayName = new Map();
-  let hasUnavailableFiles = false;
-  for (const animationGroup of entity.animationGroups) {
-    const group = sprite.groups.find(({ animationGroup: id }) => id === animationGroup);
-    const groups = groupsByDisplayName.get(group.displayName) ?? [];
-    groups.push(group);
-    groupsByDisplayName.set(group.displayName, groups);
-  }
-  for (const [displayName, groups] of groupsByDisplayName) {
-    const hasMissingFile = groups.some((group) => {
-      if (spriteLibraryPaths.has(group.file)) return false;
-      const filename = group.file.split('/').pop();
-      return (spriteLibraryPathsByName.get(filename) ?? []).length !== 1;
-    });
-    if (!hasMissingFile) continue;
-
-    const assetDirectory = groups[0].outputKind === 'image' ? '/static/' : '/dynamic/';
-    const prefix = `sprite-${String(entity.spriteId).padStart(3, '0')}-${displayName}-`;
-    const candidates = [...spriteLibraryPaths]
-      .filter((file) => (
-        file.includes(assetDirectory) &&
-        file.split('/').pop().startsWith(prefix)
-      ))
-      .sort((left, right) => {
-        const getActionIndex = (file) => Number(file.match(/-(\d+)[^-]*\.png$/i)?.[1]);
-        return getActionIndex(left) - getActionIndex(right);
-      });
-    if (!candidates.length) {
-      console.warn(
-        `跳过缺少图像文件的${entity.category} ${entity.name}（sprite ${entity.spriteId}）`,
-      );
-      hasUnavailableFiles = true;
-      continue;
-    }
-    if (candidates.length !== groups.length) {
-      throw new Error(
-        `${entity.category} ${displayName} 动画组与素材数量不匹配：${groups.length}/${candidates.length}`,
-      );
-    }
-    groups.forEach((group, index) => {
-      ambientEntityFileOverrides.set(
-        `${entity.spriteId}:${group.animationGroup}`,
-        candidates[index],
-      );
-    });
-  }
-  if (hasUnavailableFiles) continue;
-  for (const animationGroup of entity.animationGroups) {
-    ambientEntityGroupKeys.add(`${entity.spriteId}:${animationGroup}`);
-  }
-  availableAmbientEntities.push(entity);
-}
-ambientEntityCatalog = availableAmbientEntities;
-const ambientEntitySpriteIds = new Set(ambientEntityCatalog.map(({ spriteId }) => spriteId));
-const runtimeSpriteIds = new Set([
-  ...spriteIds,
-  ...skillEffectSpriteIds,
-  ...ambientEntitySpriteIds,
-]);
+const runtimeSpriteIds = new Set([...spriteIds, ...skillEffectSpriteIds]);
 const runtimeSprites = [];
 const tilesetSpriteIds = new Set();
+const tilesetFiles = new Map();
 for (const spriteId of [...runtimeSpriteIds].sort((a, b) => a - b)) {
   const sprite = libraryById.get(spriteId);
   if (!sprite) throw new Error(`sprite_library.json 缺少地图资源 sprite ${spriteId}`);
@@ -374,22 +278,11 @@ for (const spriteId of [...runtimeSpriteIds].sort((a, b) => a - b)) {
     }
     if (
       !spriteIds.has(spriteId) &&
-      !ambientEntityGroupKeys.has(`${spriteId}:${group.animationGroup}`) &&
       (group.category !== '技能特效' || group.outputKind !== 'spritesheet')
     ) {
       continue;
     }
-    const monsterGroupFile = monsterGroupFileOverrides.get(
-      `${spriteId}:${group.animationGroup}`,
-    );
-    const ambientEntityFile = ambientEntityFileOverrides.get(
-      `${spriteId}:${group.animationGroup}`,
-    );
     const textureKey = `sprite-${spriteId}-group-${group.animationGroup}`;
-    const spriteLibraryFile = monsterGroupFile ??
-      ambientEntityFile ??
-      spriteFileOverrides.get(`${spriteId}:${group.animationGroup}`) ??
-      group.file;
     runtimeSprites.push({
       spriteId,
       animationGroup: group.animationGroup,
@@ -404,7 +297,7 @@ for (const spriteId of [...runtimeSpriteIds].sort((a, b) => a - b)) {
       setStart: group.setStart,
       textureKey,
       textureKind: group.outputKind,
-      file: `sprite_library/${resolveSpriteLibraryPath(spriteLibraryFile)}`,
+      file: resolveSpriteLibraryPath(group.file),
       frameWidth: group.frameWidth,
       frameHeight: group.frameHeight,
       frameCount: group.frameCount,
@@ -431,47 +324,25 @@ for (const spriteId of [...runtimeSpriteIds].sort((a, b) => a - b)) {
 
 for (const mapId of mapIds) {
   const mapName = `map_${String(mapId).padStart(3, '0')}`;
-  const map = JSON.parse(await readFile(resolve(exportRoot, 'maps', `${mapName}.tmj`), 'utf8'));
+  const map = JSON.parse(await readFile(resolve(tiledMapRoot, `${mapName}.tmj`), 'utf8'));
   for (const tilesetReference of map.tilesets || []) {
     const definition = JSON.parse(
-      await readFile(resolve(exportRoot, 'maps', tilesetReference.source), 'utf8'),
+      await readFile(resolve(tiledMapRoot, tilesetReference.source), 'utf8'),
     );
-    const match = /^sprite_(\d+)_tiles$/.exec(definition.name);
+    const match = /^sprite_(\d+)_palette_0_tiles$/.exec(definition.name);
     if (!match) throw new Error(`${mapName} 引用了未知地形图集：${definition.name}`);
-    tilesetSpriteIds.add(Number(match[1]));
-  }
-}
-
-const ambientEntityMapIds = [81, 12];
-const ambientEntitiesByMap = new Map(
-  ambientEntityMapIds.map((mapId) => [mapId, []]),
-);
-if (ambientEntityMapIds.some((mapId) => !mapIds.includes(mapId))) {
-  throw new Error('怪物与 NPC 展示地图必须包含 map_081 和 map_012');
-}
-ambientEntityCatalog.forEach((entity, index) => {
-  ambientEntitiesByMap.get(ambientEntityMapIds[index % ambientEntityMapIds.length]).push(entity);
-});
-for (const [mapId, entities] of ambientEntitiesByMap) {
-  const collisionData = collisionDataByMap.get(mapId);
-  if (!collisionData) throw new Error(`地图 ${mapId} 缺少碰撞数据，无法放置怪物与 NPC`);
-  const openCells = [];
-  for (let y = 0; y < collisionData.height; y += 1) {
-    for (let x = 0; x < collisionData.width; x += 1) {
-      if (collisionData.attributes[y * collisionData.width + x] !== blockingAttribute) {
-        openCells.push({ x, y });
-      }
+    const spriteId = Number(match[1]);
+    const imageName = definition.image?.split(/[\\/]/).pop();
+    if (!imageName || !/^sprite_\d+_palette_0_tiles\.png$/.test(imageName)) {
+      throw new Error(`${mapName} 的地形图集图片路径无效：${definition.image}`);
     }
+    const previousImage = tilesetFiles.get(spriteId);
+    if (previousImage && previousImage !== imageName) {
+      throw new Error(`sprite ${spriteId} 对应多个地形图集文件`);
+    }
+    tilesetSpriteIds.add(spriteId);
+    tilesetFiles.set(spriteId, imageName);
   }
-  if (openCells.length < entities.length) {
-    throw new Error(`地图 ${mapId} 的非碰撞格不足以放置所有怪物与 NPC`);
-  }
-  entities.forEach((entity, index) => {
-    const cellIndex = Math.floor(((index + 0.5) * openCells.length) / entities.length);
-    const cell = openCells[cellIndex];
-    entity.x = (cell.x + 0.5) * collisionCellSize;
-    entity.y = (cell.y + 0.5) * collisionCellSize;
-  });
 }
 
 await writeFile(
@@ -479,10 +350,11 @@ await writeFile(
   `${JSON.stringify({
     mapIds,
     tilesetSpriteIds: [...tilesetSpriteIds].sort((left, right) => left - right),
+    tilesetFiles: Object.fromEntries(tilesetFiles),
     mapSpriteIds: [...spriteIds].sort((a, b) => a - b),
     sprites: runtimeSprites,
     aoCharacters,
-    startMapId: 13,
+    startMapId: mapIds[0],
     maps: worldMap.maps.map((map) => {
       const mapPlacement = placementsByMapId.get(map.mapId);
       return {
@@ -500,13 +372,14 @@ await writeFile(
           const connection = connectionsByTeleportId.get(teleport.id);
           return {
             ...teleport,
-            targetMapId: connection?.mapId ?? teleport.targetMapId ?? null,
+            targetMapId: connection?.mapId ??
+              (mapIds.includes(teleport.targetMapId) ? teleport.targetMapId : null),
             targetTeleportId: connection?.teleportId ?? null,
             connectionId: connection?.connectionId ?? null,
           };
         }),
         monsters: mapPlacement.monsters,
-        ambientEntities: ambientEntitiesByMap.get(map.mapId) ?? [],
+        ambientEntities: [],
       };
     }),
   }, null, 2)}\n`,

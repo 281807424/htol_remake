@@ -20,12 +20,12 @@ from sprite_library_taxonomy import role_animation_details
 
 
 ROOT = Path(__file__).resolve().parent
-IMAGE_ROOT = ROOT / "images"
-SPRITE_LIBRARY_ROOT = IMAGE_ROOT / "sprite_library"
+IMAGE_ROOT = ROOT
+SPRITE_LIBRARY_ROOT = ROOT
 ROLE_SPRITE_IDS = (74, 75, 76)
 TICK_MS = 50
-AO_RUNTIME_PATH = IMAGE_ROOT / "weapon_appearance_export" / "ao_runtime.json"
-AO_COMPONENT_ROOT = SPRITE_LIBRARY_ROOT / "角色" / "ao_components"
+AO_RUNTIME_PATH = IMAGE_ROOT / "player" / "ao_runtime.json"
+AO_COMPONENT_ROOT = IMAGE_ROOT / "player" / "ao_components"
 
 
 def _read_csv(path: Path) -> list[dict[str, str]]:
@@ -83,7 +83,7 @@ def _pack_component_atlas(sprite: Any) -> tuple[Image.Image, list[dict[str, int]
 
 
 def _load_appearance_slots(sprite_id: int) -> list[dict[str, Any]]:
-    manifest_path = IMAGE_ROOT / "weapon_appearance_export" / "manifest.json"
+    manifest_path = IMAGE_ROOT / "player" / "weapon_appearance_export" / "manifest.json"
     appearance_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     player = appearance_manifest.get("players", {}).get(str(sprite_id - 74))
     if player is None:
@@ -301,7 +301,7 @@ def _update_animation_indexes(
             row["frame_count"] = str(group["frameCount"])
             row["source_total_ticks"] = str(group["durationMs"] // TICK_MS)
             row["source_total_ms"] = str(group["durationMs"])
-            row["output_file"] = f"sprite_library/{group['file']}"
+            row["output_file"] = group["file"]
         _write_csv(path, rows)
 
 
@@ -343,7 +343,7 @@ def _update_asset_file_index(
                 "bound_max_y_px": str(offset_y + frame["height"]),
                 "width_px": str(frame["width"]),
                 "height_px": str(frame["height"]),
-                "file": f"sprite_library/{group['file']}",
+                "file": group["file"],
             }
         )
     _write_csv(path, rows)

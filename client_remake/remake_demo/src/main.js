@@ -102,7 +102,6 @@ class WorldScene extends Phaser.Scene {
       showFatalError(message);
     });
 
-    this.load.image('terrain-209', `${ASSET_ROOT}/tilesets/sprite_209_tiles.png`);
     for (const character of Object.values(window.htolAoCharacters)) {
       this.load.image(
         character.componentTextureKey,
@@ -132,7 +131,12 @@ class WorldScene extends Phaser.Scene {
       );
     }
     for (const spriteId of window.htolWorldTilesetSpriteIds) {
-      this.load.image(`terrain-${spriteId}`, `${ASSET_ROOT}/tilesets/sprite_${spriteId}_tiles.png`);
+      const imageName = window.htolWorldTilesetFiles[spriteId];
+      if (!imageName) throw new Error(`sprite ${spriteId} 缺少地形图集文件映射`);
+      this.load.image(
+        `terrain-${spriteId}`,
+        `${ASSET_ROOT}/tilesets/${imageName}`,
+      );
     }
   }
 
@@ -600,7 +604,7 @@ class WorldScene extends Phaser.Scene {
     this.mapId = String(mapId);
     const map = this.make.tilemap({ key: config.file });
     const tilesets = map.tilesets.map((tileset) => {
-      const match = /^sprite_(\d+)_tiles$/.exec(tileset.name);
+      const match = /^sprite_(\d+)_palette_0_tiles$/.exec(tileset.name);
       if (!match) throw new Error(`地图 ${config.name} 包含未知图集：${tileset.name}`);
       return map.addTilesetImage(
         tileset.name,
@@ -1337,6 +1341,10 @@ async function loadAssetManifest() {
     [74, 75, 76].some((spriteId) => !manifest.aoCharacters[String(spriteId)]) ||
     !Array.isArray(manifest.maps) ||
     !Array.isArray(manifest.tilesetSpriteIds) ||
+    !manifest.tilesetFiles ||
+    manifest.tilesetSpriteIds.some((spriteId) =>
+      !/^sprite_\d+_palette_0_tiles\.png$/.test(manifest.tilesetFiles[spriteId] || ''),
+    ) ||
     !Number.isInteger(manifest.startMapId) ||
     !manifest.maps.some(({ mapId }) => mapId === manifest.startMapId) ||
     manifest.maps.some((map) => (
@@ -1351,6 +1359,7 @@ async function loadAssetManifest() {
   START_MAP_ID = String(manifest.startMapId);
   window.htolMapSpriteIds = manifest.mapSpriteIds;
   window.htolWorldTilesetSpriteIds = manifest.tilesetSpriteIds;
+  window.htolWorldTilesetFiles = manifest.tilesetFiles;
   window.htolSprites = manifest.sprites;
   window.htolAoCharacters = manifest.aoCharacters;
 }

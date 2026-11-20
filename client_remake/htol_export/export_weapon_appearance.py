@@ -14,8 +14,8 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parent
-IMAGE_ROOT = ROOT / "images"
-OUTPUT_ROOT = IMAGE_ROOT / "weapon_appearance_export"
+IMAGE_ROOT = ROOT
+OUTPUT_ROOT = IMAGE_ROOT / "player" / "weapon_appearance_export"
 PLAYER_SPRITES = {0: 74, 1: 75, 2: 76}
 PLAYER_PALETTE_RECORD_RANGES = {0: (0, 10), 1: (11, 19), 2: (20, 28)}
 

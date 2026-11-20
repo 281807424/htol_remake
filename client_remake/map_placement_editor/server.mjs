@@ -1,14 +1,14 @@
 import { createServer } from "node:http";
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { dirname, join, resolve } from "node:path";
+import { dirname, join, resolve, sep } from "node:path";
 
 const directory = dirname(fileURLToPath(import.meta.url));
 const projectDirectory = resolve(directory, "..");
 const designDirectory = join(projectDirectory, "world_map_design");
-const imagesDirectory = join(projectDirectory, "htol_export", "images");
-const mapsDirectory = join(imagesDirectory, "maps");
-const monstersDirectory = join(imagesDirectory, "sprite_library", "怪物", "dynamic");
+const exportDirectory = join(projectDirectory, "htol_export");
+const mapsDirectory = join(exportDirectory, "map", "preview");
+const monstersDirectory = join(exportDirectory, "monster", "dynamic");
 const placementsFile = join(directory, "map_placements.json");
 const maxRequestBytes = 8 * 1024 * 1024;
 const directions = new Set(["东", "东北", "北", "西北", "西", "西南", "南", "东南"]);
@@ -104,17 +104,17 @@ async function loadCatalog() {
     readJson(join(designDirectory, "map_catalog.json")),
     readMonsterCatalog(),
   ]);
-  const mapsById = new Map(mapCatalog.maps.map((map) => [map.mapId, map]));
-  const worldMaps = world.maps.map((map) => {
-    const catalogMap = mapsById.get(map.mapId);
-    if (!catalogMap) throw new Error(`地图 ${map.mapId} 缺少素材档案。`);
+  const editableMaps = mapCatalog.maps.filter((map) => map.includedInWorld);
+  const mapsById = new Map(editableMaps.map((map) => [map.mapId, map]));
+  const worldMaps = editableMaps.map((catalogMap) => {
+    const map = world.maps.find((entry) => entry.mapId === catalogMap.mapId) ?? catalogMap;
     return {
-      mapId: map.mapId,
-      key: map.key,
-      name: map.name,
-      region: map.region,
-      kind: map.kind,
-      category: map.category,
+      mapId: catalogMap.mapId,
+      key: catalogMap.key,
+      name: map.name ?? catalogMap.name ?? catalogMap.key,
+      region: map.region ?? catalogMap.region ?? catalogMap.sourceCategory,
+      kind: map.kind ?? catalogMap.kind ?? catalogMap.ground,
+      category: map.category ?? catalogMap.category ?? catalogMap.vegetation,
       width: catalogMap.widthCells * catalogMap.renderCellPx,
       height: catalogMap.heightCells * catalogMap.renderCellPx,
       imageUrl: `/assets/maps/${map.mapId}`,
@@ -214,12 +214,17 @@ async function readPlacements() {
 async function serveMapImage(mapId, response) {
   const catalog = await getCatalog();
   const map = catalog.mapAssetsById.get(mapId);
-  if (!map || !/^map_\d+_full_preview\.png$/.test(map.filename)) {
+  if (!map || !/^map_\d+_palette_0_preview\.png$/.test(map.filename)) {
     send(response, 404, "text/plain; charset=utf-8", "Not found");
     return;
   }
-  const categoryPath = join(mapsDirectory, map.sourceCategory);
-  const imagePath = join(categoryPath, map.filename);
+  const relativePath = map.previewFile ??
+    join("map", "preview", map.sourceCategory, map.filename);
+  const imagePath = resolve(exportDirectory, relativePath);
+  if (!imagePath.startsWith(`${mapsDirectory}${sep}`) && !imagePath.startsWith(`${mapsDirectory}/`)) {
+    send(response, 404, "text/plain; charset=utf-8", "Not found");
+    return;
+  }
   try {
     send(response, 200, "image/png", await readFile(imagePath));
   } catch (error) {

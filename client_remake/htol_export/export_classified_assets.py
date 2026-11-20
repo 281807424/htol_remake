@@ -17,13 +17,12 @@ from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parent
-IMAGE_ROOT = ROOT / "images"
-LEGACY_SPRITES = IMAGE_ROOT / "sprites"
+IMAGE_ROOT = ROOT
+STAGING_ROOT = ROOT / "_staging"
+LEGACY_SPRITES = ROOT / "_legacy_sprites"
 JAR_PATH = ROOT.parent.parent / "server_remake" / "htol_local.jar"
 RAW_ROOT = ROOT / "raw_resources"
 MAP_TILE_SIZE = 36
-MAP_TILE_SOURCE_SIZE = 88
-MAP_TILE_SOURCE_OFFSET = 8
 
 CLASSIFICATIONS = {
     "ui_icons_candidate": ("界面图标（外观候选）", "visual-candidate"),
@@ -180,31 +179,6 @@ def output_category(
     return category, label, confidence, evidence
 
 
-def prepare_map_tile(
-    image: Image.Image, source: Path
-) -> tuple[Image.Image, tuple[int, int]]:
-    image = image.convert("RGBA")
-    if image.size == (MAP_TILE_SOURCE_SIZE, MAP_TILE_SOURCE_SIZE):
-        bounds = image.getchannel("A").getbbox()
-        if bounds is None:
-            return Image.new("RGBA", (MAP_TILE_SIZE, MAP_TILE_SIZE)), (0, 0)
-        expected_bounds = (
-            MAP_TILE_SOURCE_OFFSET,
-            MAP_TILE_SOURCE_OFFSET,
-            MAP_TILE_SOURCE_OFFSET + MAP_TILE_SIZE,
-            MAP_TILE_SOURCE_OFFSET + MAP_TILE_SIZE,
-        )
-        if bounds != expected_bounds:
-            raise ValueError(
-                f"{source}: unexpected map tile bounds {bounds}; "
-                f"expected {expected_bounds}"
-            )
-        return image.crop(bounds), (0, 0)
-    if image.size == (MAP_TILE_SIZE, MAP_TILE_SIZE):
-        return image, (0, 0)
-    raise ValueError(f"{source}: unexpected map tile size {image.size}")
-
-
 def decode_maps(
     archive: zipfile.ZipFile,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], set[int], set[int]]:
@@ -213,9 +187,7 @@ def decode_maps(
     objects: list[dict[str, Any]] = []
     map_tile_ids: set[int] = set()
     map_object_ids: set[int] = set()
-    map_output = IMAGE_ROOT / "maps"
     raw_map_root = RAW_ROOT / "maps"
-    map_output.mkdir(parents=True, exist_ok=True)
     raw_map_root.mkdir(parents=True, exist_ok=True)
 
     for resource_id in range(7, 162):
@@ -261,72 +233,17 @@ def decode_maps(
         raw_tile_sprite_id = tile_sets[0][0]
         tile_sprite_id = map_sprite_id(raw_tile_sprite_id)
         map_tile_ids.add(tile_sprite_id)
-        tile_index_path = (
-            LEGACY_SPRITES
-            / f"sprite_{tile_sprite_id:03d}"
-            / "component_index.csv"
-        )
-        if not tile_index_path.exists():
-            raise ValueError(
-                f"/{resource_id}: missing tile components for sprite {tile_sprite_id}"
-            )
-        component_rows = read_csv(tile_index_path)
-        available_components = {int(row["component"]) for row in component_rows}
-
         for values in blocks:
             if not values or values[0] >= 300 or values[0] < 0:
                 continue
             map_object_ids.add(map_sprite_id(values[0]))
 
-        map_path = map_output / f"map_{resource_id:03d}_base_preview.png"
-        canvas = Image.new(
-            "RGBA", (width * MAP_TILE_SIZE, height * MAP_TILE_SIZE), (0, 0, 0, 0)
-        )
-        component_cache: dict[
-            int, tuple[Image.Image, tuple[int, int]]
-        ] = {}
-        max_component = max((tile for tile in grid if tile != 255), default=-1)
-        if max_component >= 0 and max_component not in available_components:
-            raise ValueError(
-                f"/{resource_id}: tile index {max_component} is absent from sprite "
-                f"{tile_sprite_id}"
-            )
         for cell_index, tile_id in enumerate(grid):
-            if tile_id not in component_cache:
-                if tile_id != 255:
-                    component_file = (
-                        LEGACY_SPRITES
-                        / f"sprite_{tile_sprite_id:03d}"
-                        / "components"
-                        / f"component_{tile_id:04d}.png"
-                    )
-                    if not component_file.exists():
-                        raise ValueError(
-                            f"/{resource_id}: missing tile component {tile_id} "
-                            f"from sprite {tile_sprite_id}"
-                        )
-                    with Image.open(component_file) as image:
-                        component_cache[tile_id] = prepare_map_tile(
-                            image, component_file
-                        )
             x, y = cell_index % width, cell_index // width
             transform_shift = (3 - (cell_index & 3)) * 2
             tile_transform = (
                 packed_palette[cell_index >> 2] >> transform_shift
             ) & 0x03
-            if tile_id != 255:
-                tile, offset = component_cache[tile_id]
-                if tile_transform & 1:
-                    tile = tile.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
-                if tile_transform & 2:
-                    tile = tile.transpose(Image.Transpose.FLIP_TOP_BOTTOM)
-                canvas.alpha_composite(
-                    tile,
-                    (
-                        x * MAP_TILE_SIZE + offset[0],
-                        y * MAP_TILE_SIZE + offset[1],
-                    ),
-                )
             tiles.append(
                 {
                     "map_resource_id": resource_id,
@@ -343,8 +260,6 @@ def decode_maps(
                     "tile_atlas_sprite_id": tile_sprite_id,
                 }
             )
-        canvas.save(map_path, format="PNG", optimize=True)
-
         object_count = 0
         tile_record_count = 0
         for block_index, values in enumerate(blocks):
@@ -405,8 +320,10 @@ def decode_maps(
                 "object_record_count": object_count,
                 "empty_tile_count": sum(1 for value in grid if value == 255),
                 "attribute_record_bytes": len(attributes),
-                "base_preview": map_path.relative_to(IMAGE_ROOT).as_posix(),
-                "full_preview": f"maps/map_{resource_id:03d}_full_preview.png",
+                "base_preview": "",
+                "full_preview": (
+                    f"map/preview/map_{resource_id:03d}_palette_0_preview.png"
+                ),
                 "raw_records_pattern": f"../raw_resources/maps/map_{resource_id:03d}_record_NNN.bin",
                 "map_name": "",
                 "map_name_status": "not present in client resource record",
@@ -502,7 +419,7 @@ def copy_asset(
     frame_index: int | str = "",
     metadata: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    destination_dir = IMAGE_ROOT / category
+    destination_dir = STAGING_ROOT / category
     destination_dir.mkdir(parents=True, exist_ok=True)
     destination = destination_dir / destination_name
     shutil.copy2(source, destination)
@@ -549,7 +466,7 @@ def copy_animation_frame(
     frame: int,
     timing: dict[str, str],
 ) -> dict[str, Any]:
-    destination_dir = IMAGE_ROOT / category
+    destination_dir = STAGING_ROOT / category
     destination_dir.mkdir(parents=True, exist_ok=True)
     destination = destination_dir / destination_name
     with Image.open(source) as opened:
@@ -681,7 +598,7 @@ def flatten_sprite_assets(
                 frame_count += 1
             animation_count = len(animation_rows)
             components_dir = source_dir / "components"
-            if components_dir.exists():
+            if components_dir.exists() and sprite_id not in map_tile_ids:
                 for path in sorted(components_dir.glob("*.png")):
                     component = re.search(r"component_(\d+)", path.stem)
                     component_id = int(component.group(1)) if component else ""
@@ -704,6 +621,8 @@ def flatten_sprite_assets(
                 ("components_overview.png", "component_overview"),
             ):
                 path = source_dir / overview_name
+                if sprite_id in map_tile_ids and kind == "component_overview":
+                    continue
                 if path.exists():
                     current_files.append(
                         copy_asset(
@@ -717,7 +636,9 @@ def flatten_sprite_assets(
 
         payload_bytes = int(raw.get("payload_bytes", "0") or 0)
         render_status = (
-            "rendered"
+            "atlas-only"
+            if sprite_id in map_tile_ids
+            else "rendered"
             if frame_count or component_count
             else "raw-only"
             if payload_bytes
@@ -757,7 +678,7 @@ def flatten_sprite_assets(
 
 
 def add_standalone_files(file_rows: list[dict[str, Any]]) -> None:
-    standalone = IMAGE_ROOT / "standalone"
+    standalone = IMAGE_ROOT / "icon"
     if not standalone.exists():
         return
     for path in sorted(standalone.iterdir()):
@@ -781,41 +702,27 @@ def add_standalone_files(file_rows: list[dict[str, Any]]) -> None:
                     "bound_max_y_px": "",
                     "width_px": width,
                     "height_px": height,
-                    "file": f"standalone/{path.name}",
-                    "source_file": f"images/standalone/{path.name}",
+                    "file": f"icon/{path.name}",
+                    "source_file": f"icon/{path.name}",
                 }
             )
 
 
-def add_map_preview_files(
-    file_rows: list[dict[str, Any]], map_index: list[dict[str, Any]]
-) -> None:
-    for row in map_index:
-        path = IMAGE_ROOT / row["base_preview"]
-        with Image.open(path) as image:
-            width, height = image.size
-        file_rows.append(
-            {
-                "file_kind": "map_base_preview_unpaletted",
-                "sprite_id": row["tile_atlas_sprite_id"],
-                "category": "maps",
-                "animation_group": "",
-                "frame_index": "",
-                "component_id": "",
-                "delay_ticks": "",
-                "delay_ms": "",
-                "origin_x_px": "",
-                "origin_y_px": "",
-                "bound_min_x_px": "",
-                "bound_min_y_px": "",
-                "bound_max_x_px": "",
-                "bound_max_y_px": "",
-                "width_px": width,
-                "height_px": height,
-                "file": row["base_preview"],
-                "source_file": f"../../server_remake/htol_local.jar!/{row['map_resource_id']}",
-            }
-        )
+def remove_tile_component_images(sprite_ids: set[int]) -> int:
+    tile_image_root = STAGING_ROOT / "map_tiles"
+    if not tile_image_root.is_dir():
+        return 0
+
+    removed = 0
+    for sprite_id in sprite_ids:
+        for pattern in (
+            f"sprite_{sprite_id:03d}_component_*.png",
+            f"sprite_{sprite_id:03d}_components_overview.png",
+        ):
+            for path in tile_image_root.glob(pattern):
+                path.unlink()
+                removed += 1
+    return removed
 
 
 def write_animation_groups(catalog_rows: list[dict[str, Any]]) -> None:
@@ -887,7 +794,7 @@ def main() -> None:
     parser.add_argument(
         "--remove-legacy",
         action="store_true",
-        help="remove images/sprites after all flat copies and indexes are written",
+        help="remove _legacy_sprites after all staged copies and indexes are written",
     )
     args = parser.parse_args()
 
@@ -911,7 +818,6 @@ def main() -> None:
     catalog_rows, file_rows = flatten_sprite_assets(
         resource_rows, map_tile_ids, map_object_ids, palette_sprites
     )
-    add_map_preview_files(file_rows, map_index)
     add_standalone_files(file_rows)
     write_animation_groups(catalog_rows)
 
@@ -1036,6 +942,7 @@ def main() -> None:
         ],
         palette_rows,
     )
+    removed_tile_images = remove_tile_component_images(map_tile_ids)
     print(
         json.dumps(
             {
@@ -1054,6 +961,7 @@ def main() -> None:
                 "map_cells": len(map_tiles),
                 "map_objects": len(map_objects),
                 "map_tile_sprites": sorted(map_tile_ids),
+                "removed_tile_component_images": removed_tile_images,
                 "map_object_sprites": sorted(map_object_ids),
                 "palette_mapping_rows": len(palette_rows),
             },
@@ -1061,7 +969,7 @@ def main() -> None:
             indent=2,
         )
     )
-    if args.remove_legacy:
+    if args.remove_legacy and LEGACY_SPRITES.exists():
         shutil.rmtree(LEGACY_SPRITES)
 
 

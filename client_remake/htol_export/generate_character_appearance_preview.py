@@ -13,10 +13,11 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 ROOT = Path(__file__).resolve().parent
-IMAGE_ROOT = ROOT / "images"
-OUTPUT = IMAGE_ROOT / "weapon_appearance_export" / "character_weapon_preview.png"
+IMAGE_ROOT = ROOT
+OUTPUT = IMAGE_ROOT / "player" / "weapon_appearance_export" / "character_weapon_preview.png"
 MAPPING_OUTPUT = (
     IMAGE_ROOT
+    / "player"
     / "weapon_appearance_export"
     / "character_appearance_mapping_preview.png"
 )
@@ -47,6 +48,7 @@ class AoSprite:
     frames: list[tuple[int, int]]
     animations: list[tuple[int, int, int, int, int]]
     groups: list[tuple[int, int]]
+    palette_count: int
     bitmaps: list[Image.Image | None]
 
 
@@ -214,7 +216,9 @@ def decode_bitmap(
     return image
 
 
-def parse_ao_sprite(data: bytes, sprite_id: int) -> AoSprite:
+def parse_ao_sprite(
+    data: bytes, sprite_id: int, palette_index: int = 0
+) -> AoSprite:
     if len(data) < 8:
         raise ValueError(f"sprite {sprite_id} payload is shorter than its AO header")
 
@@ -344,6 +348,10 @@ def parse_ao_sprite(data: bytes, sprite_id: int) -> AoSprite:
         )
     if not palettes:
         raise ValueError(f"sprite {sprite_id} has no AO color palette")
+    if not 0 <= palette_index < len(palettes):
+        raise ValueError(
+            f"sprite {sprite_id} palette index {palette_index} is out of range"
+        )
 
     bitmaps: list[Image.Image | None] = []
     for component_id, (width, height) in enumerate(component_sizes):
@@ -355,7 +363,7 @@ def parse_ao_sprite(data: bytes, sprite_id: int) -> AoSprite:
                 chunks[component_id],
                 width,
                 height,
-                palettes[0],
+                palettes[palette_index],
                 compression,
             )
         )
@@ -372,6 +380,7 @@ def parse_ao_sprite(data: bytes, sprite_id: int) -> AoSprite:
         frames=frames,
         animations=animations,
         groups=groups,
+        palette_count=len(palettes),
         bitmaps=bitmaps,
     )
 
