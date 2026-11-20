@@ -736,7 +736,7 @@ def generate_preview() -> Path:
     footer_y = sheet_top + len(SPRITES) * card_height + (len(SPRITES) - 1) * row_gap
     draw.text(
         (margin, footer_y + 3),
-        "备注：客户端资源中武器差异已烘焙在整身动画组；肩甲未发现独立世界角色贴图层。",
+        "备注：角色帧以整身画面绘制；肩甲/背饰的装备外观映射尚未确认。",
         font=subtitle_font,
         fill=TEXT_COLOR,
     )

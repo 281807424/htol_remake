@@ -1,0 +1,87 @@
+# 浩天奇缘OL 原版菜单树（实机点击结构）
+# 字段: 层级	父菜单	序号	标签	来源	备注
+1	根	1	商城	PROTOCOL §141.1	MuMu 1600x900 y=143
+1	根	2	人物	PROTOCOL §141.1	y=219
+1	根	3	宠物	PROTOCOL §141.1	y=292
+1	根	4	社交	PROTOCOL §141.1	y=367
+1	根	5	任务	PROTOCOL §141.1	y=440
+1	根	6	导航	PROTOCOL §141.1	y=513
+1	根	7	系统	PROTOCOL §141.1	y=588
+1	根	8	副本	PROTOCOL §141.1	y=662
+1	根	0	返回	PROTOCOL §141.1	y=735
+2	社交	1	聊天记录	PROTOCOL §141.2	-
+2	社交	2	附近玩家	PROTOCOL §141.2	1952 type=1
+2	社交	3	个人关系	PROTOCOL §141.2	-
+2	社交	4	队伍相关	PROTOCOL §141.2	-
+2	社交	5	帮派相关	PROTOCOL §141.2	-
+2	社交	6	邮件系统	PROTOCOL §141.2	2403/2413
+2	社交	7	游戏排行	PROTOCOL §141.2	2281+2283
+2	社交	0	返回菜单	PROTOCOL §141.2	-
+3	个人关系	1	好友名单	PROTOCOL §143.4	1952 type=2 可用
+3	个人关系	2	黑名手册	PROTOCOL §143.4	1952 type=3 可用
+3	个人关系	3	临时关系	PROTOCOL §143.4	客户端占位
+3	个人关系	4	婚姻关系	PROTOCOL §143.4	本服为 NPC 成亲 无真人列表
+3	个人关系	5	师徒关系	PROTOCOL §143.4	客户端占位
+3	个人关系	6	结拜关系	PROTOCOL §143.4	客户端占位
+3	个人关系	7	仇人关系	PROTOCOL §143.4	1952 type=4 可用
+3	帮派相关	1	成员信息	PROTOCOL §153.2	1001
+3	帮派相关	2	本帮信息	PROTOCOL §153.2	-
+3	帮派相关	3	管理帮派	PROTOCOL §153.2	3006 menuId=408
+3	帮派相关	4	查询帮派	PROTOCOL §153.2	844/845
+3	帮派相关	5	加入帮派	PROTOCOL §153.2	-
+3	帮派相关	6	退出帮派	PROTOCOL §153.2	-
+2	系统	1	系统设置	PROTOCOL §147.1	-
+2	系统	2	活动公告	PROTOCOL §147.1	2510/2200
+2	系统	3	提交问题	PROTOCOL §147.1	-
+2	系统	4	游戏帮助	PROTOCOL §147.1	-
+2	系统	5	脱离卡死	PROTOCOL §147.1	纯客户端功能 服务端不用做
+2	系统	6	重选角色	PROTOCOL §147.1	-
+2	系统	7	财产安全	PROTOCOL §147.1	2200
+2	系统	8	退出游戏	PROTOCOL §147.1	-
+2	副本	1	副本重置	PROTOCOL §133.2	客户端自带静态子菜单
+2	副本	2	进本必读	PROTOCOL §133.2	客户端自带静态子菜单
+2	副本	3	副本进度	PROTOCOL §133.2	客户端自带静态子菜单 服务端 2200
+2	人物	1	人物属性	strings pack1 id=23 + PROTOCOL §128	-
+2	人物	2	物品装备	strings pack1 id=24 + PROTOCOL §128	-
+2	人物	3	技能查看	strings pack1 id=25 + PROTOCOL §128	1220
+2	人物	4	快捷设置	strings pack1 id=26 + PROTOCOL §128	-
+2	人物	5	管家设置	strings pack1 id=27 + PROTOCOL §128	2701
+2	人物	6	装备改造	strings pack1 id=28 + PROTOCOL §128	3006 menuId=271
+2	人物	7	人物称号	strings pack1 id=29 + PROTOCOL §128	2600/2601
+2	人物	8	游戏排行	strings pack1 id=30 + PROTOCOL §128	2281/2283
+2	人物	9	当前状态	strings pack1 id=31 + PROTOCOL §128	1240
+2	人物	10	随身功能	strings pack1 id=32 + PROTOCOL §128	3006 menuId=409
+2	商城	1	宝物商店	GameServer.java:10241	3003=470 元宝计价 shop6
+2	商城	2	道具商店	GameServer.java:10241	3003=471 金币计价 shop1
+2	商城	3	元宝查询	GameServer.java:10241	3003=472 932
+2	商城	4	返回	GameServer.java:10241	3003=439
+2	装备改造	1	强化装备	GameServer.java:10234	3003=430
+2	装备改造	2	提纯背包装备	GameServer.java:10234	3003=431
+2	装备改造	3	查看已穿戴	GameServer.java:10234	3003=432
+2	装备改造	4	返回	GameServer.java:10234	3003=439
+2	随身功能	1	随身杂货	GameServer.java:10258	3003=460
+2	随身功能	2	全部修理	GameServer.java:10258	3003=461
+2	随身功能	3	回城	GameServer.java:10258	3003=462
+2	随身功能	4	回收装备	GameServer.java:10258	3003=463
+2	随身功能	5	放生宠物	GameServer.java:10258	3003=464
+2	随身功能	6	返回	GameServer.java:10258	3003=439
+2	管理帮派	1	帮派任务	GameServer.java:10249	3003=480
+2	管理帮派	2	帮派技能	GameServer.java:10249	3003=481
+2	管理帮派	3	签到领帮贡	GameServer.java:10249	3003=482
+2	管理帮派	4	刷新成员	GameServer.java:10249	3003=483
+2	管理帮派	5	返回	GameServer.java:10249	3003=439
+2	导航	1	桃夭镇	GameServer.java:10245	3003=450
+2	导航	2	桃花小径	GameServer.java:10245	3003=451
+2	导航	3	立马坡	GameServer.java:10245	3003=452
+2	导航	4	定远城郊	GameServer.java:10245	3003=453
+2	导航	5	定远城	GameServer.java:10245	3003=454
+2	导航	6	返回	GameServer.java:10245	3003=439
+2	拍卖物品	1	查看物品	PROTOCOL §154.3	服务端
+2	拍卖物品	2	查看详情	PROTOCOL §154.3	服务端
+2	拍卖物品	3	出价竞拍	PROTOCOL §154.3	服务端
+2	拍卖物品	4	出一口价	PROTOCOL §154.3	服务端 两段式确认
+2	拍卖物品	5	名称排序	PROTOCOL §154.3	纯客户端
+2	拍卖物品	6	价格排序	PROTOCOL §154.3	纯客户端
+2	拍卖物品	7	时间排序	PROTOCOL §154.3	纯客户端
+2	拍卖物品	8	刷新列表	PROTOCOL §154.3	纯客户端
+2	拍卖物品	9	取消	PROTOCOL §154.3	-

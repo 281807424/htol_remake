@@ -1,0 +1,144 @@
+# 浩天奇缘OL 菜单码总表
+# 字段: 类别	码	名称	上行或触发	服务端处理与下行	来源	状态
+# 状态: 已实现=当前 GameServer.java 有分支; 协议记录=PROTOCOL.md 记录但源码未见分支; 客户端内置=客户端自带标签不需服务端下发
+3006请求菜单	271	装备改造	3006 menuId=271	3007 回 430强化装备/431提纯背包装备/432查看已穿戴/439返回	GameServer.java:10234	已实现
+3006请求菜单	415	商城	3006 menuId=415	3007 回 470宝物商店/471道具商店/472元宝查询/439返回	GameServer.java:10241	已实现
+3006请求菜单	402	导航	3006 menuId=402	3007 回 450桃夭镇/451桃花小径/452立马坡/453定远城郊/454定远城/439返回	GameServer.java:10245	已实现
+3006请求菜单	408	管理帮派	3006 menuId=408	有帮派回 480/481/482/483/439，无帮派只回 439	GameServer.java:10249	已实现
+3006请求菜单	409	随身功能	3006 menuId=409	3007 回 460随身杂货/461全部修理/462回城/463回收装备/464放生宠物/439返回	GameServer.java:10258	已实现
+3006请求菜单	430	强化槽位列表	3006 menuId=430	sendEquipUpgradeMenu 回 500+槽位	GameServer.java:10263	已实现
+3006请求菜单	default	未实现菜单码	任意未知 menuId	日志「未实现的菜单码」+ 3007 只回 439	GameServer.java:10264	已实现
+3003叶子	430	强化装备	3003 menuId=430	直接强化已穿戴最低星级装备 + 2200结果 + 950刷背包 + 3007收尾	PROTOCOL §131.6	已实现
+3003叶子	431	提纯背包装备	3003 menuId=431	salvageBag	GameServer.java:10378	已实现
+3003叶子	432	查看已穿戴	3003 menuId=432	showEquipped	GameServer.java:10381	已实现
+3003叶子	439	返回	3003 menuId=439	回一条 439 空菜单，客户端退出菜单层	GameServer.java:10280	已实现
+3003叶子	440	商店1	3003 menuId=440	sendShop(1,0)	GameServer.java:10398	已实现
+3003叶子	441	商店3	3003 menuId=441	sendShop(3,0)	GameServer.java:10401	已实现
+3003叶子	442	商店2	3003 menuId=442	sendShop(2,0)	GameServer.java:10404	已实现
+3003叶子	443	商店4	3003 menuId=443	sendShop(4,0)	GameServer.java:10407	已实现
+3003叶子	450	传送桃夭镇	3003 menuId=450	switchMap(0,300,400)	GameServer.java:10410	已实现
+3003叶子	451	传送桃花小径	3003 menuId=451	switchMap(1,60,384)	GameServer.java:10413	已实现
+3003叶子	452	传送立马坡	3003 menuId=452	switchMap(2,60,396)	GameServer.java:10416	已实现
+3003叶子	453	传送定远城郊	3003 menuId=453	switchMap(4,60,480)	GameServer.java:10419	已实现
+3003叶子	454	传送定远城	3003 menuId=454	switchMap(5,60,384)	GameServer.java:10422	已实现
+3003叶子	460	随身杂货	3003 menuId=460	sendShop(1,0)	GameServer.java:10425	已实现
+3003叶子	461	全部修理	3003 menuId=461	repairAll	GameServer.java:10428	已实现
+3003叶子	462	回城	3003 menuId=462	switchMap(0,300,400)	GameServer.java:10431	已实现
+3003叶子	463	回收装备	3003 menuId=463	recycleGear	PROTOCOL §160	已实现
+3003叶子	464	放生宠物	3003 menuId=464	3007 回 700+i 宠物列表	GameServer.java:10287	已实现
+3003叶子	470	宝物商店	3003 menuId=470	ses.curShopId=6, sendShop(6,0) 元宝计价	GameServer.java:10383	已实现
+3003叶子	471	道具商店	3003 menuId=471	ses.curShopId=1, sendShop(1,0) 金币计价	GameServer.java:10387	已实现
+3003叶子	472	元宝查询	3003 menuId=472	932(u8 1 + i32 元宝) + 2200 对话框	GameServer.java:10391	已实现
+3003叶子	480	帮派任务	3003 menuId=480	guildTask	GameServer.java:10284	已实现
+3003叶子	481	帮派技能	3003 menuId=481	guildSkillMenu(0)	GameServer.java:10285	已实现
+3003叶子	482	签到领帮贡	3003 menuId=482	guildSignIn	GameServer.java:10286	已实现
+3003叶子	483	刷新成员	3003 menuId=483	sendGuildMembers 重发 1001	GameServer.java:10347	已实现
+3003叶子	500-599	强化指定槽位	3003 menuId=500+slot	enhanceEquip(slot)	GameServer.java:10359	已实现
+3003叶子	700-709	放生第N只宠物	3003 menuId=700+i	移除宠物 + S_FREE_PET + S_ALL_PET_INFO	GameServer.java:10302	已实现
+3003叶子	701	喂食宠物	3003 menuId=701	消耗兽粮3002 + S_FEED_PET + S_SHOW_PET_LIST	GameServer.java:10306	已实现
+3003叶子	702	放生宠物	3003 menuId=702	移除 + S_FREE_PET	GameServer.java:10315	已实现
+3003叶子	703	出战或收回	3003 menuId=703	S_CALL_PET 或 S_CALLBACK_PET	GameServer.java:10325	已实现
+3003叶子	1000-1099	传送地图	3003 menuId=1000+idx	按 TELEPORT_MAPS 切图	GameServer.java:10208	已实现
+3003叶子	2001	打开仓库	3003 menuId=2001	openDepot, 950 type=2	GameServer.java:10207	已实现
+3003叶子	3100-3109	进入第N个副本	3003 或 2250 code	enterDungeon(N)	GameServer.java:10355	已实现
+3003叶子	3200-3299	副本难度入口	3003 或 2250 code	3200 + 副本序号*3 + (难度-1), 18副本最大3251, 判断须<3300	PROTOCOL §186.3	已实现
+2250NPC回调	1	杂货铺	2250 code=1	sendShop(npcShopId)	GameServer.java:9426	已实现
+2250NPC回调	2	药铺	2250 code=2	sendShop(3,0)	GameServer.java:9430	已实现
+2250NPC回调	3	全部修理	2250 code=3	repairAll	GameServer.java:9433	已实现
+2250NPC回调	4	闲聊	2250 code=4	sendNpcDialog	GameServer.java:9436	已实现
+2250NPC回调	5	传送阵	2250 code=5	sendTeleportMenu	GameServer.java:9439	已实现
+2250NPC回调	6	悬赏说明	2250 code=6	sendNpcDialog 自定义文本	GameServer.java:9442	已实现
+2250NPC回调	7	强化说明	2250 code=7	同 11	GameServer.java:9446	已实现
+2250NPC回调	8	技能	2250 code=8	sendSkillDialog	GameServer.java:9451	已实现
+2250NPC回调	9	副本	2250 code=9	startDup	GameServer.java:9454	已实现
+2250NPC回调	10	随身功能	2250 code=10	sendShop(1,0)	GameServer.java:9457	已实现
+2250NPC回调	11	强化说明	2250 code=11	品质阶梯+十格部位+职业武器说明	GameServer.java:9446	已实现
+2250NPC回调	20	送我出副本	MENU_EXIT_DUNGEON	清副本状态 + switchMap 回桃夭镇	GameServer.java:9465	已实现
+2250NPC回调	30	装备转星	2250 code=30	transferStars	GameServer.java:9470	已实现
+2250NPC回调	31	装备融合	2250 code=31	mergeEquips	GameServer.java:9473	已实现
+2250NPC回调	36	强化装备	2250 code=36	sendEquipUpgradeMenu	PROTOCOL §49	已实现
+2250NPC回调	40	疯狂BOSS	2250 code=40	芸凤 每日3次 511声望	GameServer.java:9546	已实现
+2250NPC回调	41	跑环接取	2250 code=41	接或查看当前环	GameServer.java:9548	已实现
+2250NPC回调	42	跑环交付	2250 code=42	交环	GameServer.java:9550	已实现
+2250NPC回调	43	在线兑换声望	2250 code=43	每周一次	GameServer.java:9552	已实现
+2250NPC回调	44	帮贡签到	2250 code=44	guildSignIn	GameServer.java:9540	已实现
+2250NPC回调	45	兑换高级项链	2250 code=45	guildExchangeNecklace	GameServer.java:9542	已实现
+2250NPC回调	46	查看帮贡	2250 code=46	聊天提示当前帮贡	GameServer.java:9544	已实现
+2250NPC回调	47	挑战塔下一层	2250 code=47	towerChallenge	GameServer.java:9505	已实现
+2250NPC回调	48	查看塔进度	2250 code=48	towerInfo	GameServer.java:9508	已实现
+2250NPC回调	49	结晶换神器	2250 code=49	towerExchangeArtifact	GameServer.java:9511	已实现
+2250NPC回调	50	创建帮派	2250 code=50	guildCreate	GameServer.java:9491	已实现
+2250NPC回调	51	帮派任务	2250 code=51	guildTask	GameServer.java:9494	已实现
+2250NPC回调	52	帮派技能菜单	2250 code=52	guildSkillMenu(-1)	GameServer.java:9497	已实现
+2250NPC回调	53	帮派信息	2250 code=53	guildInfo	GameServer.java:9500	已实现
+2250NPC回调	54-56	帮派技能升级	2250 code=54+i	guildSkillMenu(code-54)	GameServer.java:9503	已实现
+2250NPC回调	57	内测福利	2250 code=57	gmWelfare 每角色一次	GameServer.java:9480	已实现
+2250NPC回调	60	竞技场报名	2250 code=60	arenaEnter	GameServer.java:9483	已实现
+2250NPC回调	61	荣誉商店	2250 code=61	arenaShop	GameServer.java:9486	已实现
+2250NPC回调	62	查看荣誉	2250 code=62	arenaInfo	GameServer.java:9489	已实现
+2250NPC回调	63	兑换荣誉装	2250 code=63	arenaBuySet	GameServer.java:9489	已实现
+2250NPC回调	80	查看套装	2250 code=80	setInfo	GameServer.java:9521	已实现
+2250NPC回调	81	神器套转血狱	2250 code=81	upgradeToXueyu	GameServer.java:9524	已实现
+2250NPC回调	90-95	宠物换皮肤	2250 code=90+i	petSkin(code-90)	GameServer.java:9517	已实现
+2250NPC回调	96	查看宠物皮肤	2250 code=96	petSkinInfo	GameServer.java:9520	已实现
+2250NPC回调	97	国家任务领取	2250 code=97	30级起 每日1次	GameServer.java:9638	已实现
+2250NPC回调	98	开启冰火岛	2250 code=98	18-20点 20级+ 需帮派	GameServer.java:9561	已实现
+2250NPC回调	99	提交圣火令牌	2250 code=99	换经验	GameServer.java:9589	已实现
+2250NPC回调	100	定妖玉换紫装	2250 code=100	zhenyaoExchange(3)	GameServer.java:9531	已实现
+2250NPC回调	101	定妖玉换橙装	2250 code=101	zhenyaoExchange(4)	GameServer.java:9534	已实现
+2250NPC回调	102	查看兑换材料	2250 code=102	统计 4062/4063	GameServer.java:9537	已实现
+2250NPC回调	110	领取冰火帮贡	2250 code=110	满300帮贡领取	GameServer.java:9608	已实现
+2250NPC回调	111	放生宠物列表	2250 code=111	3007 回 700+i 宠物列表	GameServer.java:9625	已实现
+2250NPC回调	600-899	学习技能	2250 code=600+技能id	learnSkill(false) + sendSkillDialog	GameServer.java:9417	已实现
+2250NPC回调	900+	升级技能	2250 code=900+技能id	learnSkill(true) + sendSkillDialog	GameServer.java:9422	已实现
+2250NPC回调	3100-3299	副本入口与难度	2250 code	转 handleMenu 处理	GameServer.java:9412	已实现
+1079物品号	39	取消	1079 下行菜单号	0号包内置文案	strings pack0 id=39	客户端内置
+1079物品号	56	装备	1079 下行菜单号	背包物品穿戴	strings pack0 id=56	客户端内置
+1079物品号	57	丢弃	1079 下行菜单号	丢弃	strings pack0 id=57	客户端内置
+1079物品号	59	卸下	1079 下行菜单号	装备栏卸下	strings pack0 id=59	客户端内置
+1079物品号	61	使用	1079 下行菜单号	消耗品使用 sendUseItem 958	strings pack0 id=61	客户端内置
+1079物品号	179	存入	1079 下行菜单号	仓库存入 sendPutInItem	strings pack0 id=179	客户端内置
+1079物品号	180	取出	1079 下行菜单号	仓库取出	strings pack0 id=180	客户端内置
+1079物品号	185	购买	1079 下行菜单号	商店商品格	PROTOCOL §48	客户端内置
+1079物品号	210	查看	1079 下行菜单号	查看物品	strings pack0 id=210	客户端内置
+1079物品号	212	整理	1079 下行菜单号	背包整理 2350	strings pack0 id=212	客户端内置
+1079物品号	213	整理	1079 下行菜单号	仓库整理	strings pack0 id=213	客户端内置
+1079物品号	246	卖出	1079 下行菜单号	商店背包格出售（协议文档写作出售，客户端文案是卖出）	strings pack0 id=246	客户端内置
+1079物品号	271	装备改造	1079 下行菜单号	3006(menuId=271)	strings pack0 id=271	客户端内置
+1079物品号	272	装备拆解	1079 下行菜单号	拆解	strings pack0 id=272	客户端内置
+1079物品号	273	鉴定	1079 下行菜单号	2201 script=4 消耗鉴定符	strings pack0 id=273	客户端内置
+1079物品号	274	转星	1079 下行菜单号	2201 script=3	strings pack0 id=274	客户端内置
+1079物品号	294	放入	1079 下行菜单号	交易窗口用，背包无拆分入口	strings pack0 id=294	客户端内置
+1079物品号	416	合成	1079 下行菜单号	1076 三颗同级宝石合一颗	strings pack0 id=416	客户端内置
+1079物品号	427	复活	1079 下行菜单号	复活	strings pack0 id=427	客户端内置
+面板包	3006	请求菜单	i32 menuId,i32 serial,i32 charId	必须回 3007 否则客户端卡请稍候	PROTOCOL §15	协议
+面板包	3007	自定义菜单	u8 flag,i32 serial,i32 callback=0x2345,u8 count,[i32 id + str8],u8 0	id<428 读0号包标签, >=428 必须带 str8	GameServer.java:10156	协议
+面板包	3003	菜单项选中	i32 0,i32 callback,i32 menuId,u8 argc,i32[] args	handleMenuCallback 用 ses.socialSerial 回显	PROTOCOL §15/§131	协议
+面板包	607	NPC对话	u8 菜单数,[i32 code + str8 文本]	客户端据此弹 NPC 对话菜单	GameServer.java:8784	协议
+面板包	2250	NPC菜单回调	i32 npcId,i32 code	handleNpcCallback	GameServer.java:9402	协议
+面板包	1079	物品操作菜单	u8 强化类型,u8 包裹状态,u8 包类型,u8 位置,i32 defId	下行 u8 1,u8 数量,i32[] 菜单号	PROTOCOL §1079	协议
+面板包	2200	对话框	i32 callback,str32 标题,u8 style=3,u8 optionNum,...	menuCount=0 时客户端自动补关闭	PROTOCOL §15	协议
+面板包	2201	脚本请求	i32 menuId + args	鉴定=4 转星=3 排行=RANK_RES	GameServer.java:4215	协议
+面板包	951	商店列表	商品/页签	curShopId 决定商店	PROTOCOL §18	协议
+面板包	950	C_INIT_ITEM	type=0背包 type=2仓库	type=2 才打开仓库面板	PROTOCOL §15	协议
+面板包	932	元宝查询	u8 1 + i32 元宝	回显	PROTOCOL §15	协议
+面板包	845	帮派查询结果	i32 总页,i32 当前页,u8 条数,[i32 帮派id,str32 名]	844 上行	PROTOCOL §157.2	协议
+面板包	1952	玩家列表	u8 type,u8 总页,u8 当前页,u8 菜单数,u8 玩家数	type2好友 type3黑名单 type4仇人	PROTOCOL §143.4	协议
+面板包	2600/2601	称号列表	u8 1 + i32 当前 + u8 数量 + 条目	称号面板	PROTOCOL §15	协议
+面板包	2403/2404	邮件列表	u8 0 空列表	面板正常打开	PROTOCOL §15	协议
+面板包	2413/2414	已发邮件	u8 0 空列表	面板正常打开	PROTOCOL §15	协议
+面板包	1265/1269	脱离卡死	u8 1	纯客户端功能，服务端无需实现	PROTOCOL §147.2	协议
+面板包	2510	公告请求	2200 公告对话框	noticeText(menuId)	PROTOCOL §15	协议
+面板包	2281/2283	排行榜菜单与数据	排行条目	社交-游戏排行	PROTOCOL §115.1	协议
+面板包	2900	拍卖行列表	一条 2900 即可弹面板	入口 NPC 菜单码 38	PROTOCOL §154.1	协议
+面板包	2350	整理背包	合并堆叠+排序	菜单 212	PROTOCOL §48	协议
+面板包	2701/1240	管家设置/当前状态	状态面板	人物子菜单	PROTOCOL §128	协议
+面板包	1001/2308	帮派成员/公告	成员列表	管理帮派	PROTOCOL §153.3	协议
+面板包	960/965	穿戴/卸下	u16 defId,u8 位置	960 后需回 966 解 showWait	PROTOCOL §1079	协议
+面板包	970/974/975	仓库存取	i32 charId,u8 源类型,u16 位置,u8 目标类型,u8 数量	挪格后同时重发 950 type=0 和 type=2	PROTOCOL §15	协议
+协议记录待核	12	仓库管事	2250 code=12	950 type=2 打开仓库	PROTOCOL §15	协议记录
+协议记录待核	16	进入副本	2250 code=16	3007 列表 3003 选 3100+序号	PROTOCOL §16.4	协议记录
+协议记录待核	17	重置副本	2250 code=17	清空进度重刷	PROTOCOL §16.4	协议记录
+协议记录待核	37	声望商店	NPC 菜单码 37	声望装备/道具 两页签	PROTOCOL §2000	协议记录
+协议记录待核	38	拍卖行	NPC 菜单码 38	2900 拍卖列表	PROTOCOL §154.1	协议记录
+协议记录待核	408	管理帮派	3006 menuId=408	3007 五个入口	PROTOCOL §157	协议记录
